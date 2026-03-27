@@ -106,19 +106,71 @@
     <div class="container">
       <h2 class="section-title">✨ תכונות</h2>
       <div class="features-grid">
-        <div class="feature-card"><span class="feature-name">⚡ התראות בזמן אמת</span><span class="feature-detail">סקירה רציפה של ה-API כל 2 שניות</span></div>
-<div class="feature-card"><span class="feature-name">🗺️ מפות Mapbox</span><span class="feature-detail">פוליגוני ערים מדויקים — fallback לbounding box ולטקסט</span></div>
-<div class="feature-card"><span class="feature-name">✏️ עריכת הודעות</span><span class="feature-detail">התראות מאותו סוג עורכות את ההודעה הקיימת בחלון זמן מוגדר</span></div>
-<div class="feature-card"><span class="feature-name">📊 מגבלת Mapbox חודשית</span><span class="feature-detail">מונה SQLite + מטמון תמונות — חוסך קוטה ומונע חריגה</span></div>
-<div class="feature-card"><span class="feature-name">📢 ניתוב נושאים</span><span class="feature-detail">5 קטגוריות: ביטחוני, טבע, סביבתי, תרגילים, כללי</span></div>
-<div class="feature-card"><span class="feature-name">🔔 DM אישי</span><span class="feature-detail">מנוי לערים ספציפיות — פורמט קצר או מפורט</span></div>
-<div class="feature-card"><span class="feature-name">📍 מנוי לפי אזור</span><span class="feature-detail">6 אזורי-על ← 28 אזורים ← ערים, כולל "בחר/הסר כל האזור"</span></div>
-<div class="feature-card"><span class="feature-name">🔍 חיפוש עיר</span><span class="feature-detail">חיפוש חופשי בשם, תוצאות מיידיות</span></div>
-<div class="feature-card"><span class="feature-name">🛡️ מניעת כפילויות</span><span class="feature-detail">fingerprint חכם — פוקע כשהתרעה נעלמת, לא רק ב-all-clear</span></div>
-<div class="feature-card"><span class="feature-name">📡 newsFlash ארצי</span><span class="feature-detail">תפיסת הודעות ללא ערים שהספרייה מדלגת עליהן</span></div>
-<div class="feature-card"><span class="feature-name">🐳 Docker</span><span class="feature-detail">תמיכה מלאה — multi-stage build, non-root user, volume לנתונים</span></div>
-<div class="feature-card"><span class="feature-name">🚀 CI/CD</span><span class="feature-detail">GitHub Actions: בדיקות + בנייה אוטומטית + דחיפה ל-Docker Hub</span></div>
-<div class="feature-card"><span class="feature-name">🌐 תמיכה ב-Proxy</span><span class="feature-detail">לשימוש מחוץ לישראל (ה-API חסום גיאוגרפית)</span></div>
+        <div class="feature-card">
+  <span class="feature-icon">⚡</span>
+  <span class="feature-title">התראות בזמן אמת</span>
+  <span class="feature-desc">סקירה רציפה של ה-API כל 2 שניות</span>
+</div>
+<div class="feature-card">
+  <span class="feature-icon">🗺️</span>
+  <span class="feature-title">מפות Mapbox</span>
+  <span class="feature-desc">פוליגוני ערים מדויקים — fallback לbounding box ולטקסט</span>
+</div>
+<div class="feature-card">
+  <span class="feature-icon">✏️</span>
+  <span class="feature-title">עריכת הודעות</span>
+  <span class="feature-desc">התראות מאותו סוג עורכות את ההודעה הקיימת בחלון זמן מוגדר</span>
+</div>
+<div class="feature-card">
+  <span class="feature-icon">📊</span>
+  <span class="feature-title">מגבלת Mapbox חודשית</span>
+  <span class="feature-desc">מונה SQLite + מטמון תמונות — חוסך קוטה ומונע חריגה</span>
+</div>
+<div class="feature-card">
+  <span class="feature-icon">📢</span>
+  <span class="feature-title">ניתוב נושאים</span>
+  <span class="feature-desc">5 קטגוריות: ביטחוני, טבע, סביבתי, תרגילים, כללי</span>
+</div>
+<div class="feature-card">
+  <span class="feature-icon">🔔</span>
+  <span class="feature-title">DM אישי</span>
+  <span class="feature-desc">מנוי לערים ספציפיות — פורמט קצר או מפורט</span>
+</div>
+<div class="feature-card">
+  <span class="feature-icon">📍</span>
+  <span class="feature-title">מנוי לפי אזור</span>
+  <span class="feature-desc">6 אזורי-על ← 28 אזורים ← ערים, כולל "בחר/הסר כל האזור"</span>
+</div>
+<div class="feature-card">
+  <span class="feature-icon">🔍</span>
+  <span class="feature-title">חיפוש עיר</span>
+  <span class="feature-desc">חיפוש חופשי בשם, תוצאות מיידיות</span>
+</div>
+<div class="feature-card">
+  <span class="feature-icon">🛡️</span>
+  <span class="feature-title">מניעת כפילויות</span>
+  <span class="feature-desc">fingerprint חכם — פוקע כשהתרעה נעלמת, לא רק ב-all-clear</span>
+</div>
+<div class="feature-card">
+  <span class="feature-icon">📡</span>
+  <span class="feature-title">newsFlash ארצי</span>
+  <span class="feature-desc">תפיסת הודעות ללא ערים שהספרייה מדלגת עליהן</span>
+</div>
+<div class="feature-card">
+  <span class="feature-icon">🐳</span>
+  <span class="feature-title">Docker</span>
+  <span class="feature-desc">תמיכה מלאה — multi-stage build, non-root user, volume לנתונים</span>
+</div>
+<div class="feature-card">
+  <span class="feature-icon">🚀</span>
+  <span class="feature-title">CI/CD</span>
+  <span class="feature-desc">GitHub Actions: בדיקות + בנייה אוטומטית + דחיפה ל-Docker Hub</span>
+</div>
+<div class="feature-card">
+  <span class="feature-icon">🌐</span>
+  <span class="feature-title">תמיכה ב-Proxy</span>
+  <span class="feature-desc">לשימוש מחוץ לישראל (ה-API חסום גיאוגרפית)</span>
+</div>
       </div>
     </div>
   </section>
