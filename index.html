@@ -116,7 +116,7 @@
 <div class="feature-card">
   <span class="feature-icon">🗺️</span>
   <span class="feature-title">מפות Mapbox</span>
-  <span class="feature-desc">פוליגוני ערים מדויקים — fallback לbounding box ולטקסט</span>
+  <span class="feature-desc">פוליגוני ערים מדויקים בצבע לפי סוג ההתראה — fallback לbounding box ולטקסט</span>
 </div>
 <div class="feature-card">
   <span class="feature-icon">✏️</span>
@@ -136,17 +136,22 @@
 <div class="feature-card">
   <span class="feature-icon">🔔</span>
   <span class="feature-title">DM אישי</span>
-  <span class="feature-desc">מנוי לערים ספציפיות — פורמט קצר או מפורט</span>
+  <span class="feature-desc">מנוי לערים ספציפיות — פורמט קצר (עם זמן מקלט) או מפורט</span>
 </div>
 <div class="feature-card">
   <span class="feature-icon">📍</span>
   <span class="feature-title">מנוי לפי אזור</span>
-  <span class="feature-desc">6 אזורי-על ← 28 אזורים ← ערים, כולל "בחר/הסר כל האזור"</span>
+  <span class="feature-desc">6 אזורי-על ← 28 אזורים (עם תוויות) ← ערים, כולל "בחר/הסר כל האזור"</span>
 </div>
 <div class="feature-card">
   <span class="feature-icon">🔍</span>
   <span class="feature-title">חיפוש עיר</span>
   <span class="feature-desc">חיפוש חופשי בשם, תוצאות מיידיות</span>
+</div>
+<div class="feature-card">
+  <span class="feature-icon">😴</span>
+  <span class="feature-title">Snooze DMs</span>
+  <span class="feature-desc">השתקת DMs לפרק זמן מוגדר — התראות ביטחוניות תמיד עוברות</span>
 </div>
 <div class="feature-card">
   <span class="feature-icon">🛡️</span>
@@ -161,7 +166,7 @@
 <div class="feature-card">
   <span class="feature-icon">📜</span>
   <span class="feature-title">היסטוריית התראות</span>
-  <span class="feature-desc">שמירת כל התראה ב-SQLite (7 ימים) — `/stats` ו-`/history` לסיכום ולחיפוש</span>
+  <span class="feature-desc">שמירת כל התראה ב-SQLite (7 ימים) — `/stats` ו-`/history` עם שעה מוחלטת</span>
 </div>
 <div class="feature-card">
   <span class="feature-icon">🔕</span>
@@ -187,6 +192,11 @@
   <span class="feature-icon">🔄</span>
   <span class="feature-title">עמידות לאיתחול</span>
   <span class="feature-desc">חלון ההתראות נשמר ב-SQLite — אין הודעות כפולות בערוץ לאחר הפעלה מחדש</span>
+</div>
+<div class="feature-card">
+  <span class="feature-icon">🎛️</span>
+  <span class="feature-title">לוח בקרה</span>
+  <span class="feature-desc">Admin Dashboard (React + Express) — ניטור, ניהול מנויים, שליחת broadcast, הגדרות</span>
 </div>
 <div class="feature-card">
   <span class="feature-icon">🐳</span>
@@ -374,7 +384,7 @@
   <!-- ⑥  Footer ------------------------------------------------------------- -->
   <footer class="footer">
     <div class="footer-inner">
-      <span>גרסה 0.1.4</span>
+      <span>גרסה 0.1.5</span>
       <span class="footer-sep" aria-hidden="true">·</span>
       <a
         href="https://github.com/yonatan2021/pikud-haoref-bot"
