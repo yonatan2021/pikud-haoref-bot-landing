@@ -289,7 +289,7 @@
   <span class="feature-icon">✏️</span>
   <span class="feature-text">
     <span class="feature-title">עריכת הודעות</span>
-    <span class="feature-desc">התראות מאותו סוג עורכות את ההודעה הקיימת בחלון זמן מוגדר</span>
+    <span class="feature-desc">התראות מאותו סוג עורכות את ההודעה הקיימת בחלון זמן מוגדר; שרשרת מדורגת: editMessageMedia → editMessageCaption → editMessageText</span>
   </span>
 </div>
 <div class="feature-card">
@@ -331,7 +331,7 @@
   <span class="feature-icon">🎛️</span>
   <span class="feature-text">
     <span class="feature-title">לוח בקרה</span>
-    <span class="feature-desc">Admin Dashboard — React + glassmorphism UI, framer-motion, ניהול מנויים, broadcast, הגדרות</span>
+    <span class="feature-desc">Admin Dashboard — React + glassmorphism UI, framer-motion, ניהול מנויים, broadcast, הגדרות, ניהול WhatsApp listeners</span>
   </span>
 </div>
 <div class="feature-card">
@@ -345,7 +345,7 @@
   <span class="feature-icon">🧙</span>
   <span class="feature-text">
     <span class="feature-title">NPX Wizard</span>
-    <span class="feature-desc">`--update` לעדכון .env קיים, `--verify` לבדיקת טוקנים, ולידציה חיה בכל שדה</span>
+    <span class="feature-desc">`--update` לעדכון .env קיים, `--verify` לבדיקת טוקנים, ולידציה חיה בכל שדה, בחירת פלטפורמה (Telegram / WhatsApp / שניהם)</span>
   </span>
 </div>
 <div class="feature-card">
@@ -367,6 +367,34 @@
   <span class="feature-text">
     <span class="feature-title">Proxy</span>
     <span class="feature-desc">תמיכה בהרצה מחוץ לישראל</span>
+  </span>
+</div>
+<div class="feature-card">
+  <span class="feature-icon">📱</span>
+  <span class="feature-text">
+    <span class="feature-title">WhatsApp Listener</span>
+    <span class="feature-desc">האזנה לקבוצות/ערוצים WhatsApp, סינון לפי מילות מפתח, העברה לטלגרם (WHATSAPP_ENABLED=true)</span>
+  </span>
+</div>
+<div class="feature-card">
+  <span class="feature-icon">🔒</span>
+  <span class="feature-text">
+    <span class="feature-title">Rate Limiting</span>
+    <span class="feature-desc">הגנה על endpoints בדשבורד (broadcast, deploy, export), bot callbacks, ו-brute-force פרסיסטנטי ב-SQLite</span>
+  </span>
+</div>
+<div class="feature-card">
+  <span class="feature-icon">⚡</span>
+  <span class="feature-text">
+    <span class="feature-title">Caching O(1)</span>
+    <span class="feature-desc">cityLookup Maps, subscription cache in-memory, TTL stats cache, Mapbox usage cache — אפס DB hits בנתיב ההתראות</span>
+  </span>
+</div>
+<div class="feature-card">
+  <span class="feature-icon">📨</span>
+  <span class="feature-text">
+    <span class="feature-title">שיפורי הודעות</span>
+    <span class="feature-desc">חותמת זמן יציבה (Asia/Jerusalem), ספירת ערים בכותרת, מיון אלפבתי, `📍 ערים נוספות` לערים ללא polygon</span>
   </span>
 </div>
           </div>
@@ -585,7 +613,7 @@
   <!-- ⑨ Footer -------------------------------------------------------------- -->
   <footer class="footer">
     <div class="footer-inner">
-      <span>גרסה 0.2.3</span>
+      <span>גרסה 0.3.0</span>
       <span class="footer-sep" aria-hidden="true">·</span>
       <a href="https://github.com/yonatan2021/pikud-haoref-bot" target="_blank" rel="noopener noreferrer">GitHub</a>
       <span class="footer-sep" aria-hidden="true">·</span>
