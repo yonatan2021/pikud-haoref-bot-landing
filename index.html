@@ -193,9 +193,23 @@
   <section class="features section section--alt" id="features">
     <div class="container">
       <h2 class="section-title reveal">✨ תכונות</h2>
+
+      <!-- Mobile-only tab switcher -->
+      <div class="features-tabs" role="tablist" aria-label="בחירת קטגוריית תכונות">
+        <button class="features-tab features-tab--active" role="tab"
+                aria-selected="true" aria-controls="panel-user" id="tab-user">
+          🔔 למשתמש
+        </button>
+        <button class="features-tab" role="tab"
+                aria-selected="false" aria-controls="panel-dev" id="tab-dev">
+          ⚙️ למתכנתים
+        </button>
+      </div>
+
       <div class="features-columns">
 
-        <div class="features-panel features-panel--user glass-card reveal">
+        <div class="features-panel features-panel--user glass-card reveal"
+             id="panel-user" role="tabpanel" aria-labelledby="tab-user">
           <div class="features-panel-header">
             <span class="features-panel-icon">🔔</span>
             <div>
@@ -208,125 +222,136 @@
   <span class="feature-icon">⚡</span>
   <span class="feature-text">
     <span class="feature-title">התראות בזמן אמת</span>
-    <span class="feature-desc">מתעדכן כל 2 שניות — ללא עיכוב</span>
+    <span class="feature-desc">תקבלו התראה תוך שניות מרגע שפיקוד העורף מפרסם — בלי לחכות</span>
   </span>
 </div>
 <div class="feature-card">
   <span class="feature-icon">🗺️</span>
   <span class="feature-text">
     <span class="feature-title">מפה לכל התראה</span>
-    <span class="feature-desc">הדגשת האזורים המוזהרים בצבע לפי סוג האירוע; סגנון `streets-v12` ביום (06:00–18:00) עם כבישים ונקודות ציון, `navigation-night-v1` בלילה (18:00–06:00) בניגודיות גבוהה; padding אדפטיבי לפי כמות הערים; איחוד פוליגונים חופפים להתראות רב-עיר (50+ ערים כגון כל מרכז הארץ מוצגות כאזורים ממולאים ולא כ-pin markers); fallback לסמני מיקום כשאין נתוני polygon</span>
+    <span class="feature-desc">כל התראה מגיעה עם מפה צבעונית שמראה בדיוק איפה האזעקה, מותאמת ליום ולילה</span>
   </span>
 </div>
 <div class="feature-card">
   <span class="feature-icon">📢</span>
   <span class="feature-text">
-    <span class="feature-title">6 קטגוריות נושא</span>
-    <span class="feature-desc">ביטחוני, טבע, סביבתי, תרגילים, WhatsApp, כללי — ניתוב לערוץ המתאים</span>
+    <span class="feature-title">ערוצים לפי נושא</span>
+    <span class="feature-desc">ביטחוני, טבע, סביבתי, תרגילים, WhatsApp, כללי — כל סוג בערוץ נפרד כדי שתראו רק מה שמעניין אתכם</span>
   </span>
 </div>
 <div class="feature-card">
   <span class="feature-icon">📋</span>
   <span class="feature-text">
-    <span class="feature-title">הודעה מפורטת</span>
-    <span class="feature-desc">ספירת ערים כוללת בכותרת, ערים ממוינות אלפבתית לפי אזור, שעת ההתראה המדויקת</span>
+    <span class="feature-title">הודעה ברורה</span>
+    <span class="feature-desc">רשימת ערים מסודרת לפי אזור, עם שעה מדויקת וספירה כוללת — תדעו בדיוק מה קורה ואיפה</span>
   </span>
 </div>
 <div class="feature-card">
   <span class="feature-icon">✏️</span>
   <span class="feature-text">
-    <span class="feature-title">עדכון הודעה חי</span>
-    <span class="feature-desc">התראות מאותו סוג עורכות את ההודעה הקיימת בערוץ (ברירת מחדל: 120 שניות) — אין הצפה של הודעות חדשות</span>
+    <span class="feature-title">בלי הצפת הודעות</span>
+    <span class="feature-desc">כשנכנסות עוד ערים לאותה התראה, ההודעה מתעדכנת במקום — אין שיטפון של הודעות חדשות</span>
   </span>
 </div>
 <div class="feature-card">
   <span class="feature-icon">🔔</span>
   <span class="feature-text">
-    <span class="feature-title">DM אישי</span>
-    <span class="feature-desc">הודעה ישירה רק כשמוזהרת עיר שבחרת</span>
+    <span class="feature-title">הודעה אישית</span>
+    <span class="feature-desc">מקבלים הודעה ישירה רק כשיש אזעקה בעיר שבחרתם</span>
   </span>
 </div>
 <div class="feature-card">
   <span class="feature-icon">⏱️</span>
   <span class="feature-text">
-    <span class="feature-title">זמן מקלט ב-DM</span>
-    <span class="feature-desc">כל הודעת DM מציגה את זמן ההגעה למרחב מוגן (`⏱ X שנ׳`) עבור הערים שלך</span>
+    <span class="feature-title">זמן מקלט</span>
+    <span class="feature-desc">בכל הודעה אישית מופיע כמה שניות יש לכם להגיע למרחב מוגן</span>
   </span>
 </div>
 <div class="feature-card">
   <span class="feature-icon">📍</span>
   <span class="feature-text">
-    <span class="feature-title">מנוי לפי אזור</span>
-    <span class="feature-desc">בחירה לפי אזור גיאוגרפי, עם אפשרות "בחר את כל האזור"</span>
+    <span class="feature-title">בחירה לפי אזור</span>
+    <span class="feature-desc">בוחרים אזור שלם בלחיצה אחת, או בוחרים ערים ספציפיות</span>
   </span>
 </div>
 <div class="feature-card">
   <span class="feature-icon">🔍</span>
   <span class="feature-text">
     <span class="feature-title">חיפוש עיר</span>
-    <span class="feature-desc">חיפוש חופשי לפי שם — תוצאות מיידיות</span>
+    <span class="feature-desc">מחפשים עיר לפי שם — תוצאות מיידיות</span>
   </span>
 </div>
 <div class="feature-card">
   <span class="feature-icon">😴</span>
   <span class="feature-text">
     <span class="feature-title">השתקה זמנית</span>
-    <span class="feature-desc">להשתיק DMs לפרק זמן — התראות ביטחוניות תמיד עוברות</span>
+    <span class="feature-desc">אפשר להשתיק הודעות לזמן מוגבל — התראות ביטחוניות תמיד עוברות</span>
   </span>
 </div>
 <div class="feature-card">
   <span class="feature-icon">🔕</span>
   <span class="feature-text">
     <span class="feature-title">שעות שקט</span>
-    <span class="feature-desc">ביטול DMs בשעות הלילה (23:00–06:00), בלי לפספס התראות קריטיות</span>
+    <span class="feature-desc">ללא הודעות בשעות הלילה (23:00–06:00), בלי לפספס התראות קריטיות</span>
   </span>
 </div>
 <div class="feature-card">
   <span class="feature-icon">💬</span>
   <span class="feature-text">
-    <span class="feature-title">קבוצת WhatsApp</span>
-    <span class="feature-desc">קבלת התראות פיקוד העורף גם ישירות ב-WhatsApp — ללא בוט, ללא הגדרות</span>
+    <span class="feature-title">גם ב-WhatsApp</span>
+    <span class="feature-desc">מקבלים התראות גם ישירות ב-WhatsApp — ללא התקנה, ללא הגדרות</span>
   </span>
 </div>
 <div class="feature-card">
   <span class="feature-icon">📊</span>
   <span class="feature-text">
-    <span class="feature-title">/stats</span>
-    <span class="feature-desc">סטטיסטיקת 24 שעות אחרונות לפי קטגוריה + ספירה אישית כמה התראות נגעו לאזוריך</span>
+    <span class="feature-title">סטטיסטיקה</span>
+    <span class="feature-desc">צפייה בכמה אזעקות היו ב-24 שעות האחרונות ואילו מהן נגעו לאזורים שלכם</span>
   </span>
 </div>
 <div class="feature-card">
   <span class="feature-icon">📜</span>
   <span class="feature-text">
-    <span class="feature-title">היסטוריית התראות</span>
-    <span class="feature-desc">צפייה ב-10 התראות אחרונות — לאזורך, לעיר ספציפית, או כלל-ארצי</span>
-  </span>
-</div>
-<div class="feature-card">
-  <span class="feature-icon">👤</span>
-  <span class="feature-text">
-    <span class="feature-title">DM מותאם אישית</span>
-    <span class="feature-desc">כל מנוי מקבל רק את הערים שלו — לא הצפה מהכל</span>
+    <span class="feature-title">היסטוריה</span>
+    <span class="feature-desc">צפייה ב-10 התראות האחרונות — לאזור שלכם, לעיר מסוימת, או כלל-ארצי</span>
   </span>
 </div>
 <div class="feature-card">
   <span class="feature-icon">👋</span>
   <span class="feature-text">
-    <span class="feature-title">Onboarding חכם</span>
-    <span class="feature-desc">משתמש חדש נכנס ל-wizard אינטראקטיבי ב-`/start` — שם, עיר מגורים, והרשמה אוטומטית; מצב נשמר ב-DB ושורד ריסטארט</span>
+    <span class="feature-title">הרשמה קלה</span>
+    <span class="feature-desc">בלחיצה על /start מתחיל תהליך קצר — בוחרים שם, עיר, ומיד מתחילים לקבל התראות</span>
   </span>
 </div>
 <div class="feature-card">
   <span class="feature-icon">✏️</span>
   <span class="feature-text">
     <span class="feature-title">פרופיל אישי</span>
-    <span class="feature-desc">`/profile` — צפייה ועריכה של שם תצוגה ועיר מגורים; בחירת שפה מוכנה ל-i18n עתידי</span>
+    <span class="feature-desc">אפשר לצפות ולשנות את השם, העיר, וקוד החיבור שלכם בכל רגע</span>
+  </span>
+</div>
+<div class="feature-card">
+  <span class="feature-icon">🔗</span>
+  <span class="feature-text">
+    <span class="feature-title">אנשי קשר</span>
+    <span class="feature-desc">חברו חברים עם תפריט אינטראקטיבי: שתפו קוד בן 6 ספרות, בחרו הרשאות מפורשות (עיר בית / זמן עדכון), הצד השני מאשר ורואה סיכום של מה שותף</span>
+  </span>
+</div>
+<div class="feature-card">
+  <span class="feature-icon">🛡️</span>
+  <span class="feature-text">
+    <span class="feature-title">הגנה מפני ספאם</span>
+    <span class="feature-desc">המערכת מגבילה בקשות קשר חריגות ומנקה בקשות ישנות באופן אוטומטי</span>
   </span>
 </div>
           </div>
+          <button class="features-show-more" aria-expanded="false">
+            הצג עוד
+          </button>
         </div>
 
-        <div class="features-panel features-panel--dev glass-card reveal" style="--reveal-delay: 0.1s">
+        <div class="features-panel features-panel--dev glass-card reveal"
+             id="panel-dev" role="tabpanel" aria-labelledby="tab-dev" style="--reveal-delay: 0.1s">
           <div class="features-panel-header">
             <span class="features-panel-icon">⚙️</span>
             <div>
@@ -461,7 +486,17 @@
     <span class="feature-desc">מערכת onboarding עם wizard ב-`/start`; פרופיל עם `display_name`, `home_city`, `locale`; מצב נשמר ב-SQLite (עמיד לריסטארט); `addColumnIfMissing` מיגרציה בטוחה</span>
   </span>
 </div>
+<div class="feature-card">
+  <span class="feature-icon">🔗</span>
+  <span class="feature-text">
+    <span class="feature-title">Contact System</span>
+    <span class="feature-desc">טבלאות `contacts` + `contact_permissions` עם FK cascades; transactional `createContactWithPermissions()`; `pruneExpiredContacts()` מחזורי; dashboard API חושף `contact_count` ב-subquery</span>
+  </span>
+</div>
           </div>
+          <button class="features-show-more" aria-expanded="false">
+            הצג עוד
+          </button>
         </div>
 
       </div>
@@ -639,14 +674,16 @@
   <!-- ⑦ What's New ---------------------------------------------------------- -->
   <section class="whats-new section" id="whats-new">
     <div class="container">
-      <h2 class="section-title reveal">✨ מה חדש בגרסה 0.4.1?</h2>
+      <h2 class="section-title reveal">✨ מה חדש בגרסה 0.4.2?</h2>
       <ul class="changelog-list reveal" style="--reveal-delay: 0.1s">
-        <li>Onboarding</li>
-<li>Onboarding wizard ב-/start</li>
-<li>הרשמה אוטומטית לעיר מגורים</li>
-<li>פרופיל</li>
-<li>פקודת /profile</li>
+        <li>אנשי קשר</li>
+<li>הגנה מפני שימוש לרעה</li>
+<li>קוד חיבור בפרופיל</li>
+<li>אנשי קשר בלוח הבקרה</li>
       </ul>
+      <button class="changelog-show-more" aria-expanded="false">
+        עוד עדכונים
+      </button>
       <div class="changelog-footer reveal" style="--reveal-delay: 0.2s">
         <a
           href="https://github.com/yonatan2021/pikud-haoref-bot/blob/main/CHANGELOG.md"
@@ -718,7 +755,7 @@
   <!-- ⑨ Footer -------------------------------------------------------------- -->
   <footer class="footer">
     <div class="footer-inner">
-      <span>גרסה 0.4.1</span>
+      <span>גרסה 0.4.2</span>
       <span class="footer-sep" aria-hidden="true">·</span>
       <a href="https://github.com/yonatan2021/pikud-haoref-bot" target="_blank" rel="noopener noreferrer">GitHub</a>
       <span class="footer-sep" aria-hidden="true">·</span>
@@ -738,9 +775,13 @@
     <p class="footer-credit">עשוי עם ❤️ בישראל 🇮🇱</p>
   </footer>
 
+  <!-- Mobile FAB — quick join link, hidden on desktop -->
+  <a href="https://t.me/phalaret" class="mobile-fab" target="_blank"
+     rel="noopener noreferrer" aria-label="הצטרף בטלגרם">🔔</a>
+
   <!-- -----------------------------------------------------------------------
        Inline JS — cursor spotlight, scroll reveal, counters,
-                   How It Works connector, copy button
+                   How It Works connector, copy button, mobile interactions
   ------------------------------------------------------------------------ -->
   <script>
     // ── 1. Cursor spotlight ─────────────────────────────────────────────────
@@ -819,7 +860,92 @@
       howObserver.observe(howSection);
     }
 
-    // ── 6. Copy-to-clipboard (npx command) ──────────────────────────────────
+    // ── 6. Mobile: feature tabs, show-more, compact cards ─────────────────
+    var isMobile = window.matchMedia('(max-width: 900px)');
+
+    // 6a. Tab switcher for feature panels
+    var tabs = document.querySelectorAll('.features-tab');
+    var panels = [document.getElementById('panel-user'), document.getElementById('panel-dev')];
+
+    function activateTab(selectedTab) {
+      tabs.forEach(function(tab) {
+        var isSelected = tab === selectedTab;
+        tab.classList.toggle('features-tab--active', isSelected);
+        tab.setAttribute('aria-selected', isSelected);
+      });
+      var activeId = selectedTab.getAttribute('aria-controls');
+      panels.forEach(function(panel) {
+        if (!panel) return;
+        var show = panel.id === activeId;
+        panel.hidden = !show;
+        panel.style.display = show ? '' : 'none';
+      });
+    }
+
+    function initMobileTabs() {
+      if (isMobile.matches) {
+        // On mobile: show only user panel initially
+        if (panels[1]) { panels[1].hidden = true; panels[1].style.display = 'none'; }
+      } else {
+        // On desktop: show both, remove hidden
+        panels.forEach(function(p) { if (p) { p.hidden = false; p.style.display = ''; } });
+      }
+    }
+
+    tabs.forEach(function(tab) {
+      tab.addEventListener('click', function() { activateTab(tab); });
+    });
+
+    initMobileTabs();
+    isMobile.addEventListener('change', initMobileTabs);
+
+    // 6b. "Show more" buttons for feature grids
+    document.querySelectorAll('.features-show-more').forEach(function(btn) {
+      var grid = btn.previousElementSibling;
+      if (!grid || !grid.classList.contains('features-grid')) return;
+      var total = grid.querySelectorAll('.feature-card').length;
+      var hiddenCount = Math.max(0, total - 6);
+      if (hiddenCount > 0) {
+        btn.textContent = 'הצג עוד (' + hiddenCount + ')';
+      }
+      btn.addEventListener('click', function() {
+        var expanded = grid.classList.toggle('expanded');
+        btn.setAttribute('aria-expanded', expanded);
+        btn.textContent = expanded ? 'הצג פחות' : 'הצג עוד (' + hiddenCount + ')';
+      });
+    });
+
+    // 6c. Compact cards — tap to expand description on mobile
+    document.querySelectorAll('.feature-card').forEach(function(card) {
+      card.addEventListener('click', function() {
+        if (!isMobile.matches) return;
+        card.classList.toggle('expanded');
+      });
+    });
+
+    // 6d. What's New show-more
+    var clBtn = document.querySelector('.changelog-show-more');
+    if (clBtn) {
+      var clList = document.querySelector('.changelog-list');
+      clBtn.addEventListener('click', function() {
+        if (!clList) return;
+        var expanded = clList.classList.toggle('expanded');
+        clBtn.setAttribute('aria-expanded', expanded);
+        clBtn.textContent = expanded ? 'הצג פחות' : 'עוד עדכונים';
+      });
+    }
+
+    // 6e. FAB auto-hide near CTA section
+    var fab = document.querySelector('.mobile-fab');
+    var ctaSection = document.querySelector('.cta-section');
+    if (fab && ctaSection) {
+      var fabObserver = new IntersectionObserver(function(entries) {
+        fab.classList.toggle('mobile-fab--hidden', entries[0].isIntersecting);
+      }, { threshold: 0.2 });
+      fabObserver.observe(ctaSection);
+    }
+
+    // ── 7. Copy-to-clipboard (npx command) ──────────────────────────────────
     document.querySelectorAll('.copy-btn').forEach(function(btn) {
       btn.addEventListener('click', function() {
         var text = btn.dataset.copy;
