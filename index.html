@@ -309,6 +309,20 @@
     <span class="feature-desc">כל מנוי מקבל רק את הערים שלו — לא הצפה מהכל</span>
   </span>
 </div>
+<div class="feature-card">
+  <span class="feature-icon">👋</span>
+  <span class="feature-text">
+    <span class="feature-title">Onboarding חכם</span>
+    <span class="feature-desc">משתמש חדש נכנס ל-wizard אינטראקטיבי ב-`/start` — שם, עיר מגורים, והרשמה אוטומטית; מצב נשמר ב-DB ושורד ריסטארט</span>
+  </span>
+</div>
+<div class="feature-card">
+  <span class="feature-icon">✏️</span>
+  <span class="feature-text">
+    <span class="feature-title">פרופיל אישי</span>
+    <span class="feature-desc">`/profile` — צפייה ועריכה של שם תצוגה ועיר מגורים; בחירת שפה מוכנה ל-i18n עתידי</span>
+  </span>
+</div>
           </div>
         </div>
 
@@ -438,6 +452,13 @@
   <span class="feature-text">
     <span class="feature-title">שיפורי הודעות</span>
     <span class="feature-desc">חותמת זמן יציבה (Asia/Jerusalem), ספירת ערים בכותרת, מיון אלפבתי, `▸ ערים נוספות` לערים ללא polygon; תוכן ההודעה מופיע לפני רשימת הערים</span>
+  </span>
+</div>
+<div class="feature-card">
+  <span class="feature-icon">👤</span>
+  <span class="feature-text">
+    <span class="feature-title">Onboarding + פרופיל</span>
+    <span class="feature-desc">מערכת onboarding עם wizard ב-`/start`; פרופיל עם `display_name`, `home_city`, `locale`; מצב נשמר ב-SQLite (עמיד לריסטארט); `addColumnIfMissing` מיגרציה בטוחה</span>
   </span>
 </div>
           </div>
@@ -618,13 +639,13 @@
   <!-- ⑦ What's New ---------------------------------------------------------- -->
   <section class="whats-new section" id="whats-new">
     <div class="container">
-      <h2 class="section-title reveal">✨ מה חדש בגרסה 0.4.0?</h2>
+      <h2 class="section-title reveal">✨ מה חדש בגרסה 0.4.1?</h2>
       <ul class="changelog-list reveal" style="--reveal-delay: 0.1s">
-        <li>WhatsApp Broadcast לקבוצות</li>
-<li>קטגוריה 6 — WhatsApp Forward</li>
-<li>שידור Listener לקבוצות WA</li>
-<li>דשבורד WhatsApp — שדרוג משמעותי</li>
-<li>WhatsApp Channels</li>
+        <li>Onboarding</li>
+<li>Onboarding wizard ב-/start</li>
+<li>הרשמה אוטומטית לעיר מגורים</li>
+<li>פרופיל</li>
+<li>פקודת /profile</li>
       </ul>
       <div class="changelog-footer reveal" style="--reveal-delay: 0.2s">
         <a
@@ -697,13 +718,13 @@
   <!-- ⑨ Footer -------------------------------------------------------------- -->
   <footer class="footer">
     <div class="footer-inner">
-      <span>גרסה 0.4.0</span>
+      <span>גרסה 0.4.1</span>
       <span class="footer-sep" aria-hidden="true">·</span>
       <a href="https://github.com/yonatan2021/pikud-haoref-bot" target="_blank" rel="noopener noreferrer">GitHub</a>
       <span class="footer-sep" aria-hidden="true">·</span>
       <span>Apache 2.0</span>
       <span class="footer-sep" aria-hidden="true">·</span>
-      <span>עודכן 31 במרץ 2026</span>
+      <span>עודכן 3 באפריל 2026</span>
     </div>
     <div class="footer-sponsor">
       <a
