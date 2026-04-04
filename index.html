@@ -351,6 +351,48 @@
     <span class="feature-desc">המערכת מגבילה בקשות קשר חריגות ומנקה בקשות ישנות באופן אוטומטי</span>
   </span>
 </div>
+<div class="feature-card">
+  <span class="feature-icon">🎨</span>
+  <span class="feature-text">
+    <span class="feature-title">חזותיות אזורים</span>
+    <span class="feature-desc">צבעים שונים לכל אזור במפת ההתרעות לזיהוי מהיר של מוקדי הסכנה</span>
+  </span>
+</div>
+<div class="feature-card">
+  <span class="feature-icon">🎯</span>
+  <span class="feature-text">
+    <span class="feature-title">רלוונטיות אישית</span>
+    <span class="feature-desc">אינדיקטור שמציין אם ההתרעה נוגעת לאזורים שנבחרו — בכותרת הערוץ ובהודעות DM</span>
+  </span>
+</div>
+<div class="feature-card">
+  <span class="feature-icon">⏱️</span>
+  <span class="feature-text">
+    <span class="feature-title">סרגל ספירה לאחור</span>
+    <span class="feature-desc">בהודעות DM מופיע סרגל ויזואלי (🟥🟥🟥🟥🟥) שמראה כמה זמן נותר להגיע למרחב מוגן</span>
+  </span>
+</div>
+<div class="feature-card">
+  <span class="feature-icon">🏁</span>
+  <span class="feature-text">
+    <span class="feature-title">אישור סיום התרעה</span>
+    <span class="feature-desc">הודעת "הסתיימה ההתרעה" לאחר כל אזעקה, עם חלון שקט למניעת הצפה</span>
+  </span>
+</div>
+<div class="feature-card">
+  <span class="feature-icon">📅</span>
+  <span class="feature-text">
+    <span class="feature-title">סיכום יומי</span>
+    <span class="feature-desc">פקודת `/today` מציגה סיכום של כל התרעות היום עם פירוט לפי קטגוריות</span>
+  </span>
+</div>
+<div class="feature-card">
+  <span class="feature-icon">🗺️</span>
+  <span class="feature-text">
+    <span class="feature-title">אגדת אזורים</span>
+    <span class="feature-desc">פקודת `/legend` מציגה את פלטת הצבעים של כל אזור לפי סופר-אזורים</span>
+  </span>
+</div>
           </div>
           <button class="features-show-more" aria-expanded="false">
             הצג עוד
@@ -505,6 +547,34 @@
   <span class="feature-text">
     <span class="feature-title">Contact System</span>
     <span class="feature-desc">טבלאות `contacts` + `contact_permissions` עם FK cascades; transactional `createContactWithPermissions()`; `pruneExpiredContacts()` מחזורי; dashboard API חושף `contact_count` ב-subquery</span>
+  </span>
+</div>
+<div class="feature-card">
+  <span class="feature-icon">🎨</span>
+  <span class="feature-text">
+    <span class="feature-title">33 צבעי אזורים</span>
+    <span class="feature-desc">33 צבעים ייחודיים לאזורים במפות Mapbox; runtime assertion שמגן מפני אי-התאמה בין רשימת הצבעים לאזורים</span>
+  </span>
+</div>
+<div class="feature-card">
+  <span class="feature-icon">🏁</span>
+  <span class="feature-text">
+    <span class="feature-title">allClearTracker</span>
+    <span class="feature-desc">מעקב all-clear per-zone עם injectable deps, חלון שקט (quiet window) ומחיקת timers בעת SIGTERM/SIGINT</span>
+  </span>
+</div>
+<div class="feature-card">
+  <span class="feature-icon">📐</span>
+  <span class="feature-text">
+    <span class="feature-title">פורמט משותף</span>
+    <span class="feature-desc">`buildSummaryLine()` — מקור יחיד לספירת ערים/אזורים בטלגרם ו-WhatsApp; תיקון דקדוקי "1 עיר" לעומת "N ערים"</span>
+  </span>
+</div>
+<div class="feature-card">
+  <span class="feature-icon">🗓️</span>
+  <span class="feature-text">
+    <span class="feature-title">alertSerial ב-Israel</span>
+    <span class="feature-desc">מספרי אינדקס התרעות לפי שעון ישראל (`Asia/Jerusalem`) — אינדקס מתאפס בחצות המקומית</span>
   </span>
 </div>
           </div>
@@ -688,13 +758,13 @@
   <!-- ⑦ What's New ---------------------------------------------------------- -->
   <section class="whats-new section" id="whats-new">
     <div class="container">
-      <h2 class="section-title reveal">✨ מה חדש בגרסה 0.4.3?</h2>
+      <h2 class="section-title reveal">✨ מה חדש בגרסה 0.4.4?</h2>
       <ul class="changelog-list reveal" style="--reveal-delay: 0.1s">
-        <li>Telegram Listener</li>
-<li>הגדרות פרטיות</li>
-<li>שליטה per-contact</li>
-<li>תבנית ברירת מחדל</li>
-<li>שיפור UX חיבור חברים</li>
+        <li>חזותיות אזורים חכמה</li>
+<li>אינדיקטור רלוונטיות</li>
+<li>סרגל ספירה לאחור ב-DM</li>
+<li>allClearTracker</li>
+<li>פקודת /today</li>
       </ul>
       <button class="changelog-show-more" aria-expanded="false">
         עוד עדכונים
@@ -770,13 +840,13 @@
   <!-- ⑨ Footer -------------------------------------------------------------- -->
   <footer class="footer">
     <div class="footer-inner">
-      <span>גרסה 0.4.3</span>
+      <span>גרסה 0.4.4</span>
       <span class="footer-sep" aria-hidden="true">·</span>
       <a href="https://github.com/yonatan2021/pikud-haoref-bot" target="_blank" rel="noopener noreferrer">GitHub</a>
       <span class="footer-sep" aria-hidden="true">·</span>
       <span>Apache 2.0</span>
       <span class="footer-sep" aria-hidden="true">·</span>
-      <span>עודכן 3 באפריל 2026</span>
+      <span>עודכן 4 באפריל 2026</span>
     </div>
     <div class="footer-sponsor">
       <a
