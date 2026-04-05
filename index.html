@@ -906,31 +906,31 @@
           <span class="badge-pulse" aria-hidden="true"></span>
           <span>LIVE</span>
           <span class="hero-ticker-sep" aria-hidden="true">·</span>
-          <span>גרסה 0.4.4</span>
+          <span>גרסה 0.4.5</span>
           <span class="hero-ticker-sep" aria-hidden="true">·</span>
-          <span>4 באפריל 2026</span>
+          <span>5 באפריל 2026</span>
         </div>
       </div>
       <div class="wn-grid reveal" style="--reveal-delay: 0.1s">
         <div class="wn-card">
-  <span class="wn-title">חזותיות אזורים חכמה</span>
-  <span class="wn-desc">33 צבעים ייחודיים לאזורים במפות Mapbox; ספריית zoneColors.ts עם runtime assertion שמגן מפני אי-התאמה</span>
+  <span class="wn-title">all-clear</span>
+  <span class="wn-desc">שליחת הודעת "שקט חזר" אחרי אזעקה; תמיכה ב-DM, ערוץ, או שניהם (all_clear_mode); זיהוי מובנה של newsFlash רשמי "האירוע הסתיימה"; ניהול מלא מלוח הבקרה כולל בחירת נושא ייעודי (all_clear_topic_id)</span>
 </div>
 <div class="wn-card">
-  <span class="wn-title">אינדיקטור רלוונטיות</span>
-  <span class="wn-desc">getRelevanceIndicator() מציין בכותרת ערוץ אם ההתרעה נוגעת לאזורים שנבחרו</span>
-</div>
-<div class="wn-card">
-  <span class="wn-title">סרגל ספירה לאחור ב-DM</span>
-  <span class="wn-desc">renderCountdownBar() מייצר סרגל ויזואלי (🟥🟥🟥🟥🟥 עד 🔵⬜⬜⬜⬜) בהודעות DM</span>
-</div>
-<div class="wn-card">
-  <span class="wn-title">allClearTracker</span>
-  <span class="wn-desc">מעקב all-clear per-zone: הודעת "הסתיימה ההתרעה" עם חלון שקט למניעת הצפה; injectable deps; timers מנוקים בעת SIGTERM/SIGINT</span>
+  <span class="wn-title">density indicator</span>
+  <span class="wn-desc">אינדיקטור צפיפות יומי בהתראות חיות: רגיל / גבוה / חריג על בסיס ממוצע 90 ימים; מחושב לפי timezone ישראל</span>
 </div>
 <div class="wn-card">
   <span class="wn-title">פקודת /today</span>
-  <span class="wn-desc">סיכום יומי של כל ההתרעות עם פירוט לפי קטגוריות (alertsToday handler)</span>
+  <span class="wn-desc">ציר זמן יומי מלא של ההתרעות עם density summary לכל קטגוריה</span>
+</div>
+<div class="wn-card">
+  <span class="wn-title">dashboard sidebar</span>
+  <span class="wn-desc">sidebar RTL מתקפל עם היררכיית ניווט עברית</span>
+</div>
+<div class="wn-card">
+  <span class="wn-title">dashboard settings trust</span>
+  <span class="wn-desc">badges להבחנת הגדרות ENV vs DB בממשק הניהול</span>
 </div>
       </div>
       <button class="changelog-show-more" aria-expanded="false">עוד עדכונים</button>
@@ -1091,7 +1091,7 @@
   <!-- ⑨ Footer -------------------------------------------------------------- -->
   <footer class="footer">
     <div class="footer-inner">
-      <span>גרסה 0.4.4</span>
+      <span>גרסה 0.4.5</span>
       <span class="footer-sep" aria-hidden="true">·</span>
       <a href="https://github.com/yonatan2021/pikud-haoref-bot" target="_blank" rel="noopener noreferrer">GitHub</a>
       <span class="footer-sep" aria-hidden="true">·</span>
@@ -1101,7 +1101,7 @@
       <span class="footer-sep" aria-hidden="true">·</span>
       <span>Apache 2.0</span>
       <span class="footer-sep" aria-hidden="true">·</span>
-      <span>עודכן 4 באפריל 2026</span>
+      <span>עודכן 5 באפריל 2026</span>
     </div>
     <div class="footer-sponsor">
       <a
