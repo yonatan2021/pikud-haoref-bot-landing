@@ -517,8 +517,15 @@
 <div class="feature-card">
   <span class="feature-icon">🏁</span>
   <span class="feature-text">
-    <span class="feature-title">אישור סיום התרעה</span>
-    <span class="feature-desc">הודעת "הסתיימה ההתרעה" לאחר כל אזעקה, עם חלון שקט למניעת הצפה</span>
+    <span class="feature-title">שקט חזר</span>
+    <span class="feature-desc">הודעה שנשלחת אחרי שהאזעקה נגמרת — ל-DM, לערוץ, או לשניהם; ניהול מלא מלוח הבקרה</span>
+  </span>
+</div>
+<div class="feature-card">
+  <span class="feature-icon">📊</span>
+  <span class="feature-text">
+    <span class="feature-title">צפיפות התראות</span>
+    <span class="feature-desc">אינדיקטור `רגיל / גבוה / חריג` בהתראות חיות, מחושב לפי ממוצע 90 ימים בשעון ישראל</span>
   </span>
 </div>
 <div class="feature-card">
@@ -701,8 +708,15 @@
 <div class="feature-card">
   <span class="feature-icon">🏁</span>
   <span class="feature-text">
-    <span class="feature-title">allClearTracker</span>
-    <span class="feature-desc">מעקב all-clear per-zone עם injectable deps, חלון שקט (quiet window) ומחיקת timers בעת SIGTERM/SIGINT</span>
+    <span class="feature-title">allClearService</span>
+    <span class="feature-desc">שירות all-clear מלא: DM + ערוץ + שניהם; injectable deps; renderTemplate per-zone עם try-catch; ביטול ב-newsFlash רשמי "האירוע הסתיים"</span>
+  </span>
+</div>
+<div class="feature-card">
+  <span class="feature-icon">📊</span>
+  <span class="feature-text">
+    <span class="feature-title">density infrastructure</span>
+    <span class="feature-desc">`alertHistoryRepository`, `alertDensity.ts`, Israel-timezone cutoff — מחשב 90th percentile ב-`getDensityLabel()`</span>
   </span>
 </div>
 <div class="feature-card">
@@ -717,6 +731,13 @@
   <span class="feature-text">
     <span class="feature-title">alertSerial ב-Israel</span>
     <span class="feature-desc">מספרי אינדקס התרעות לפי שעון ישראל (`Asia/Jerusalem`) — אינדקס מתאפס בחצות המקומית</span>
+  </span>
+</div>
+<div class="feature-card">
+  <span class="feature-icon">🎛️</span>
+  <span class="feature-text">
+    <span class="feature-title">Dashboard UX</span>
+    <span class="feature-desc">Sidebar RTL מתקפל, page headers אחידים, toast consistency בעברית; Settings badges: ENV vs DB source לכל הגדרה</span>
   </span>
 </div>
           </div>
@@ -1097,7 +1118,7 @@
       <span class="footer-sep" aria-hidden="true">·</span>
       <span>⭐ 0 כוכבים</span>
       <span class="footer-sep" aria-hidden="true">·</span>
-      <span>🧪 651 בדיקות</span>
+      <span>🧪 1003 בדיקות</span>
       <span class="footer-sep" aria-hidden="true">·</span>
       <span>Apache 2.0</span>
       <span class="footer-sep" aria-hidden="true">·</span>
