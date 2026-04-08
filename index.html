@@ -761,6 +761,62 @@
     <span class="feature-desc">Sidebar RTL מתקפל, page headers אחידים, toast consistency בעברית; Settings badges: ENV vs DB source לכל הגדרה</span>
   </span>
 </div>
+<div class="feature-card">
+  <span class="feature-icon">🔐</span>
+  <span class="feature-text">
+    <span class="feature-title">הגדרות ואבטחה</span>
+    <span class="feature-desc">ניהול AES-256-GCM מוצפן של API keys (DEK/KEK envelope) — ללא צורך ב-env vars לאחר bootstrap; `rewrapDek()` לרוטציית סיסמה</span>
+  </span>
+</div>
+<div class="feature-card">
+  <span class="feature-icon">✏️</span>
+  <span class="feature-text">
+    <span class="feature-title">תבניות הודעה</span>
+    <span class="feature-desc">עורך תבניות גוף הודעה עם `{{ערים}}` `{{כותרת}}` `{{זמן}}` `{{אמוגי}}` `{{מספר_ערים}}`; live preview בסגנון Telegram</span>
+  </span>
+</div>
+<div class="feature-card">
+  <span class="feature-icon">💬</span>
+  <span class="feature-text">
+    <span class="feature-title">טקסטי DM</span>
+    <span class="feature-desc">רלוונטיות ("באזורך", "באזור קרוב") ו-"נשמו" — ניתנים לשינוי מלשונית "הודעות DM" בדאשבורד ללא restart</span>
+  </span>
+</div>
+<div class="feature-card">
+  <span class="feature-icon"></span>
+  <span class="feature-text">
+    <span class="feature-title">תיקון</span>
+    <span class="feature-desc">פרטים</span>
+  </span>
+</div>
+<div class="feature-card">
+  <span class="feature-icon">🔤</span>
+  <span class="feature-text">
+    <span class="feature-title">יישור RTL</span>
+    <span class="feature-desc">תווי `\u200F` (Right-to-Left Mark) נוספו לכותרות אזורים ב-`buildZonedCityList`, `buildZoneOnlyList` ו-`formatAlertMessage` — מונע הצגה הפוכה של הכדור `▸`</span>
+  </span>
+</div>
+<div class="feature-card">
+  <span class="feature-icon">🏠</span>
+  <span class="feature-text">
+    <span class="feature-title">"נשמו" לפי עיר בית</span>
+    <span class="feature-desc">הודעת "נשמו" נשלחת רק למי שעיר המגורים (`home_city`) הייתה בהתראה המקורית — לא לכל המנויים לאזור</span>
+  </span>
+</div>
+<div class="feature-card">
+  <span class="feature-icon">🔕</span>
+  <span class="feature-text">
+    <span class="feature-title">"נשמו" + שעות שקט</span>
+    <span class="feature-desc">שעות שקט ו-snooze מופעלים גם על הודעת "נשמו" (לא מעקפים אותם כבעבר)</span>
+  </span>
+</div>
+<div class="feature-card">
+  <span class="feature-icon">⚡</span>
+  <span class="feature-text">
+    <span class="feature-title">"נשמו" דרך DmQueue</span>
+    <span class="feature-desc">הודעת "נשמו" עוברת דרך `dmQueue` (מקביליות 10 + backoff 429) — מונעת flood בעת התראות רחבות-היקף</span>
+  </span>
+</div>
           </div>
           <button class="features-show-more" aria-expanded="false">
             הצג עוד
@@ -948,31 +1004,31 @@
           <span class="badge-pulse" aria-hidden="true"></span>
           <span>LIVE</span>
           <span class="hero-ticker-sep" aria-hidden="true">·</span>
-          <span>גרסה 0.4.5</span>
+          <span>גרסה 0.5.0</span>
           <span class="hero-ticker-sep" aria-hidden="true">·</span>
-          <span>7 באפריל 2026</span>
+          <span>8 באפריל 2026</span>
         </div>
       </div>
       <div class="wn-grid reveal" style="--reveal-delay: 0.1s">
         <div class="wn-card">
-  <span class="wn-title">all-clear</span>
-  <span class="wn-desc">שליחת הודעת "שקט חזר" אחרי אזעקה; תמיכה ב-DM, ערוץ, או שניהם (all_clear_mode); זיהוי מובנה של newsFlash רשמי "האירוע הסתיימה"; ניהול מלא מלוח הבקרה כולל בחירת נושא ייעודי (all_clear_topic_id)</span>
+  <span class="wn-title">Safety Status — "האם אתה בסדר?"</span>
+  <span class="wn-desc">שאלת סטטוס אוטומטית כשמגיעה התראה לעיר המגורים; 3 כפתורים (✅ בסדר / ⚠️ צריך עזרה / 🔇 התעלם); dedup חכם לפי fingerprint — INSERT OR IGNORE מונע כפל (PR #186–#189)</span>
 </div>
 <div class="wn-card">
-  <span class="wn-title">density indicator</span>
-  <span class="wn-desc">אינדיקטור צפיפות יומי בהתראות חיות: רגיל / גבוה / חריג על בסיס ממוצע 90 ימים; מחושב לפי timezone ישראל</span>
+  <span class="wn-title">פקודת /status</span>
+  <span class="wn-desc">צפייה ועדכון ידני של סטטוס ביטחוני עם מד-זמן עד לפקיעה; תצוגת סטטוס אנשי קשר מורשים; ניווט safety:contacts / safety:back (PR #197–#199)</span>
 </div>
 <div class="wn-card">
-  <span class="wn-title">פקודת /today</span>
-  <span class="wn-desc">ציר זמן יומי מלא של ההתרעות עם density summary לכל קטגוריה</span>
+  <span class="wn-title">עדכון אנשי קשר אוטומטי</span>
+  <span class="wn-desc">שיתוף סטטוס אוטומטי עם אנשי קשר בעלי הרשאת safety_status=true; דרך dmQueue עם backoff 429; התעלמות אינה מעדכנת קשרים (PR #200–#201)</span>
 </div>
 <div class="wn-card">
-  <span class="wn-title">dashboard sidebar</span>
-  <span class="wn-desc">sidebar RTL מתקפל עם היררכיית ניווט עברית</span>
+  <span class="wn-title">ניהול סודות מוצפן</span>
+  <span class="wn-desc">AES-256-GCM envelope encryption (DEK/KEK via PBKDF2); ניהול API keys מלוח הבקרה ללא env vars; עמוד Configuration חדש עם SecretCard ו-RestartBanner; migration אוטומטי מ-.env בהפעלה (PR #153, #160, #161)</span>
 </div>
 <div class="wn-card">
-  <span class="wn-title">dashboard settings trust</span>
-  <span class="wn-desc">badges להבחנת הגדרות ENV vs DB בממשק הניהול</span>
+  <span class="wn-title">תבניות גוף הודעה</span>
+  <span class="wn-desc">עורך תבניות עם {{ערים}} {{כותרת}} {{זמן}} {{אמוגי}} {{מספר_ערים}}; live preview בסגנון Telegram; tab "עורך תבנית" חדש בדאשבורד (PR #156)</span>
 </div>
       </div>
       <button class="changelog-show-more" aria-expanded="false">עוד עדכונים</button>
@@ -1133,7 +1189,7 @@
   <!-- ⑨ Footer -------------------------------------------------------------- -->
   <footer class="footer">
     <div class="footer-inner">
-      <span>גרסה 0.4.5</span>
+      <span>גרסה 0.5.0</span>
       <span class="footer-sep" aria-hidden="true">·</span>
       <a href="https://github.com/yonatan2021/pikud-haoref-bot" target="_blank" rel="noopener noreferrer">GitHub</a>
       <span class="footer-sep" aria-hidden="true">·</span>
@@ -1143,7 +1199,7 @@
       <span class="footer-sep" aria-hidden="true">·</span>
       <span>Apache 2.0</span>
       <span class="footer-sep" aria-hidden="true">·</span>
-      <span>עודכן 7 באפריל 2026</span>
+      <span>עודכן 8 באפריל 2026</span>
     </div>
     <div class="footer-sponsor">
       <a
