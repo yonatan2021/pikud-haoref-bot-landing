@@ -563,6 +563,34 @@
     <span class="feature-desc">שיתוף סטטוס אוטומטי עם אנשי קשר מורשים</span>
   </span>
 </div>
+<div class="feature-card">
+  <span class="feature-icon">✅</span>
+  <span class="feature-text">
+    <span class="feature-title">הכל בסדר — לכולם</span>
+    <span class="feature-desc">כפתור חד-לחיצתי בתפריט הראשי ששולח עדכון "הכל בסדר" לכל אנשי הקשר עם הרשאת סטטוס ביטחוני; אישור לפני שליחה</span>
+  </span>
+</div>
+<div class="feature-card">
+  <span class="feature-icon">⚠️</span>
+  <span class="feature-text">
+    <span class="feature-title">באנר תזכורת</span>
+    <span class="feature-desc">הצגת אזהרה ב-`/start` כשיש שאלת בטיחות שלא נענתה — כולל שם עיר וכפתורי פעולה מהירה</span>
+  </span>
+</div>
+<div class="feature-card">
+  <span class="feature-icon">👥</span>
+  <span class="feature-text">
+    <span class="feature-title">אנשי קשר בהתראה</span>
+    <span class="feature-desc">שורת "X אנשי קשר שלך נמצאים באזור" מתווספת להתראות DM כשיש אנשי קשר באזור המותקף</span>
+  </span>
+</div>
+<div class="feature-card">
+  <span class="feature-icon">⚙️</span>
+  <span class="feature-text">
+    <span class="feature-title">הגדרות חברתיות</span>
+    <span class="feature-desc">5 מתגים לשליטה בתכונות חברתיות: שאלת בטיחות, באנר תזכורת, מספר אנשי קשר, התראות קבוצתיות, כפתור מהיר</span>
+  </span>
+</div>
           </div>
           <button class="features-show-more" aria-expanded="false">
             הצג עוד
@@ -780,6 +808,20 @@
   <span class="feature-text">
     <span class="feature-title">טקסטי DM</span>
     <span class="feature-desc">רלוונטיות ("באזורך", "באזור קרוב") ו-"נשמו" — ניתנים לשינוי מלשונית "הודעות DM" בדאשבורד ללא restart</span>
+  </span>
+</div>
+<div class="feature-card">
+  <span class="feature-icon">🛡️</span>
+  <span class="feature-text">
+    <span class="feature-title">Safety Check Dashboard</span>
+    <span class="feature-desc">טאב `/safety-check` בדשבורד — 6 KPI cards, גרף מגמה 7 ימים, טבלת שאלות אחרונות עם מיסוך פרטיות; 60s cache</span>
+  </span>
+</div>
+<div class="feature-card">
+  <span class="feature-icon">👥</span>
+  <span class="feature-text">
+    <span class="feature-title">ניהול טקסטים חברתיים</span>
+    <span class="feature-desc">עריכה חמה של כל טקסטי התכונות החברתיות מהדשבורד; `getString`/`getNumber`/`getBool` ב-configResolver; תצוגה מקדימה עם DOMPurify</span>
   </span>
 </div>
 <div class="feature-card">
@@ -1004,31 +1046,31 @@
           <span class="badge-pulse" aria-hidden="true"></span>
           <span>LIVE</span>
           <span class="hero-ticker-sep" aria-hidden="true">·</span>
-          <span>גרסה 0.5.1</span>
+          <span>גרסה 0.5.2</span>
           <span class="hero-ticker-sep" aria-hidden="true">·</span>
-          <span>12 באפריל 2026</span>
+          <span>13 באפריל 2026</span>
         </div>
       </div>
       <div class="wn-grid reveal" style="--reveal-delay: 0.1s">
         <div class="wn-card">
-  <span class="wn-title">קבוצות חוסן — /group</span>
-  <span class="wn-desc">קבוצות משפחה/חברים/עבודה לתיאום ביטחוני: /group create &lt;שם&gt; יוצר קבוצה עם קוד הזמנה, /group join &lt;קוד&gt; מצטרף, /group leave עוזב, /group list מציג קבוצות (PR #230)</span>
+  <span class="wn-title">הגדרות חברתיות — /settings</span>
+  <span class="wn-desc">5 מתגי הפעלה/כיבוי לתכונות חברתיות: שאלת "הכל בסדר" אחרי אזעקה, באנר תזכורת, מספר אנשי קשר בהתראה, התראות קבוצתיות, כפתור שליחה מהירה (PR #236)</span>
 </div>
 <div class="wn-card">
-  <span class="wn-title">מסך סטטוס קבוצתי — /group status</span>
-  <span class="wn-desc">תצוגה חיה של סטטוס הביטחוני של כל חברי הקבוצה (✅/⚠️/🔇/❓); בחירת קבוצה inline; כפתור רענון; מחיצת קבוצה בודדת — אוטומטית (PR #232)</span>
+  <span class="wn-title">כפתור "הכל בסדר — לכולם"</span>
+  <span class="wn-desc">כפתור חד-לחיצתי בתפריט הראשי ששולח עדכון "הכל בסדר" לכל אנשי הקשר עם הרשאת סטטוס ביטחוני; מסך אישור לפני שליחה; TTL מותאם של 6 שעות (PR #237)</span>
 </div>
 <div class="wn-card">
-  <span class="wn-title">התראות קבוצה</span>
-  <span class="wn-desc">עדכון אוטומטי לכל חברי הקבוצה כשמישהו מעדכן סטטוס; dismissed לא מעדכן; notify_group=0 מאפשר opt-out פר-חבר; dedup בין קבוצות חופפות (PR #233)</span>
+  <span class="wn-title">באנר תזכורת ב-/start</span>
+  <span class="wn-desc">הצגת אזהרה בראש התפריט כשיש שאלת בטיחות שלא נענתה; כולל שם עיר מהאזעקה וכפתורי פעולה מהירה (PR #238)</span>
 </div>
 <div class="wn-card">
-  <span class="wn-title">ניהול קבוצות בדשבורד</span>
-  <span class="wn-desc">עמוד "קבוצות חוסן" חדש: KPI cards (סה"כ / ממוצע חברים / גדולה ביותר), טבלה עם drill-down ל-drawer חברים, מחיקת קבוצה עם rate-limit 5/דקה (PR #234)</span>
+  <span class="wn-title">מספר אנשי קשר בהתראת DM</span>
+  <span class="wn-desc">שורת "👥 X אנשי קשר שלך נמצאים באזור" מתווספת להתראות כשיש אנשי קשר מאושרים באזור המותקף (PR #239)</span>
 </div>
 <div class="wn-card">
-  <span class="wn-title">hot-config לקבוצות</span>
-  <span class="wn-desc">groups_max_per_user (ברירת מחדל 5) ו-groups_max_members (ברירת מחדל 20) ניתנים לשינוי מהדשבורד ללא restart; שמירה על minimum=1 למניעת נעילת הפיצ'ר (PR #234)</span>
+  <span class="wn-title">טאב בדיקת שלומות בדשבורד</span>
+  <span class="wn-desc">עמוד /safety-check חדש עם 6 כרטיסי KPI (שאלות, אחוז תגובה, זמן תגובה ממוצע, פילוח תשובות), גרף מגמה 7 ימים, וטבלת שאלות אחרונות עם מיסוך פרטיות (PR #240)</span>
 </div>
       </div>
       <button class="changelog-show-more" aria-expanded="false">עוד עדכונים</button>
@@ -1189,7 +1231,7 @@
   <!-- ⑨ Footer -------------------------------------------------------------- -->
   <footer class="footer">
     <div class="footer-inner">
-      <span>גרסה 0.5.1</span>
+      <span>גרסה 0.5.2</span>
       <span class="footer-sep" aria-hidden="true">·</span>
       <a href="https://github.com/yonatan2021/pikud-haoref-bot" target="_blank" rel="noopener noreferrer">GitHub</a>
       <span class="footer-sep" aria-hidden="true">·</span>
@@ -1199,7 +1241,7 @@
       <span class="footer-sep" aria-hidden="true">·</span>
       <span>Apache 2.0</span>
       <span class="footer-sep" aria-hidden="true">·</span>
-      <span>עודכן 12 באפריל 2026</span>
+      <span>עודכן 13 באפריל 2026</span>
     </div>
     <div class="footer-sponsor">
       <a
