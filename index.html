@@ -591,6 +591,41 @@
     <span class="feature-desc">5 מתגים לשליטה בתכונות חברתיות: שאלת בטיחות, באנר תזכורת, מספר אנשי קשר, התראות קבוצתיות, כפתור מהיר</span>
   </span>
 </div>
+<div class="feature-card">
+  <span class="feature-icon">📊</span>
+  <span class="feature-text">
+    <span class="feature-title">Community Pulse</span>
+    <span class="feature-desc">לאחר אזעקה בעיר המגורים — שאלת "מה שלומך?" אוטומטית עם 3 אפשרויות (✅ בסדר / 😰 מפחד/ת / 🤝 עוזר/ת לאחרים); ריכוז תוצאות כשיש מספיק מענים</span>
+  </span>
+</div>
+<div class="feature-card">
+  <span class="feature-icon">📖</span>
+  <span class="feature-text">
+    <span class="feature-title">סיפורי מקלט</span>
+    <span class="feature-desc">שיתוף חוויה קצרה מהמקלט (עד 200 תווים) לפרסום בערוץ ייעודי אחרי אישור מנהל; opt-in לחלוטין</span>
+  </span>
+</div>
+<div class="feature-card">
+  <span class="feature-icon">🛠️</span>
+  <span class="feature-text">
+    <span class="feature-title">שיתוף מיומנויות</span>
+    <span class="feature-desc">`/skills` להצהרת מיומנויות מרשימה מוגדרת מראש; `/need [מיומנות]` לחיפוש אנשי קשר מתאימים לסיוע בשעת חירום</span>
+  </span>
+</div>
+<div class="feature-card">
+  <span class="feature-icon">🏘️</span>
+  <span class="feature-text">
+    <span class="feature-title">בדיקת שכנים</span>
+    <span class="feature-desc">DM אוטומטי "בדקת את שכניך?" מספר דקות אחרי אזעקה בעיר מגורים; 3 כפתורי מענה (בדקתי / לא יכולתי / הבנתי)</span>
+  </span>
+</div>
+<div class="feature-card">
+  <span class="feature-icon">🚪</span>
+  <span class="feature-text">
+    <span class="feature-title">מחיקת/העברת קבוצה</span>
+    <span class="feature-desc">מנהל קבוצה יכול למחוק אותה עם confirmation, או להעביר בעלות לחבר אחר — מניעת קבוצות "נטושות"</span>
+  </span>
+</div>
           </div>
           <button class="features-show-more" aria-expanded="false">
             הצג עוד
@@ -825,6 +860,20 @@
   </span>
 </div>
 <div class="feature-card">
+  <span class="feature-icon">🏘️</span>
+  <span class="feature-text">
+    <span class="feature-title">Community Dashboard</span>
+    <span class="feature-desc">עמוד `/community` בדשבורד: cooldown סקרים, מגבלת תווים לסיפורים, threshold תוצאות, השהיית שכנים — כולן hot-configurable ללא restart</span>
+  </span>
+</div>
+<div class="feature-card">
+  <span class="feature-icon">🗃️</span>
+  <span class="feature-text">
+    <span class="feature-title">`skill_catalog` table</span>
+    <span class="feature-desc">30 מיומנויות מוגדרות מראש עם קטגוריות; injectable deps לבדיקות; `getSkillsByCategory()` sorted</span>
+  </span>
+</div>
+<div class="feature-card">
   <span class="feature-icon"></span>
   <span class="feature-text">
     <span class="feature-title">תיקון</span>
@@ -1046,31 +1095,31 @@
           <span class="badge-pulse" aria-hidden="true"></span>
           <span>LIVE</span>
           <span class="hero-ticker-sep" aria-hidden="true">·</span>
-          <span>גרסה 0.5.2</span>
+          <span>גרסה 0.5.3</span>
           <span class="hero-ticker-sep" aria-hidden="true">·</span>
-          <span>13 באפריל 2026</span>
+          <span>16 באפריל 2026</span>
         </div>
       </div>
       <div class="wn-grid reveal" style="--reveal-delay: 0.1s">
         <div class="wn-card">
-  <span class="wn-title">הגדרות חברתיות — /settings</span>
-  <span class="wn-desc">5 מתגי הפעלה/כיבוי לתכונות חברתיות: שאלת "הכל בסדר" אחרי אזעקה, באנר תזכורת, מספר אנשי קשר בהתראה, התראות קבוצתיות, כפתור שליחה מהירה (PR #236)</span>
+  <span class="wn-title">Community Pulse</span>
+  <span class="wn-desc">סקר "מה שלומך?" אוטומטי אחרי אזעקה בעיר המגורים; 3 אפשרויות (✅ בסדר / 😰 מפחד/ת / 🤝 עוזר/ת לאחרים); תוצאות מרוכזות כשמגיעים ל-threshold מוגדר; opt-in; cooldown מוגדר (ברירת מחדל 6 שעות) (PR #219)</span>
 </div>
 <div class="wn-card">
-  <span class="wn-title">כפתור "הכל בסדר — לכולם"</span>
-  <span class="wn-desc">כפתור חד-לחיצתי בתפריט הראשי ששולח עדכון "הכל בסדר" לכל אנשי הקשר עם הרשאת סטטוס ביטחוני; מסך אישור לפני שליחה; TTL מותאם של 6 שעות (PR #237)</span>
+  <span class="wn-title">סיפורי מקלט</span>
+  <span class="wn-desc">שיתוף חוויה קצרה מהמקלט (עד 200 תווים); flow אישור בדשבורד (lock → publish); פרסום בערוץ נושא ייעודי (TELEGRAM_TOPIC_ID_STORIES); INSERT OR IGNORE מגן מפני כפילויות (PR #220)</span>
 </div>
 <div class="wn-card">
-  <span class="wn-title">באנר תזכורת ב-/start</span>
-  <span class="wn-desc">הצגת אזהרה בראש התפריט כשיש שאלת בטיחות שלא נענתה; כולל שם עיר מהאזעקה וכפתורי פעולה מהירה (PR #238)</span>
+  <span class="wn-title">שיתוף מיומנויות</span>
+  <span class="wn-desc">/skills להצהרת מיומנויות מרשימה מוגדרת מראש (30 מיומנויות + קטגוריות); /need [מיומנות] לחיפוש אנשי קשר מתאימים לסיוע בשעת חירום; skill_catalog table + repository (PR #221, #228)</span>
 </div>
 <div class="wn-card">
-  <span class="wn-title">מספר אנשי קשר בהתראת DM</span>
-  <span class="wn-desc">שורת "👥 X אנשי קשר שלך נמצאים באזור" מתווספת להתראות כשיש אנשי קשר מאושרים באזור המותקף (PR #239)</span>
+  <span class="wn-title">בדיקת שכנים</span>
+  <span class="wn-desc">X דקות לאחר אזעקה בעיר מגורים → DM אוטומטי "בדקת את שכניך?" עם 3 כפתורי מענה (בדקתי / לא יכולתי / הבנתי); injectable scheduleFn/sendFn/cancelScheduleFn לבדיקות; kill-switch ב-dashboard (PR #222)</span>
 </div>
 <div class="wn-card">
-  <span class="wn-title">טאב בדיקת שלומות בדשבורד</span>
-  <span class="wn-desc">עמוד /safety-check חדש עם 6 כרטיסי KPI (שאלות, אחוז תגובה, זמן תגובה ממוצע, פילוח תשובות), גרף מגמה 7 ימים, וטבלת שאלות אחרונות עם מיסוך פרטיות (PR #240)</span>
+  <span class="wn-title">מחיקת/העברת קבוצה</span>
+  <span class="wn-desc">מנהל קבוצה יכול למחוק אותה עם confirmation, או להעביר בעלות לחבר אחר; audit log בטבלה ייעודית (group_transfer_log) (PR #231)</span>
 </div>
       </div>
       <button class="changelog-show-more" aria-expanded="false">עוד עדכונים</button>
@@ -1231,17 +1280,17 @@
   <!-- ⑨ Footer -------------------------------------------------------------- -->
   <footer class="footer">
     <div class="footer-inner">
-      <span>גרסה 0.5.2</span>
+      <span>גרסה 0.5.3</span>
       <span class="footer-sep" aria-hidden="true">·</span>
       <a href="https://github.com/yonatan2021/pikud-haoref-bot" target="_blank" rel="noopener noreferrer">GitHub</a>
       <span class="footer-sep" aria-hidden="true">·</span>
       <span>⭐ 0 כוכבים</span>
       <span class="footer-sep" aria-hidden="true">·</span>
-      <span>🧪 1,615 בדיקות</span>
+      <span>🧪 1,789 בדיקות</span>
       <span class="footer-sep" aria-hidden="true">·</span>
       <span>Apache 2.0</span>
       <span class="footer-sep" aria-hidden="true">·</span>
-      <span>עודכן 13 באפריל 2026</span>
+      <span>עודכן 16 באפריל 2026</span>
     </div>
     <div class="footer-sponsor">
       <a
