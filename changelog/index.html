@@ -1,0 +1,1806 @@
+<!DOCTYPE html>
+<html lang="he" dir="rtl">
+<head>
+  <!-- Flash prevention: apply saved theme before first paint -->
+  <script>(function(){try{var t=localStorage.getItem('theme');if(t==='light'||t==='dark'){document.documentElement.dataset.theme=t;}}catch(e){}}());</script>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>יומן שינויים — התראות פיקוד העורף</title>
+  <meta name="description" content="היסטוריית כל הגרסאות והשינויים. Keep a Changelog + SemVer.">
+  <link rel="canonical" href="https://yonatan2021.github.io/pikud-haoref-bot-landing/changelog/">
+  <link rel="alternate" hreflang="he" href="https://yonatan2021.github.io/pikud-haoref-bot-landing/changelog/">
+  
+
+  <!-- Open Graph -->
+  <meta property="og:type" content="website">
+  <meta property="og:locale" content="he_IL">
+  <meta property="og:site_name" content="התראות פיקוד העורף">
+  <meta property="og:title" content="יומן שינויים — התראות פיקוד העורף">
+  <meta property="og:description" content="היסטוריית כל הגרסאות והשינויים. Keep a Changelog + SemVer.">
+  <meta property="og:url" content="https://yonatan2021.github.io/pikud-haoref-bot-landing/changelog/">
+  <meta property="og:image" content="https://yonatan2021.github.io/pikud-haoref-bot-landing/og/changelog.png">
+  <meta property="og:image:width" content="1200">
+  <meta property="og:image:height" content="630">
+
+  <!-- Twitter -->
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="יומן שינויים — התראות פיקוד העורף">
+  <meta name="twitter:description" content="היסטוריית כל הגרסאות והשינויים. Keep a Changelog + SemVer.">
+  <meta name="twitter:image" content="https://yonatan2021.github.io/pikud-haoref-bot-landing/og/changelog.png">
+
+  <!-- Theme + icons -->
+  <meta name="theme-color" content="#07080f">
+  <link rel="icon" href="/logo.jpg">
+
+  <!-- Fonts: self-hosted Heebo woff2 preload (critical weights) -->
+  <link rel="preload" href="/fonts/heebo-400.woff2" as="font" type="font/woff2" crossorigin>
+  <link rel="preload" href="/fonts/heebo-700.woff2" as="font" type="font/woff2" crossorigin>
+
+  <!-- Hero image preload (home only) -->
+  
+
+  <link rel="stylesheet" href="/style.css">
+  <link rel="stylesheet" href="/styles/subpage.css">
+
+  <!-- JSON-LD structured data -->
+  <script type="application/ld+json">{"@context":"https://schema.org","@type":"Organization","name":"התראות פיקוד העורף","url":"https://yonatan2021.github.io/pikud-haoref-bot-landing","logo":"https://yonatan2021.github.io/pikud-haoref-bot-landing/logo.jpg"}</script>
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"בית","item":"https://yonatan2021.github.io/pikud-haoref-bot-landing/"},{"@type":"ListItem","position":2,"name":"יומן שינויים","item":"https://yonatan2021.github.io/pikud-haoref-bot-landing/changelog/"}]}</script>
+
+  <!-- GA4 -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-4K6GHXRF9Y"></script>
+<script>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments);}gtag('js',new Date());gtag('config','G-4K6GHXRF9Y');</script>
+</head>
+<body>
+<!-- sticky top nav; hamburger via :has + checkbox on mobile -->
+<a class="skip-link" href="#main">דלג לתוכן הראשי</a>
+<input type="checkbox" id="nav-toggle" class="nav-toggle-input" hidden>
+<header class="nav-bar" role="banner">
+  <div class="nav-inner">
+    <a class="nav-brand" href="/" aria-label="דף הבית">
+      <img src="/logo.jpg" alt="" width="32" height="32" aria-hidden="true">
+      <span>התראות פיקוד העורף</span>
+    </a>
+    <label for="nav-toggle" class="nav-hamburger" aria-label="פתח תפריט" aria-expanded="false">
+      <span></span><span></span><span></span>
+    </label>
+    <nav class="nav-links" aria-label="ניווט ראשי">
+      <a href="/" data-slug="/">בית</a>
+      <a href="/guides/" data-slug="/guides/">מדריכים</a>
+      <a href="/faq/" data-slug="/faq/">שאלות</a>
+      <a href="/changelog/" data-slug="/changelog/">שינויים</a>
+      <a href="https://github.com/yonatan2021/pikud-haoref-bot" rel="noopener" target="_blank">GitHub</a>
+      <button class="nav-theme-toggle" aria-label="החלף בין מצב בהיר לכהה" type="button" data-theme-toggle>🌓</button>
+      <kbd class="nav-palette-hint" title="פתח פלטה מהירה">/</kbd>
+    </nav>
+  </div>
+</header>
+<script>
+  // highlight active route — runs before main scripts
+  (function(){
+    var active = '/changelog/' || (location.pathname.endsWith('/') ? location.pathname : location.pathname + '/');
+    document.querySelectorAll('.nav-links a[data-slug]').forEach(function(a){
+      if (a.dataset.slug === active) { a.setAttribute('aria-current','page'); a.classList.add('is-active'); }
+    });
+  })();
+</script>
+<main class="subpage" id="main">
+  <nav class="breadcrumb" aria-label="פירורי לחם">
+    <ol>
+      <li><a href="/">בית</a></li>
+      <li aria-current="page">יומן שינויים</li>
+    </ol>
+  </nav>
+
+  <header class="subpage-hero">
+    <h1>יומן שינויים</h1>
+    <p class="subtitle">היסטוריית גרסאות מלאה. 0.5.3 הוא הנוכחי. פורמט: <a href="https://keepachangelog.com/he/1.0.0/" rel="noopener">Keep a Changelog</a> + <a href="https://semver.org/" rel="noopener">SemVer</a>.</p>
+  </header>
+
+  <article class="prose changelog-list">
+    <section class="cl-version">
+  <h2>v0.5.3 <span class="cl-date">— 2026-04-16</span></h2>
+<section class="cl-category">
+  <h3>✨ תכונות חדשות</h3>
+  <ul>
+    <li><strong>Community Pulse</strong> — סקר "מה שלומך?" אוטומטי אחרי אזעקה בעיר המגורים; 3 אפשרויות (✅ בסדר / 😰 מפחד/ת / 🤝 עוזר/ת לאחרים); תוצאות מרוכזות כשמגיעים ל-threshold מוגדר; opt-in; cooldown מוגדר (ברירת מחדל 6 שעות) (PR #219)</li>
+    <li><strong>סיפורי מקלט</strong> — שיתוף חוויה קצרה מהמקלט (עד 200 תווים); flow אישור בדשבורד (lock → publish); פרסום בערוץ נושא ייעודי (<code>TELEGRAM_TOPIC_ID_STORIES</code>); INSERT OR IGNORE מגן מפני כפילויות (PR #220)</li>
+    <li><strong>שיתוף מיומנויות</strong> — <code>/skills</code> להצהרת מיומנויות מרשימה מוגדרת מראש (30 מיומנויות + קטגוריות); <code>/need [מיומנות]</code> לחיפוש אנשי קשר מתאימים לסיוע בשעת חירום; <code>skill_catalog</code> table + repository (PR #221, #228)</li>
+    <li><strong>בדיקת שכנים</strong> — X דקות לאחר אזעקה בעיר מגורים → DM אוטומטי "בדקת את שכניך?" עם 3 כפתורי מענה (בדקתי / לא יכולתי / הבנתי); injectable <code>scheduleFn</code>/<code>sendFn</code>/<code>cancelScheduleFn</code> לבדיקות; kill-switch ב-dashboard (PR #222)</li>
+    <li><strong>מחיקת/העברת קבוצה</strong> — מנהל קבוצה יכול למחוק אותה עם confirmation, או להעביר בעלות לחבר אחר; audit log בטבלה ייעודית (<code>group_transfer_log</code>) (PR #231)</li>
+    <li><strong>Community Config Dashboard</strong> — עמוד <code>/community</code> בדשבורד עם 5 הגדרות hot-configurable: cooldown סקרים, מגבלת תווים לסיפורים, threshold תוצאות, השהיית בדיקת שכנים, מתג הפעלה כלל-מערכתי (PR #227)</li>
+  </ul>
+</section>
+<section class="cl-category">
+  <h3>🐛 תיקוני באגים</h3>
+  <ul>
+    <li><strong><code>CHECK (length(body) <= 200)</code> הוסר מ-DB</strong> — ה-constraint גרם ל-crash מובטח כשה-dashboard default הוא 500; app layer אחראי לבדיקה</li>
+    <li><strong><code>insertResponse</code> מחזירה <code>boolean</code></strong> — מאפשר לזהות duplicate response ב-<code>communityPulseHandler</code> ולהציג "כבר ענית על הסקר הזה"</li>
+    <li><strong><code>shelterStoriesHandler</code> — pending state נמחק רק בהצלחה</strong> — שגיאת שרת לא "תתקע" את המשתמש בלולאת תגובה; <code>pendingShares.delete</code> ב-success path + catch block, לא ב-<code>finally</code></li>
+    <li><strong><code>publishStory</code> עם status guard</strong> — <code>UPDATE ... WHERE status = 'approved'</code> מונע publish כפול או מקדים</li>
+    <li><strong>Empty catch blocks</strong> — <code>neighborCheckHandler</code>, <code>skillsHandler</code> — כל catch מוסיף <code>log('error/warn', ...)</code> + reply למשתמש</li>
+  </ul>
+</section>
+<section class="cl-category">
+  <h3>🧪 בדיקות</h3>
+  <ul>
+    <li><code>alertWindowTracker</code> — 5 tests ל-<code>setWindowCloseCallback</code>: lazy expiry, no-double-fire, copy semantics, <code>clearAllCloseTimers</code> independence</li>
+    <li><code>neighborCheckHandler</code> — 5 callback tests: checked/unable/dismissed confirmations, already-responded guard, expiry message (injected <code>:memory:</code> DB via <code>setNeighborCheckHandlerDb</code>)</li>
+    <li><code>communityPulseHandler</code> — 6 callback tests: first-response תודה, duplicate guard, multi-user, missing <code>from</code>, agg threshold</li>
+    <li><code>alertHandler</code> — 4 tests ל-<code>scheduleNeighborCheck</code> dep: fresh send, dmCities filter on edit, empty dmCities guard, optional dep</li>
+    <li><strong>סה"כ: 1,789 tests (1,418 main suite + 371 dashboard)</strong></li>
+  </ul>
+</section>
+<section class="cl-category">
+  <h3>🔧 תחזוקה</h3>
+  <ul>
+    <li><code>cancelNeighborCheckTimers</code> מחובר ל-<code>shutdown()</code> ב-<code>index.ts</code> — graceful shutdown מלא</li>
+    <li>TS2571 fix: <code>(calls[0].arguments[0] as Alert).cities</code> ב-<code>alertHandler.test.ts</code></li>
+    <li><code>alertWindowTracker</code> silent catch הוחלף ב-<code>log('warn', ...)</code> עם context</li>
+  </ul>
+</section>
+</section>
+<section class="cl-version">
+  <h2>v0.5.2 <span class="cl-date">— 2026-04-13</span></h2>
+<section class="cl-category">
+  <h3>✨ תכונות חדשות</h3>
+  <ul>
+    <li><strong>הגדרות חברתיות — <code>/settings</code></strong> — 5 מתגי הפעלה/כיבוי לתכונות חברתיות: שאלת "הכל בסדר" אחרי אזעקה, באנר תזכורת, מספר אנשי קשר בהתראה, התראות קבוצתיות, כפתור שליחה מהירה (PR #236)</li>
+    <li><strong>כפתור "הכל בסדר — לכולם"</strong> — כפתור חד-לחיצתי בתפריט הראשי ששולח עדכון "הכל בסדר" לכל אנשי הקשר עם הרשאת סטטוס ביטחוני; מסך אישור לפני שליחה; TTL מותאם של 6 שעות (PR #237)</li>
+    <li><strong>באנר תזכורת ב-<code>/start</code></strong> — הצגת אזהרה בראש התפריט כשיש שאלת בטיחות שלא נענתה; כולל שם עיר מהאזעקה וכפתורי פעולה מהירה (PR #238)</li>
+    <li><strong>מספר אנשי קשר בהתראת DM</strong> — שורת "👥 X אנשי קשר שלך נמצאים באזור" מתווספת להתראות כשיש אנשי קשר מאושרים באזור המותקף (PR #239)</li>
+    <li><strong>טאב בדיקת שלומות בדשבורד</strong> — עמוד <code>/safety-check</code> חדש עם 6 כרטיסי KPI (שאלות, אחוז תגובה, זמן תגובה ממוצע, פילוח תשובות), גרף מגמה 7 ימים, וטבלת שאלות אחרונות עם מיסוך פרטיות (PR #240)</li>
+    <li><strong>ניהול טקסטים חברתיים בדשבורד</strong> — עריכה חמה של כל טקסטי התכונות החברתיות (באנר, כפתור, אישור, שידור, שורת אנשי קשר) עם תצוגה מקדימה; מתגי ברירת מחדל למשתמשים חדשים; סף זמן לבאנר תזכורת; פונקציות <code>getString</code>/<code>getNumber</code>/<code>getBool</code> חדשות ב-configResolver (PR #241)</li>
+  </ul>
+</section>
+</section>
+<section class="cl-version">
+  <h2>v0.5.1 <span class="cl-date">— 2026-04-12</span></h2>
+<section class="cl-category">
+  <h3>✨ תכונות חדשות</h3>
+  <ul>
+    <li><strong>קבוצות חוסן — <code>/group</code></strong> — קבוצות משפחה/חברים/עבודה לתיאום ביטחוני: <code>/group create <שם></code> יוצר קבוצה עם קוד הזמנה, <code>/group join <קוד></code> מצטרף, <code>/group leave</code> עוזב, <code>/group list</code> מציג קבוצות (PR #230)</li>
+    <li><strong>מסך סטטוס קבוצתי — <code>/group status</code></strong> — תצוגה חיה של סטטוס הביטחוני של כל חברי הקבוצה (✅/⚠️/🔇/❓); בחירת קבוצה inline; כפתור רענון; מחיצת קבוצה בודדת — אוטומטית (PR #232)</li>
+    <li><strong>התראות קבוצה</strong> — עדכון אוטומטי לכל חברי הקבוצה כשמישהו מעדכן סטטוס; <code>dismissed</code> לא מעדכן; <code>notify_group=0</code> מאפשר opt-out פר-חבר; dedup בין קבוצות חופפות (PR #233)</li>
+    <li><strong>ניהול קבוצות בדשבורד</strong> — עמוד "קבוצות חוסן" חדש: KPI cards (סה"כ / ממוצע חברים / גדולה ביותר), טבלה עם drill-down ל-drawer חברים, מחיקת קבוצה עם rate-limit 5/דקה (PR #234)</li>
+    <li><strong>hot-config לקבוצות</strong> — <code>groups_max_per_user</code> (ברירת מחדל 5) ו-<code>groups_max_members</code> (ברירת מחדל 20) ניתנים לשינוי מהדשבורד ללא restart; שמירה על <code>minimum=1</code> למניעת נעילת הפיצ'ר (PR #234)</li>
+  </ul>
+</section>
+<section class="cl-category">
+  <h3>⚡ שיפורי ביצועים</h3>
+  <ul>
+    <li><strong>N+1 ב-GET /api/groups נפתר</strong> — <code>listAllGroupsWithStats</code> מבצע LEFT JOIN ל-<code>users</code> בשאילתה אחת במקום N קריאות <code>getUser()</code> פר-קבוצה (PR #234)</li>
+    <li><strong>CI: חיסכון ~50% דקות Actions</strong> — <code>pull_request</code> trigger מוגבל ל-<code>opened/reopened</code> בלבד; <code>synchronize</code> (push לענף PR) מכוסה ע"י ה-<code>push</code> trigger הקיים (PR #235)</li>
+  </ul>
+</section>
+<section class="cl-category">
+  <h3>🐛 תיקוני באגים</h3>
+  <ul>
+    <li><strong><code>groups_max_per_user=0</code> לא עוצר יצירת קבוצות</strong> — <code>validatePositiveInt</code> (n≥1) בגבול ה-PATCH + <code>resolveIntConfig(..., { minimum: 1 })</code> ב-runtime; קוד שגוי <code>"0"</code> ב-DB נופל ל-fallback עם warn-log (PR #234)</li>
+  </ul>
+</section>
+<section class="cl-category">
+  <h3>🧪 בדיקות</h3>
+  <ul>
+    <li><code>groupHandler</code> — 1,150 שורות: <code>/group create|join|leave|list|status</code>, callback_data guard (64 bytes), collision retry, auth invariants (owner-only invite, non-member block), hot-config override</li>
+    <li><code>groupRepository</code> — 320 שורות: CRUD, member count, stats helpers, <code>InviteCodeCollisionError</code></li>
+    <li><code>groupNotificationService</code> — 222 שורות: ok/help/dismissed, opt-out, cross-group dedup, XSS escaping, fallback display name</li>
+    <li><code>dashboard/routes/groups</code> — 201 שורות: GET list/stats/detail, DELETE + rate-limit, input validation, CASCADE</li>
+    <li><code>settings.test.ts</code> — 6 tests חדשים ל-<code>groups_max_per_user</code>/<code>groups_max_members</code> validation</li>
+    <li><strong>סה"כ: 1,615 tests (מ-1,086 ב-v0.5.0)</strong></li>
+  </ul>
+</section>
+<section class="cl-category">
+  <h3>🔧 תחזוקה</h3>
+  <ul>
+    <li><code>schema.ts</code> — 2 טבלאות חדשות: <code>groups</code> + <code>group_members</code> (CASCADE FKs, CHECK constraint על <code>role</code>, 3 indexes)</li>
+    <li><code>botSetup.ts</code> — <code>registerGroupHandler</code> נוסף; <code>setMyCommands</code> — 15 פקודות (נוספה <code>/group</code>)</li>
+    <li><code>configResolver.ts</code> — הוספת <code>groups_max_per_user</code>, <code>groups_max_members</code>, <code>groups_invite_code_ttl_hours</code> ל-<code>ALLOWED_CONFIG_KEYS</code></li>
+    <li><code>dashboard/router.ts</code> — <code>/api/groups</code> route חדש</li>
+  </ul>
+</section>
+</section>
+<section class="cl-version">
+  <h2>v0.5.0 <span class="cl-date">— 2026-04-07</span></h2>
+<section class="cl-category">
+  <h3>✨ תכונות חדשות</h3>
+  <ul>
+    <li><strong>Safety Status — "האם אתה בסדר?"</strong> — שאלת סטטוס אוטומטית כשמגיעה התראה לעיר המגורים; 3 כפתורים (✅ בסדר / ⚠️ צריך עזרה / 🔇 התעלם); dedup חכם לפי fingerprint — <code>INSERT OR IGNORE</code> מונע כפל (PR #186–#189)</li>
+    <li><strong>פקודת <code>/status</code></strong> — צפייה ועדכון ידני של סטטוס ביטחוני עם מד-זמן עד לפקיעה; תצוגת סטטוס אנשי קשר מורשים; ניווט <code>safety:contacts</code> / <code>safety:back</code> (PR #197–#199)</li>
+    <li><strong>עדכון אנשי קשר אוטומטי</strong> — שיתוף סטטוס אוטומטי עם אנשי קשר בעלי הרשאת <code>safety_status=true</code>; דרך <code>dmQueue</code> עם backoff 429; התעלמות אינה מעדכנת קשרים (PR #200–#201)</li>
+    <li><strong>ניהול סודות מוצפן</strong> — AES-256-GCM envelope encryption (DEK/KEK via PBKDF2); ניהול API keys מלוח הבקרה ללא env vars; עמוד Configuration חדש עם SecretCard ו-RestartBanner; migration אוטומטי מ-.env בהפעלה (PR #153, #160, #161)</li>
+    <li><strong>תבניות גוף הודעה</strong> — עורך תבניות עם <code>{{ערים}}</code> <code>{{כותרת}}</code> <code>{{זמן}}</code> <code>{{אמוגי}}</code> <code>{{מספר_ערים}}</code>; live preview בסגנון Telegram; tab "עורך תבנית" חדש בדאשבורד (PR #156)</li>
+    <li><strong>ניהול תצורה מאוחד</strong> — <code>configResolver.ts</code> עם שרשרת DB → env fallback; <code>SECRET_KEYS</code> (5) + <code>RESTART_REQUIRED_KEYS</code> (6); <code>DASHBOARD_SECRET</code> בלבד נדרש לאתחול (PR #154, #155, #157, #158)</li>
+    <li><strong>טקסטי DM ניתנים לשינוי</strong> — רלוונטיות ("באזורך", "באזור קרוב", "לא באזורך") ו-"נשמו" ניתנים לשינוי מלשונית "הודעות DM" בדאשבורד ללא restart (PR #159)</li>
+  </ul>
+</section>
+<section class="cl-category">
+  <h3>🐛 תיקוני באגים</h3>
+  <ul>
+    <li><strong>יישור RTL</strong> — תווי <code>\u200F</code> נוספו לכותרות אזורים ב-<code>buildZonedCityList</code>, <code>buildZoneOnlyList</code> ו-<code>formatAlertMessage</code> — מונע הצגה הפוכה של <code>▸</code> בטלגרם (PR #151)</li>
+    <li><strong>"נשמו" לפי עיר בית</strong> — הודעת "נשמו" נשלחת רק למי שעיר המגורים (<code>home_city</code>) הייתה בהתראה המקורית — לא לכל מנויי האזור (PR #152)</li>
+    <li><strong>"נשמו" + שעות שקט</strong> — שעות שקט ו-snooze מופעלים גם על הודעת "נשמו" (לא עוקפים אותם) (PR #152)</li>
+    <li><strong>"נשמו" דרך DmQueue</strong> — הגנה מ-Telegram 429 בעת התראות רחבות-היקף; מקביליות 10 + backoff (PR #152)</li>
+  </ul>
+</section>
+<section class="cl-category">
+  <h3>⚠️ שינויים שוברים</h3>
+  <ul>
+    <li><code>DASHBOARD_SECRET</code> הוא <strong>משתנה הסביבה היחיד הנדרש</strong> לאתחול לאחר migration. <code>TELEGRAM_BOT_TOKEN</code>, <code>MAPBOX_ACCESS_TOKEN</code> ושאר הסודות מנוהלים דרך לוח הבקרה (PR #155, #161)</li>
+    <li><code>callback_data</code> של safety prompts כולל prompt ID מפורש: <code>safety:ok:42</code> — לא חיפוש "ה-prompt האחרון" (מונע עמביגואיזציה בין שתי התראות מקבילות) (PR #191, #195)</li>
+  </ul>
+</section>
+<section class="cl-category">
+  <h3>🧪 בדיקות</h3>
+  <ul>
+    <li>Safety Status — 75 tests חדשים: <code>safetyStatusRepository</code> (15), <code>safetyPromptRepository</code> (27), <code>safetyPromptService</code> (12), <code>safetyStatusHandler</code> (14), <code>safetyAutoReset</code> (7)</li>
+    <li>3 integration tests מקצה לקצה: happy path (prompt → ok → contact notified → dedup), dismiss (no notify), fingerprint dedup</li>
+    <li><code>userRepository</code> — 3 tests חדשים ל-<code>getUsersWithHomeCity</code>; <code>alertHandler</code> — 28 tests כולל <code>dispatchSafetyPrompts</code> optional dep</li>
+    <li><strong>סה"כ: 1,086 tests (מ-1,008 ב-v0.4.5)</strong></li>
+  </ul>
+</section>
+<section class="cl-category">
+  <h3>🔧 תחזוקה</h3>
+  <ul>
+    <li><code>src/CLAUDE.md</code> + <code>src/db/CLAUDE.md</code> + <code>.claude/rules/structure.md</code> + <code>README.md</code> — עודכנו עם פרטי Safety Status feature</li>
+    <li><code>botSetup.ts</code> — <code>registerSafetyStatusHandler</code> נרשם לפני <code>registerMenuHandler</code> (PR #196)</li>
+    <li><code>setMyCommands</code> — 14 פקודות (נוספו <code>/status</code>, <code>/today</code>, <code>/legend</code>, <code>/connect</code>, <code>/contacts</code>, <code>/privacy</code>)</li>
+  </ul>
+</section>
+</section>
+<section class="cl-version">
+  <h2>v0.4.5 <span class="cl-date">— 2026-04-05</span></h2>
+<section class="cl-category">
+  <h3>✨ תכונות חדשות</h3>
+  <ul>
+    <li><strong>all-clear</strong> — שליחת הודעת "שקט חזר" אחרי אזעקה; תמיכה ב-DM, ערוץ, או שניהם (<code>all_clear_mode</code>); זיהוי מובנה של newsFlash רשמי "האירוע הסתיימה"; ניהול מלא מלוח הבקרה כולל בחירת נושא ייעודי (<code>all_clear_topic_id</code>)</li>
+    <li><strong>density indicator</strong> — אינדיקטור צפיפות יומי בהתראות חיות: <code>רגיל / גבוה / חריג</code> על בסיס ממוצע 90 ימים; מחושב לפי timezone ישראל</li>
+    <li><strong>פקודת <code>/today</code></strong> — ציר זמן יומי מלא של ההתרעות עם density summary לכל קטגוריה</li>
+    <li><strong>dashboard sidebar</strong> — sidebar RTL מתקפל עם היררכיית ניווט עברית</li>
+    <li><strong>dashboard settings trust</strong> — badges להבחנת הגדרות ENV vs DB בממשק הניהול</li>
+    <li><strong>page headers</strong> — כותרות אחידות לכל 10 עמודי dashboard</li>
+  </ul>
+</section>
+<section class="cl-category">
+  <h3>🐛 תיקוני באגים</h3>
+  <ul>
+    <li><strong>density log level</strong> — הודעות "message not modified" תויגו כ-<code>warn</code> במקום <code>info</code>; זהו מצב הצלחה</li>
+    <li><strong>allClearService renderTemplate</strong> — שגיאה באחד האזורים כבתה את כל שאר האזורים; עכשיו עטוף ב-try-catch עם <code>continue</code></li>
+    <li><strong>getDailyAverageAlerts timezone</strong> — חישוב ממוצע אזעקות יומי השתמש ב-UTC במקום timezone ישראל (Asia/Jerusalem)</li>
+    <li><strong>all_clear_mode validation</strong> — PATCH <code>/api/settings</code> עכשיו מאמת שהערך הוא אחד מ-<code>dm / channel / both</code></li>
+  </ul>
+</section>
+<section class="cl-category">
+  <h3>🧪 בדיקות</h3>
+  <ul>
+    <li><strong>allClearService</strong> — test suite מלא עם injectable deps</li>
+    <li><strong>allClearIntegration</strong> — integration tests מקצה לקצה לפיצ'ר all-clear</li>
+    <li><strong>density→editAlert</strong> — test חסר לpath של <code>editAlert</code> (density מועבר כ-arg 5)</li>
+  </ul>
+</section>
+</section>
+<section class="cl-version">
+  <h2>v0.4.4 <span class="cl-date">— 2026-04-04</span></h2>
+<section class="cl-category">
+  <h3>✨ תכונות חדשות</h3>
+  <ul>
+    <li><strong>חזותיות אזורים חכמה</strong> — 33 צבעים ייחודיים לאזורים במפות Mapbox; ספריית <code>zoneColors.ts</code> עם runtime assertion שמגן מפני אי-התאמה</li>
+    <li><strong>אינדיקטור רלוונטיות</strong> — <code>getRelevanceIndicator()</code> מציין בכותרת ערוץ אם ההתרעה נוגעת לאזורים שנבחרו</li>
+    <li><strong>סרגל ספירה לאחור ב-DM</strong> — <code>renderCountdownBar()</code> מייצר סרגל ויזואלי (🟥🟥🟥🟥🟥 עד 🔵⬜⬜⬜⬜) בהודעות DM</li>
+    <li><strong>allClearTracker</strong> — מעקב all-clear per-zone: הודעת "הסתיימה ההתרעה" עם חלון שקט למניעת הצפה; injectable deps; timers מנוקים בעת SIGTERM/SIGINT</li>
+    <li><strong>פקודת <code>/today</code></strong> — סיכום יומי של כל ההתרעות עם פירוט לפי קטגוריות (alertsToday handler)</li>
+    <li><strong>פקודת <code>/legend</code></strong> — פלטת צבעי האזורים לפי 6 סופר-אזורים (legendHandler)</li>
+    <li><strong>Forum topics support</strong> — GramJS listener תומך בנושאים (threads) בקבוצות forum; סינון לפי <code>sourceTopicId</code></li>
+    <li><strong>פורמט משותף Telegram + WhatsApp</strong> — <code>buildSummaryLine()</code> כמקור יחיד לספירת ערים/אזורים; תיקון דקדוקי "1 עיר" לעומת "N ערים"</li>
+  </ul>
+</section>
+<section class="cl-category">
+  <h3>🐛 תיקוני באגים</h3>
+  <ul>
+    <li><strong>alertSerial — timezone ישראל</strong> — מספרי אינדקס התרעות מחושבים לפי <code>Asia/Jerusalem</code> (UTC+2/+3); האינדקס מתאפס בחצות המקומית ולא בחצות UTC</li>
+    <li><strong>Empty chat list on fresh GramJS session</strong> — fallback ל-<code>client.getEntity()</code> ו-retry עם השהיה של 2 שניות בעת 0 תוצאות</li>
+    <li><strong>GetForumTopics not paginated</strong> — pagination loop לקבוצות עם יותר מ-100 נושאים</li>
+  </ul>
+</section>
+<section class="cl-category">
+  <h3>🗑️ הוסר</h3>
+  <ul>
+    <li><strong>Docker Hub / GHCR פרסום ציבורי</strong> — הוסרה אוטומציית פרסום Docker image ל-GHCR ו-Docker Hub; הדרך המומלצת להתקנה היא <code>npx @haoref-boti/pikud-haoref-bot</code>. ה-Dockerfile נשמר לבנייה מקומית.</li>
+    <li><strong>alertLayout.ts</strong> — הוסר עקב circular import; הלוגיקה הועברה ל-<code>telegramBot.ts</code></li>
+  </ul>
+</section>
+<section class="cl-category">
+  <h3>🧪 בדיקות</h3>
+  <ul>
+    <li><strong>+199 בדיקות חדשות</strong> — כיסוי מלא לחזותיות אזורים, accessibility, allClearTracker, todayHandler, legendHandler, zoneColors, crossChannelFormat, summaryLine</li>
+  </ul>
+</section>
+</section>
+<section class="cl-version">
+  <h2>v0.4.3 <span class="cl-date">— 2026-04-03</span></h2>
+<section class="cl-category">
+  <h3>✨ תכונות חדשות</h3>
+  <ul>
+    <li><strong>Telegram Listener</strong> — האזנה לקבוצות/ערוצים Telegram דרך GramJS MTProto (חשבון משתמש), סינון לפי מילות מפתח, והעברה לנושאים בערוץ ו-WhatsApp; ניהול מלא מלוח הבקרה עם auth flow (טלפון → OTP → 2FA)</li>
+    <li><strong>הגדרות פרטיות</strong> — פקודה חדשה <code>/privacy</code> לניהול מדיניות פרטיות ברירת המחדל לחיבורים חדשים</li>
+    <li><strong>שליטה per-contact</strong> — ניתן לשנות בנפרד אילו שדות (סטטוס ביטחוני, עיר בית, זמן עדכון) כל איש קשר יכול לראות</li>
+    <li><strong>תבנית ברירת מחדל</strong> — הגדרות הפרטיות שנבחרו מוחלות אוטומטית על כל חיבור חדש</li>
+    <li><strong>שיפור UX חיבור חברים</strong> — זרימה אינטראקטיבית לא-טכנית עם תפריט, קוד בתיבה tappable, ובחירת הרשאות מפורשת לפני שליחת בקשה</li>
+    <li><strong>סיכום הרשאות בעת אישור</strong> — כשחבר מאשר בקשת חיבור, הם רואים בדיוק אילו שדות שותפו (עיר בית, זמן עדכון אחרון)</li>
+    <li><strong>ניסוח משופר</strong> — כל הודעות שגיאה וחיבור כתובות בעברית יומיומית, לא טכנית</li>
+  </ul>
+</section>
+<section class="cl-category">
+  <h3>🐛 תיקוני באגים</h3>
+  <ul>
+    <li><strong>Telegram Listener — pagination</strong> — לולאת <code>refreshKnownChats</code> עצרה אחרי 100 צ'אטים ראשונים בגלל תנאי break הפוך (<code>>=</code> במקום <code><=</code>)</li>
+    <li><strong>Telegram Listener — סיווג supergroup</strong> — קבוצות-ערוץ (megagroup) אוחסנו בטעות כ-<code>group</code> במקום <code>supergroup</code></li>
+    <li><strong>Telegram Listener — race condition</strong> — <code>startPhoneAuth()</code> יכול היה לרוץ במקביל ל-<code>initialize()</code> וליצור שתי TelegramClient instances</li>
+    <li><strong>Telegram Listener — env validation</strong> — אפליקציה עלתה ללא <code>TELEGRAM_API_ID</code>/<code>TELEGRAM_API_HASH</code> ונכשלה מאוחר יותר בלי הודעת שגיאה ברורה</li>
+    <li><strong>Telegram Listener — chatId null</strong> — שימוש ב-<code>!</code> non-null assertion על <code>TELEGRAM_CHAT_ID</code> גרם לקריסה כש-env var לא הוגדר</li>
+    <li><strong>Privacy — update_time</strong> — <code>createContactWithPermissions</code> נקרא ללא <code>update_time</code>, כך שתמיד ברירת המחדל הייתה <code>true</code> ללא קשר להגדרות <code>/privacy</code></li>
+    <li><strong>Privacy — error handling</strong> — חריגות לא-נתפסות ב-<code>updatePermissions()</code> ו-<code>editMessageText()</code> גרמו לקריסת callback handlers</li>
+  </ul>
+</section>
+<section class="cl-category">
+  <h3>🧪 בדיקות</h3>
+  <ul>
+    <li><strong>כיסוי הרשאות פרטיות</strong> — טסטים מלאים ל-<code>/privacy</code>, <code>pv:toggle</code>, <code>cx:perm</code>, <code>cp:toggle</code> ו-<code>getPrivacyDefaults</code></li>
+    <li><strong>rendering test לבדיקת הרשאות</strong> — בדיקה שעיר הבית מוצגת/מוסתרת בהתאם להרשאת <code>home_city</code></li>
+    <li><strong>+8 בדיקות connectHandler</strong> — כיסוי של תפריט ה-connect, קולבקי toggle הרשאות, ו-cx:confirm/cx:cancel</li>
+    <li><strong>+81 בדיקות Telegram Listener</strong> — repository, service, ו-dashboard routes; injectable deps לבידוד מ-GramJS</li>
+  </ul>
+</section>
+</section>
+<section class="cl-version">
+  <h2>v0.4.2 <span class="cl-date">— 2026-04-03</span></h2>
+<section class="cl-category">
+  <h3>✨ תכונות חדשות</h3>
+  <ul>
+    <li><strong>אנשי קשר</strong> — חברו חברים ומשפחה עם קוד בן 6 ספרות, אשרו בקשות, ונהלו רשימת קשרים</li>
+    <li><strong>הגנה מפני שימוש לרעה</strong> — המערכת מגבילה בקשות חריגות ומנקה בקשות ישנות באופן אוטומטי</li>
+    <li><strong>קוד חיבור בפרופיל</strong> — הקוד האישי שלכם מופיע גם בעמוד הפרופיל</li>
+    <li><strong>אנשי קשר בלוח הבקרה</strong> — מנהלים רואים קודי חיבור, מספר קשרים, ורשימת אנשי קשר לכל מנוי</li>
+  </ul>
+</section>
+<section class="cl-category">
+  <h3>🧪 בדיקות</h3>
+  <ul>
+    <li><strong>+11 בדיקות</strong> — כיסוי מלא למערכת אנשי הקשר, לוח הבקרה, וניקוי אוטומטי</li>
+  </ul>
+</section>
+<section class="cl-category">
+  <h3>✨ תכונות חדשות</h3>
+  <ul>
+    <li><strong>פרופיל מנויים בדשבורד</strong> — עמוד מנויים מציג כעת שם תצוגה, עיר מגורים, וסטטוס onboarding; חיפוש לפי שם ועיר; עריכת שם ועיר מהדשבורד; ייצוא CSV כולל שדות פרופיל</li>
+  </ul>
+</section>
+<section class="cl-category">
+  <h3>🧪 בדיקות</h3>
+  <ul>
+    <li><strong>+8 בדיקות dashboard/subscribers</strong> — חיפוש לפי שם ועיר, עדכון display_name/home_city, CSV עם שדות פרופיל</li>
+  </ul>
+</section>
+</section>
+<section class="cl-version">
+  <h2>v0.4.1 <span class="cl-date">— 2026-04-02</span></h2>
+<section class="cl-category">
+  <h3>✨ תכונות חדשות</h3>
+  <ul>
+    <li><strong>Onboarding wizard ב-<code>/start</code></strong> — משתמש חדש נכנס לתהליך הגדרה מונחה: שם תצוגה → עיר מגורים → אישור. מצב נשמר ב-SQLite (<code>onboarding_step</code>) ושורד ריסטארט; אפשרות דילוג בכל שלב</li>
+    <li><strong>הרשמה אוטומטית לעיר מגורים</strong> — בסיום ה-onboarding, המשתמש נרשם אוטומטית להתראות על עיר המגורים שבחר</li>
+    <li><strong>פקודת <code>/profile</code></strong> — צפייה ועריכה של שם תצוגה, עיר מגורים ושפה במקום אחד; כפתורי עריכה inline עם ולידציית קלט</li>
+    <li><strong>בחירת שפה</strong> — תמיכה ב-locale (כרגע עברית בלבד); מוכן ל-i18n עתידי</li>
+    <li><strong>הרחבת טבלת <code>users</code></strong> — 6 עמודות חדשות: <code>display_name</code>, <code>home_city</code>, <code>locale</code>, <code>onboarding_completed</code>, <code>connection_code</code>, <code>onboarding_step</code>; מיגרציה בטוחה עם <code>addColumnIfMissing</code></li>
+    <li><strong>WhatsApp — טקסט מיידי + מפה מושהית</strong> — בתוך חלון העדכון, הודעת טקסט נשלחת מיידית ונערכת בזמן אמת (<code>msg.edit</code>); תמונת המפה נשלחת פעם אחת אחרי debounce (ברירת מחדל: 15 שניות)</li>
+    <li><strong>הגדרת עיכוב מפה בדשבורד</strong> — <code>whatsapp_map_debounce_seconds</code> — ניתן לשנות מהדשבורד ללא הפעלה מחדש</li>
+  </ul>
+</section>
+<section class="cl-category">
+  <h3>🐛 תיקוני באגים</h3>
+  <ul>
+    <li><strong>תמונת מפה בהתרעות מרובות ערים (#101)</strong> — בטלגרם: תמונת המפה נשלחת תמיד כשהיא זמינה; ב-WhatsApp: נשלחת הודעה חדשה עם מפה מעודכנת כשיש שינוי בערים</li>
+  </ul>
+</section>
+<section class="cl-category">
+  <h3>🧪 בדיקות</h3>
+  <ul>
+    <li><strong>+48 בדיקות Onboarding + Profile</strong> — 21 בדיקות userRepository (מיגרציה, פרופיל, onboarding, connection code), 16 בדיקות onboardingHandler (מעברי שלבים, דילוג, ולידציה), 11 בדיקות profileHandler (סיכום, עריכה, ברירות מחדל)</li>
+    <li><strong>+15 בדיקות WhatsApp</strong> — 8 debounce, 7 buildSendPayload + edit-with-image</li>
+  </ul>
+</section>
+<section class="cl-category">
+  <h3>🔧 תחזוקה</h3>
+  <ul>
+    <li><strong><code>src/bot/onboardingHandler.ts</code></strong> — handler חדש ל-wizard onboarding</li>
+    <li><strong><code>src/bot/profileHandler.ts</code></strong> — handler חדש לפקודת <code>/profile</code></li>
+    <li><strong>הרחבת <code>userRepository.ts</code></strong> — <code>getProfile</code>, <code>updateProfile</code>, <code>completeOnboarding</code>, <code>isOnboardingCompleted</code>, <code>setOnboardingStep</code>, <code>setConnectionCode</code>, <code>findUserByConnectionCode</code></li>
+  </ul>
+</section>
+</section>
+<section class="cl-version">
+  <h2>v0.4.0 <span class="cl-date">— 2026-03-31</span></h2>
+<section class="cl-category">
+  <h3>✨ תכונות חדשות</h3>
+  <ul>
+    <li><strong>WhatsApp Broadcast לקבוצות</strong> — קבוצות WhatsApp יכולות לקבל התראות פיקוד העורף עם מפות, edit-window dedup, ו-channel store fallback</li>
+    <li><strong>קטגוריה 6 — WhatsApp Forward</strong> — קבוצות WhatsApp יכולות להירשם לקבלת הודעות מועברות מ-WhatsApp Listener (נושא שישי בדשבורד)</li>
+    <li><strong>שידור Listener לקבוצות WA</strong> — הודעות מתאימות מ-WhatsApp Listener מועברות גם לקבוצות WhatsApp מנויות (בנוסף לטלגרם)</li>
+    <li><strong>דשבורד WhatsApp — שדרוג משמעותי</strong> — עמודי WhatsApp ו-WhatsApp Listeners עם סלקטורים חיפושיים, תיקון קטגוריות, fallback ל-topics, ותמיכה בערוצים לצד קבוצות</li>
+    <li><strong>WhatsApp Channels</strong> — <code>getChannels()</code> חדש לסריקת ערוצי WhatsApp; tab filter ב-SourceSelector; disconnect + reconnect משופרים</li>
+    <li><strong>עמוד נחיתה — שלוש דרכים</strong> — עמוד הנחיתה מציג כעת שלוש אפשרויות: Telegram, WhatsApp, ו-Self-host — עם כרטיסי מידע שנוצרים אוטומטית מה-README</li>
+    <li><strong>עמוד נחיתה — WHATSAPP_INVITE_LINK</strong> — תמיכה במשתנה סביבה חדש להצגת קישור הזמנה ל-WhatsApp בדף הנחיתה</li>
+    <li><strong>Wizard: פרופיל הגדרות</strong> — שלושה פרופילים (מינימלי / מומלץ ⭐ / מלא) שמכסים את כל 27 משתני הסביבה עם ברירות מחדל חכמות; מחליף את ה-flow הישן של required + optional</li>
+    <li><strong>Wizard: שכפול משופר</strong> — <code>git clone --depth 1</code> מהיר יותר, שינוי remote ל-<code>upstream</code> לעדכונים, הצעת Fork אוטומטית דרך <code>gh</code> CLI</li>
+    <li><strong>Wizard: --profile flag</strong> — <code>--profile=minimal|recommended|full</code> ו-<code>--full</code> כקיצור ל-<code>--profile=full</code></li>
+  </ul>
+</section>
+<section class="cl-category">
+  <h3>🐛 תיקוני באגים</h3>
+  <ul>
+    <li><strong>שעון uptime בדשבורד</strong> — תוקן תצוגת "0d 0h" קבועה; כעת מציג דקות עבור uptime קצר (<code>3m</code>, <code>1h 22m</code>)</li>
+    <li><strong>WhatsApp disconnect/reconnect</strong> — שיפור יציבות חיבור WhatsApp עם disconnect handler ו-reconnect endpoint</li>
+  </ul>
+</section>
+<section class="cl-category">
+  <h3>🧪 בדיקות</h3>
+  <ul>
+    <li><strong>+19 בדיקות wizard</strong> — 13 בדיקות profile חדשות, 6 בדיקות deployment חדשות (remote setup, spawnQuiet, fork flow)</li>
+    <li><strong>+12 בדיקות WhatsApp</strong> — כיסוי חדש ל-whatsappBroadcaster, whatsappService, dashboard routes</li>
+    <li><strong>167 בדיקות wizard</strong> | <strong>סה"כ ~700 בדיקות</strong></li>
+  </ul>
+</section>
+<section class="cl-category">
+  <h3>🔧 תחזוקה</h3>
+  <ul>
+    <li><strong>wizard: מחיקת optional.ts ו-required.ts</strong> — הוחלפו במערכת profiles מאוחדת (<code>profile.ts</code>)</li>
+    <li><strong>WHATSAPP_INVITE_LINK</strong> — נוסף ל-ENV_TEMPLATE של ה-wizard</li>
+    <li><strong>landing/build.js</strong> — תמיכה בסקשן "דרכים להשתמש" שנוצר אוטומטית מה-README</li>
+    <li><strong>עדכון .gitignore</strong> — הוספת Claude configuration ו-package-lock.json</li>
+  </ul>
+</section>
+</section>
+<section class="cl-version">
+  <h2>v0.3.3 <span class="cl-date">— 2026-03-31</span></h2>
+<section class="cl-category">
+  <h3>✨ תכונות חדשות</h3>
+  <ul>
+    <li><strong>מערכת ניהול תבניות (Messages)</strong> — עורך מקובץ לפי קטגוריה (5 סקשנים) עם Emoji picker ויזואלי, טולטיפים בעברית, סטטוס בר, ואיפוס לפי קטגוריה</li>
+    <li><strong>Simulation Engine + Telegram Preview</strong> — בחירת ערים (autocomplete, עד 50), תצוגה מקדימה חיה בתוך phone-frame mockup, character count bar, ו-test-fire לשליחת הודעת בדיקה אמיתית לטלגרם</li>
+    <li><strong>Versioning + Rollback</strong> — כל עריכת תבנית יוצרת snapshot (עד 10 לסוג), פאנל היסטוריה עם diff ו-rollback בלחיצה</li>
+    <li><strong>Historical Replay</strong> — בחירת התראה היסטורית ורינדור מחדש עם התבנית הנוכחית/override</li>
+    <li><strong>Import/Export תבניות</strong> — ייצוא כ-JSON וייבוא עם אימות all-or-nothing</li>
+    <li><strong>ניהול Topic IDs מהדשבורד</strong> — ניתוב נושאי פורום (כולל WhatsApp) ישירות מלוח הבקרה עם hot-reload מיידי ללא restart</li>
+    <li><strong>Code Splitting</strong> — <code>React.lazy</code> + <code>Suspense</code> לכל 10 דפים + Vite <code>manualChunks</code> לvendor chunks; הchunk הגדול ביותר ירד מ-945KB ל-364KB</li>
+    <li><strong>ErrorBoundary</strong> — עמוד שגיאה בעברית עם כפתור "טען מחדש" כשchunk נכשל בטעינה</li>
+    <li><strong>QR Code בטרמינל</strong> — קוד QR של WhatsApp מוצג ישירות בטרמינל בהפעלה הראשונה</li>
+    <li><strong>Wizard: קובץ .env מלא</strong> — <code>writeFullEnvFile</code> יוצר .env עם כל 22 משתני הסביבה ב-9 סקשנים עם הערות בעברית</li>
+    <li><strong>שדות חדשים בהגדרות</strong> — <code>telegram_invite_link</code>, <code>mapbox_image_cache_size</code>, <code>whatsapp_enabled</code> + מידע מערכת (גרסה, גודל DB)</li>
+    <li><strong>דשבורד: Operations</strong> — כפתור "בדוק את כל הקטגוריות" (5 הודעות לnoshim המתאימים) + טקסט הסבר לכל סקשן</li>
+    <li><strong>דשבורד: Landing</strong> — הסבר מהו דף הנחיתה, סטטוס אתר עם LiveDot, קישור GitHub Actions</li>
+    <li><strong>דשבורד: WhatsApp Listeners</strong> — 4 תת-קומפוננטות (ListenersBanner, KeywordHelp, RuleCard, SourceSelector)</li>
+  </ul>
+</section>
+<section class="cl-category">
+  <h3>🐛 תיקוני באגים</h3>
+  <ul>
+    <li><strong>wizard: קריסת npm install בנתיב עברי</strong> — <code>resolveTargetPath()</code> ברירת מחדל ל-<code>~/pikud-haoref-bot</code> (ASCII-safe) במקום CWD שעלול לכלול עברית/רווחים</li>
+    <li><strong>wizard: .env זבל ב-CWD</strong> — קובץ .env זמני נמחק אחרי node-mode setup; כרטיס סיום מציג את הנתיב הסופי</li>
+    <li><strong>wizard: escaping ל-.env</strong> — <code>quoteIfNeeded</code> תומך ב-<code>#</code>, <code>$</code>, <code>"</code>, <code>\</code> עם round-trip נכון</li>
+    <li><strong>Sidebar RTL</strong> — מחוון פעיל ל-border-right, כיוון hover תוקן</li>
+    <li><strong>Overview RTL</strong> — anchor ציר Y, שמות ערים בעברית, tooltip מסודר</li>
+    <li><strong>Alerts</strong> — תרשים עוגה שנחתך הוחלף בפאנל מספרי (AlertCategoryStats)</li>
+    <li><strong>test-alert-all</strong> — מכסה כעת את כל 5 הקטגוריות עם topic routing</li>
+    <li><strong>test-fire truncation</strong> — הודעות ארוכות נחתכות ל-4096 תווים לפני שליחה</li>
+  </ul>
+</section>
+<section class="cl-category">
+  <h3>⚡ שיפורי ביצועים</h3>
+  <ul>
+    <li><strong>Code splitting</strong> — כל דף נטען רק בגישה ראשונה; vendor chunks מופרדים לcaching עצמאי</li>
+  </ul>
+</section>
+<section class="cl-category">
+  <h3>🔧 תחזוקה</h3>
+  <ul>
+    <li><strong>alertCategories.ts</strong> — חילוץ <code>ALERT_TYPE_CATEGORY</code> ו-<code>CATEGORY_ENV_VAR</code> לקובץ משותף; מבטל כפילות בין <code>topicRouter.ts</code> ל-<code>routingCache.ts</code></li>
+    <li><strong><code>--test-concurrency=1</code></strong> — מונע race condition ב-Node.js v25 בtest runner של wizard</li>
+  </ul>
+</section>
+<section class="cl-category">
+  <h3>🧪 בדיקות</h3>
+  <ul>
+    <li><strong>28</strong> tests חדשים לendpoints של Messages (cities, export, import, replay, test-fire, history, rollback)</li>
+    <li><strong>9</strong> tests ל-messageTemplateHistoryRepository</li>
+    <li><strong>11</strong> tests ל-routingCache</li>
+    <li><strong>4</strong> tests לquoting חדש ב-wizard env</li>
+    <li><strong>672 tests</strong> — 0 regressions</li>
+  </ul>
+</section>
+</section>
+<section class="cl-version">
+  <h2>v0.3.2 <span class="cl-date">— 2026-03-30</span></h2>
+<section class="cl-category">
+  <h3>✨ תכונות חדשות</h3>
+  <ul>
+    <li><strong>פורמט הודעות חדש</strong> — תוכן/הוראות ההתראה מופיע <strong>לפני</strong> רשימת הערים בכל סוגי ההודעות (ערוץ, DM, WhatsApp), כך שהוא גלוי בהתראת ה-push ולא קבור אחרי מאות ערים; כותרת ערוץ עברה לשתי שורות (<code>🔴 סוג\n⏰ שעה · N ערים</code>); כותרות אזור שינו מ-<code>📍</code> ל-<code>▸</code>; label מיותר <code>תוכן ההודעה:</code> הוסר מ-<code>newsFlash</code></li>
+    <li><strong>שדרוג סגנון מפה</strong> — יום: <code>light-v11</code> → <code>mapbox/streets-v12</code> (כבישים, נקודות ציון, תוויות בעברית/ערבית); לילה: <code>dark-v11</code> → <code>mapbox/navigation-night-v1</code> (ניגודיות גבוהה, קריאות משופרת בלילה)</li>
+    <li><strong>Padding אדפטיבי</strong> — מחליף את <code>padding=40</code> הקשיח: 80px ל-1–3 ערים, 50px ל-4–15, 30px ל-16+ — התראות קטנות מקבלות יותר הקשר גיאוגרפי; גדולות לא מבזבזות viewport</li>
+    <li><strong>ערובת min-span לסמני pin (Strategy 0)</strong> — ערים ללא נתוני polygon שלחו עד כה pin markers עם zoom-in קרוב מדי; כעת <code>buildMarkersWithPaddingUrl</code> מוסיף bbox בלתי-נראה ל-URL שמבטיח ~50 ק"מ הקשר (כמו <code>expandGeoJSONBounds</code> בנתיב הפוליגונים)</li>
+    <li><strong>Strategy 2.5 — איחוד פוליגונים חופפים</strong> — בהתראות עם 50+ ערים (כמו כל מרכז הארץ), גם aggressive simplification לא הספיקה כדי לשמור על URL מתחת ל-8,000 תווים, והמפה נפלה ל-pin markers; שלב חדש <code>_buildUnionedPolygonsUrl</code> משתמש ב-<code>@turf/union</code> כדי למזג את כל הפוליגונים לכמה "כתמים" מאוחדים (100 פוליגוני גוש דן → 2–4 צורות), מקצר את ה-URL פי 10–20× ומאפשר הצגת אזורים ממולאים גם בהתראות גדולות; ערים לא-סמוכות (צפון + דרום ביחד) הופכות ל-MultiPolygon ומוצגות כבלובים נפרדים</li>
+    <li><strong>GitHub Sponsors</strong> — <code>.github/FUNDING.yml</code> חדש; מאפשר כפתור "Sponsor" בעמוד הריפו; badge ❤️ Sponsor נוסף לשורת הbadges ב-README וסקשן תמיכה ייעודי</li>
+    <li><strong>דף נחיתה — סקשן "מה חדש?"</strong> — <code>landing/build.js</code> מחלץ אוטומטית את 5 השינויים האחרונים מ-<code>CHANGELOG.md</code> ומזריק אותם לדף הנחיתה; מתעדכן בכל build ללא עדכון ידני</li>
+    <li><strong>דף נחיתה — כפתור Sponsor</strong> — כפתור "❤️ תמוך בפרויקט" בפוטר דף הנחיתה מקשר ל-GitHub Sponsors</li>
+    <li><strong>דף נחיתה — סטטיסטיקות מ-README</strong> — <code>landing/build.js</code> מחלץ נתוני מפתח (ערים, אזורים, קטגוריות) מטבלת <code>## 📊 עובדות</code> ב-README; עדכון README מספיק לעדכן גם את דף הנחיתה</li>
+    <li><strong>ROADMAP.md</strong> — מסמך מפת דרכים חדש: כללי ניהול גרסאות (SemVer, שני מסלולי תיוג, checklist), מיילסטונים שהושלמו v0.1–v0.3, placeholder לגרסאות עתידיות</li>
+  </ul>
+</section>
+<section class="cl-category">
+  <h3>🐛 תיקוני באגים</h3>
+  <ul>
+    <li><strong>WhatsApp→Telegram: חיתוך caption מדיה ל-1,024 תווים</strong> — הודעות וואטסאפ עם תמונה/קובץ שגוף ההודעה שלהן ארוך מ-~960 תווים גרמו לשגיאת API (<code>message caption is too long</code>). <code>whatsappListenerService.ts</code> מיישם כעת <code>truncateToCaptionLimit()</code> על ה-caption לפני <code>sendPhoto</code>/<code>sendDocument</code></li>
+    <li><strong>Race condition בגבול 06:00/18:00</strong> — <code>getCurrentMapStyle()</code> נקרא פעמים נפרדות ב-<code>buildCacheKey()</code> וב-<code>buildMapboxUrl()</code>; התרעה שהגיעה בדיוק בגבול יכלה להישמר בקאש עם key של יום אבל עם תמונת לילה (או להיפך); כעת הסגנון מחושב פעם אחת בתחילת <code>generateMapImage()</code> ומועבר לכל ה-builders</li>
+  </ul>
+</section>
+<section class="cl-category">
+  <h3>🧪 בדיקות</h3>
+  <ul>
+    <li>+4 בדיקות <code>_buildUnionedPolygonsUrl</code> — null ל-FeatureCollection ריקה, URL עם <code>geojson(</code> (לא pin markers) לעיר בודדת, URL בתוך 8,000 תווים ל-15 ערי גוש דן חופפות, URL קצר מ-naive full-polygon encoding</li>
+  </ul>
+</section>
+<section class="cl-category">
+  <h3>🔧 תחזוקה</h3>
+  <ul>
+    <li><strong>קבוע <code>MAP_DIMENSIONS</code></strong> — מחליף את המחרוזת הכפולה <code>'800x500@2x'</code> ב-<code>buildMapboxUrl</code> ו-<code>_buildMarkersUrl</code></li>
+    <li><strong>שיפור ויזואלי של פוליגונים</strong> — <code>fill-opacity</code> 0.4 → 0.5, <code>stroke-width</code> 3 → 4 לגבולות ערים בולטים יותר</li>
+    <li><strong>תלות <code>@turf/union</code></strong> — נוספה לצד <code>@turf/bbox</code>, <code>@turf/simplify</code>, <code>@turf/helpers</code>; guard ל-single-feature (union דורשת ≥ 2 גאומטריות)</li>
+    <li><strong>README</strong> — badge גרסה, Sponsors badge, סקשן <code>## 📊 עובדות</code>, עדכון טבלת sync של דף הנחיתה</li>
+    <li><strong><code>landing/template/index.html</code></strong> — סקשן "מה חדש?", כפתור Sponsor בפוטר, <code>data-target</code> לאזורים/קטגוריות/ערים עובר מ-hardcode לplaceholders</li>
+    <li><strong><code>landing/template/style.css</code></strong> — styles ל-<code>.whats-new</code>, <code>.changelog-list</code>, <code>.sponsor-btn</code></li>
+  </ul>
+</section>
+</section>
+<section class="cl-version">
+  <h2>v0.3.1 <span class="cl-date">— 2026-03-30</span></h2>
+<section class="cl-category">
+  <h3>✨ תכונות חדשות</h3>
+  <ul>
+    <li><strong><code>TELEGRAM_TOPIC_ID_WHATSAPP</code></strong> — env var חדש; topic טלגרם ברירת-מחדל להעברות WhatsApp-to-Telegram; כאשר ל-listener אין <code>telegramTopicId</code> ספציפי, ההודעות מנותבות לתפריט זה במקום ל-chat הראשי; per-listener <code>telegramTopicId</code> ממשיך לגבור (opt-in override); ערכים לא-מספריים ו-ID=1 נדחים כמו ב-<code>topicRouter</code></li>
+    <li><strong>Wizard — RTL rendering תקין</strong> — שילוב <code>bidi-js</code> להמרת עברית לסדר visual לפני הדפסה; עובד בכל הטרמינלים כולל VS Code (שמתעלם מ-<code>\u202B</code>); <code>toVisualRtl()</code> חדש ב-<code>wizard/src/ui/rtl.ts</code></li>
+    <li><strong>Wizard — overhaul ויזואלי ו-UX</strong> — banner gradient (כחול טלגרם → ענבר) ב-boxen round; progress bar עם <code>█</code>/<code>░</code> blocks לפני כל שלב; section cards ב-boxen לפני כל קבוצת prompts; skip warnings: boxen warning card עם רשימת consequences מדויקת; <code>PROXY_URL</code> מקבל אזהרה קריטית אדומה כברירת-מחדל; completion card עם סיכום ✓/<code>→ --update</code> + פקודת deploy</li>
+  </ul>
+</section>
+<section class="cl-category">
+  <h3>🧪 בדיקות</h3>
+  <ul>
+    <li>+5 בדיקות <code>whatsappListenerService</code> — fallback topic נוצל, fallback מדולג כשלא מוגדר, listener-specific topic גובר על env var, דחיית ID=1, דחיית ערך לא-מספרי</li>
+    <li>+5 בדיקות RTL (<code>wizard/__tests__/rtl.test.ts</code>) — <code>toVisualRtl</code>, <code>containsHebrew</code>, hebrew-before-chalk ordering</li>
+  </ul>
+</section>
+</section>
+<section class="cl-version">
+  <h2>v0.3.0 <span class="cl-date">— 2026-03-30</span></h2>
+<section class="cl-category">
+  <h3>✨ תכונות חדשות</h3>
+  <ul>
+    <li><strong>האזנה לקבוצות/ערוצים WhatsApp</strong> — כלל האזנה לכל קבוצה/ערוץ: keywords, topic טלגרם, is_active</li>
+    <li><strong>סינון לפי מילות מפתח</strong> — ריק = כל הודעה; עם keywords = רק התאמות; media-only נדחות בשקט</li>
+    <li><strong>העברה אוטומטית לטלגרם</strong> — כולל thread/topic; fallback ל-<code>TELEGRAM_CHAT_ID</code>; גוף > 3900 תווים נקצץ</li>
+    <li><strong>ניהול כללים בדשבורד</strong> — דף "WA Listeners": רשימה, הוספה, עריכה, מחיקה, keyword chip input</li>
+    <li><strong>guard <code>msgFromMe</code></strong> — מניעת לופ; הבוט לא מעביר את ההודעות שלעצמו חזרה לטלגרם</li>
+    <li><strong><code>TELEGRAM_FORWARD_GROUP_ID</code></strong> — env var חדש לניתוב העברות; fallback ל-<code>TELEGRAM_CHAT_ID</code></li>
+    <li><strong>חותמת זמן יציבה</strong> — <code>alert.receivedAt</code> מוחתם בזמן הסקר; הודעות ערוכות לא מציגות שעה משתנה; timezone: <code>Asia/Jerusalem</code></li>
+    <li><strong>קריאות ערים משופרת</strong> — כותרת הודעה מציגה <code>· N ערים</code> כולל; כותרת אזור מציגה <code>(N)</code> לכל אזור</li>
+    <li><strong>מיון ערים אלפבתי</strong> — ערים ממוינות לפי <code>localeCompare('he')</code> בתוך כל אזור</li>
+    <li><strong><code>📍 ערים נוספות</code></strong> — ערים ללא נתוני polygon מקבלות כותרת מפורשת במקום להידבק לאזור הקודם</li>
+    <li><strong>pin markers fallback</strong> — כאשר <code>buildGeoJSON</code> מחזיר תוצאות ריקות (עיר ב-<code>cities.json</code> אך ללא polygon), <code>generateMapImage</code> מנסה pin markers לפני החזרת <code>null</code></li>
+    <li><strong>שרשרת עריכה מדורגת</strong> — <code>editAlert</code> מנסה <code>editMessageMedia → editMessageCaption → editMessageText</code> במקום לכשול על השגיאה הראשונה; רק <code>isMessageGoneError</code> מייצר הודעה חדשה</li>
+  </ul>
+</section>
+<section class="cl-category">
+  <h3>🔒 אבטחה</h3>
+  <ul>
+    <li><strong>Rate limiting מקיף</strong> — <code>createRateLimitMiddleware</code> factory חדש (<code>src/dashboard/rateLimiter.ts</code>), zero new dependencies; מגבלות per-IP: <code>broadcast</code> 2/min, <code>test-alert</code> 10/min, <code>delete-window</code> 5/min, <code>deploy</code> 3/hr, <code>backup</code> 5/hr, <code>CSV export</code> 10/hr, subscriber mutations 10/min</li>
+    <li><strong>Brute-force protection פרסיסטנטי</strong> — מונה ניסיונות כניסה עבר מ-<code>Map</code> בזיכרון לטבלת <code>login_attempts</code> ב-SQLite; שורד restart; header <code>Retry-After</code> נכלל בתשובת 429</li>
+    <li><strong>Bot callback cooldown</strong> — 1.5s per-user למנוי/הסרת ערים (<code>ct</code>/<code>ca</code>/<code>cr</code>), search toggle (<code>st</code>), settings (<code>rm</code>/<code>quiet:toggle</code>/<code>snooze</code>) — מונע ספאם callback</li>
+  </ul>
+</section>
+<section class="cl-category">
+  <h3>⚡ שיפורי ביצועים</h3>
+  <ul>
+    <li><strong><code>cityLookup</code> O(1)</strong> — <code>Array.find()</code> הוחלף ב-<code>Map</code> objects: <code>byNormalizedName</code>, <code>byId</code>, <code>byZone</code> — בנויות פעם אחת בטעינה; pre-sort לרשימות אזורים; FIFO cache (200 ערכים) ל-<code>searchCities()</code></li>
+    <li><strong>N+1 fix — <code>dmDispatcher</code></strong> — <code>isMuted(chat_id)</code> per-subscriber הוחלף ב-JOIN אחד עם <code>u.muted_until</code> ב-<code>getUsersForCities</code>; 1 query במקום 1+N</li>
+    <li><strong>TTL Stats Cache</strong> — <code>/health</code> 15s, <code>/overview</code> 60s, <code>/alerts/by-category</code> 5min, <code>/alerts/top-cities</code> 5min (ה-<code>json_each + GROUP BY</code> query הוא היקר ביותר)</li>
+    <li><strong>In-memory Subscription Cache</strong> — <code>cityToSubscribers</code> + <code>subscriberData</code> Maps נטענות ב-startup; write functions שומרות sync עם cache; guard <code>cacheInitialized</code> מונע דליפת state בין test suites</li>
+    <li><strong>In-memory Mapbox Usage Cache</strong> — מונה module-level; DB write לעמידות בלבד; <code>initUsageCache()</code> נקרא ב-startup</li>
+  </ul>
+</section>
+<section class="cl-category">
+  <h3>🐛 תיקוני באגים</h3>
+  <ul>
+    <li><strong>Queue log spam</strong> — אזהרת queue-depth הועברה מ-<code>drain()</code> (N+1 per task) ל-<code>enqueueAll()</code> — מופיעה פעם אחת לבאץ׳ בלבד</li>
+    <li><strong><code>paused</code> field מיותר</strong> — <code>getStats()</code> החזיר <code>paused</code> ו-<code>rateLimited</code> לאותו ערך; הוסר <code>paused</code>; <code>rateLimited</code> הוא השם הקנוני</li>
+    <li><strong>Dead <code>_format</code> param</strong> — <code>buildDmText(alert, _format)</code> לא השתמש בפרמטר השני; הוסר מהסיגנטורה ומה-call site; <code>NotificationFormat</code> import נוקה</li>
+    <li><strong><code>retry_after=0</code> guard</strong> — <code>setTimeout</code> delay מוגן עם <code>Math.max(1, retryAfter * 1000)</code> למניעת delay אפסי על ערכים תיאורטיים של <code>0</code></li>
+    <li><strong><code>validateChatId()</code> extracted</strong> — לוגיקת ולידציה chatId הוצאה מה-closure לפונקציה מיוצאת; גם תוקן comment מטעה (ה-float path תופס <code>".5"</code>, לא <code>"123.0"</code>)</li>
+  </ul>
+</section>
+<section class="cl-category">
+  <h3>🧪 בדיקות</h3>
+  <ul>
+    <li><strong>391 בדיקות</strong> (+62 מ-0.2.3):</li>
+    <li>+12 <code>dmQueue</code> / <code>dmDispatcher</code> — validateChatId (5), quiet hours via injectable <code>now</code> (1), mixed mute/active subscribers (2), getStats (2), empty enqueueAll (1), error paths (1)</li>
+    <li>+11 <code>rateLimiter</code> (6) + <code>userCooldown</code> (5)</li>
+    <li>+2 <code>auth.test.ts</code> — persistence after restart (login_attempts SQLite)</li>
+    <li>WhatsApp: <code>whatsappService</code> (30+), <code>whatsappListenerService</code> (20+), <code>whatsappBroadcaster</code> (15+), <code>whatsappFormatter</code> (15+), <code>whatsappGroupRepository</code> (10+), <code>whatsappListenerRepository</code> (10+)</li>
+    <li><code>subscriptionRepository</code> — cache init, add/remove sync, evict (20+)</li>
+    <li><code>mapboxUsageRepository</code> — cache seed, limit check, month rollover (10+)</li>
+    <li><code>cityLookup</code> — O(1) lookup, search cache (5+)</li>
+    <li><code>statsCache</code> — hit/miss/expiry (5+)</li>
+    <li><code>mapService</code> — pin markers fallback, receivedAt timestamp, edit chain (10+)</li>
+    <li><code>telegramBot</code> — city counts, alphabetical sort, noZone header (15+)</li>
+  </ul>
+</section>
+<section class="cl-category">
+  <h3>🔧 תחזוקה</h3>
+  <ul>
+    <li><strong><code>src/dashboard/rateLimiter.ts</code></strong> — factory חדש לrate limiting (reusable, per-IP)</li>
+    <li><strong><code>src/bot/userCooldown.ts</code></strong> — per-user callback cooldown Map</li>
+    <li><strong><code>src/dashboard/statsCache.ts</code></strong> — TTL cache גנרי לendpoints יקרים</li>
+    <li><strong><code>src/db/whatsappGroupRepository.ts</code></strong> + <strong><code>src/db/whatsappListenerRepository.ts</code></strong> — CRUD לטבלאות חדשות</li>
+    <li><strong><code>src/dashboard/routes/whatsapp.ts</code></strong> + <strong><code>src/dashboard/routes/whatsappListeners.ts</code></strong> — 7 endpoints חדשים</li>
+    <li><strong><code>src/whatsapp/</code></strong> — 4 קבצים חדשים: <code>whatsappService</code>, <code>whatsappListenerService</code>, <code>whatsappBroadcaster</code>, <code>whatsappFormatter</code></li>
+    <li><strong><code>dashboard-ui/src/pages/</code></strong> — שני דפים חדשים: <code>WhatsApp.tsx</code>, <code>WhatsAppListeners.tsx</code></li>
+    <li><strong><code>src/db/schema.ts</code></strong> — טבלאות חדשות: <code>login_attempts</code>, <code>whatsapp_groups</code>, <code>whatsapp_listeners</code></li>
+    <li><strong>Startup order</strong> — <code>initSubscriptionCache()</code> + <code>initUsageCache()</code> נוספו לרצף האתחול ב-<code>index.ts</code> לפני <code>initializeCache()</code></li>
+  </ul>
+</section>
+<section class="cl-category">
+  <h3>⚠️ שינויים שוברים</h3>
+  <ul>
+    <li><strong><code>WHATSAPP_ENABLED=true</code></strong> נדרש להפעלת הלקוח; ללא הגדרה — כל קוד ה-WhatsApp מושבת (callback נשמר אך event לא מופעל)</li>
+    <li><strong><code>login_attempts</code></strong> — טבלת SQLite חדשה; migration אוטומטי ב-<code>initSchema()</code></li>
+  </ul>
+</section>
+</section>
+<section class="cl-version">
+  <h2>v0.2.3 <span class="cl-date">— 2026-03-29</span></h2>
+<section class="cl-category">
+  <h3>🔒 אבטחה</h3>
+  <ul>
+    <li><strong><code>timingSafeEqual</code> להשוואת סיסמה</strong> — מניעת timing-attack על endpoint הכניסה דרך <code>node:crypto</code></li>
+    <li><strong>Session token</strong> — הכניסה מייצרת <code>randomUUID()</code> ושומרת אותו ב-cookie; הסיסמה עצמה לעולם לא יוצאת מהשרת</li>
+    <li><strong>Session persistence</strong> — טוקני סשן שמורים ב-SQLite עם TTL של 7 ימים ומתמידים לאחר restart</li>
+    <li><strong>Logout מיידי</strong> — <code>DELETE FROM sessions</code> מבטל את הטוקן באופן מיידי; אין המתנה לפקיעה</li>
+    <li><strong><code>trust proxy: 1</code></strong> — Express קורא את ה-IP הנכון מ-<code>X-Forwarded-For</code> (hop אחד — nginx) במקום IP פנימי של ה-proxy</li>
+    <li><strong>Rate limiting — 10 ניסיונות / 15 דקות לכל IP</strong> — לאחר 10 כשלונות, IP נחסם עם <code>429 Too Many Requests</code> + header <code>Retry-After</code></li>
+    <li><strong>Reset מונה לאחר כניסה מוצלחת</strong> — מונה הניסיונות הכושלים מתאפס כשמזינים סיסמה נכונה</li>
+    <li><strong>ולידציה של סיסמה ריקה</strong> — <code>400 Bad Request</code> על סיסמה ריקה / חסרה במקום השוואה מיותרת</li>
+  </ul>
+</section>
+<section class="cl-category">
+  <h3>🐛 תיקוני באגים</h3>
+  <ul>
+    <li><strong>תמיכה ב-HTTPS אותיות גדולות</strong> — regex <code>/^https?:\/\//i</code> (עם <code>i</code> flag); קודם <code>HTTPS://example.com</code> נדחה בטעות</li>
+    <li><strong>Trim לכתובת URL</strong> — <code>siteUrl.trim()</code> מנקה רווחים מוביל/נגרר לפני הולידציה</li>
+    <li><strong>כפילות DMs בעריכת הודעה</strong> — במסלול העריכה, המנויים מקבלים רק את הערים <strong>החדשות</strong> (<code>dmCities</code>) ולא את כל הרשימה המאוחדת</li>
+    <li><strong>Phantom test</strong> — בדיקת <code>message:text handler</code> תוקנה עם assertion מפורש שמוודא שאין reply כשלא במצב חיפוש</li>
+  </ul>
+</section>
+<section class="cl-category">
+  <h3>🧪 בדיקות</h3>
+  <ul>
+    <li><strong><code>auth.test.ts</code></strong> — בדיקות חדשות: cookie flags (<code>httpOnly</code>, <code>sameSite: strict</code>), סיסמה ריקה (400), שדה סיסמה חסר (400), שני סשנים במקביל (logout של אחד לא מבטל את השני), header <code>Retry-After</code> על 429, rate limit per-IP עצמאי</li>
+    <li><strong><code>landing.test.ts</code></strong> — בדיקות חדשות: <code>siteUrl</code> עם רווחים (trim), פרוטוקול <code>HTTPS://</code> (i flag)</li>
+  </ul>
+</section>
+<section class="cl-category">
+  <h3>🔧 תחזוקה</h3>
+  <ul>
+    <li><code>src/services/dmDispatcher.ts</code> — הוסר import מיותר של <code>formatAlertMessage</code> שלא היה בשימוש</li>
+    <li><code>src/alertHandler.ts</code> — הוסף הסבר ל-<code>notifySubscribers({ ...alert, cities: dmCities })</code> המבהיר את ההבדל בין <code>alert</code> ל-<code>finalAlert</code></li>
+  </ul>
+</section>
+</section>
+<section class="cl-version">
+  <h2>v0.2.2 <span class="cl-date">— 2026-03-29</span></h2>
+<section class="cl-category">
+  <h3>✨ תכונות חדשות</h3>
+  <ul>
+    <li><strong>KPI trend indicators</strong> — "התראות היום" ו-"התראות 7 ימים" מציגים ▲/▼ עם delta מול אתמול / שבוע קודם</li>
+    <li><strong>Skeleton loading</strong> — גרפים מציגים <code><Skeleton></code> בזמן טעינה ראשונית במקום לקפוץ ל-<code>EmptyState</code></li>
+    <li><strong>אגדת גרף</strong> — <code><Legend></code> עם תוויות עבריות לפי קטגוריה בגרף הפילוח השבועי</li>
+    <li><strong>Empty state</strong> — הבחנה בין "אין תוצאות עבור הסינון הנוכחי" (כשסינון פעיל) לבין "אין התראות לתקופה זו" (כשהתקופה ריקה)</li>
+    <li><strong>עמוד תבניות</strong> — <code>תבניות</code> בתפריט הצד מאפשר לערוך לכל סוג התראה: אמוג׳י, כותרת עברית, וקידומת הוראות</li>
+    <li><strong>שינויים מיידיים</strong> — אין צורך ב-restart; הבוט טוען את הקאש מחדש אחרי כל שמירה</li>
+    <li><strong>איפוס לברירת מחדל</strong> — כפתור Reset מחזיר כל שורה לברירת המחדל שבקוד</li>
+    <li><strong>סגנון יום/לילה</strong> — <code>light-v11</code> בשעות 06:00–18:00 ו-<code>dark-v11</code> ב-18:00–06:00 (שעון ישראל, כולל DST)</li>
+    <li><strong>הקשר גיאוגרפי לעיר בודדת</strong> — <code>expandGeoJSONBounds()</code> מוסיף padding שקוף כשהאזור הפגוע < ~50 ק"מ</li>
+    <li><strong>Padding על כל URL</strong> — <code>?padding=40</code> מונע גזירת polygons בקצות התמונה</li>
+    <li><strong>מרקרים צבעוניים לפי סוג</strong> — צבע הסיכה נגזר מסוג ההתראה (<code>getAlertColor()</code>) במקום אדום קבוע</li>
+    <li><strong>Polygon מודגש</strong> — <code>fill-opacity</code> 0.3 → 0.4, <code>stroke-width</code> 2 → 3</li>
+  </ul>
+</section>
+<section class="cl-category">
+  <h3>🐛 תיקוני באגים</h3>
+  <ul>
+    <li><strong>Recharts Hebrew RTL</strong> — <code>HebrewYAxisTick</code> עם <code>direction="rtl"</code> על SVG <code><text></code>; ללא זאת שמות ערים עבריים הוצגו הפוך</li>
+    <li><strong><code>alertsYesterday</code> query</strong> — תוקן מחלון rolling של 24 שעות ל-גבולות חצות קלנדריות (<code>date('now','-1 day')</code> עד <code>date('now')</code>); הבחנה עקבית עם <code>alertsToday</code></li>
+    <li><strong>פילטר קטגוריה שבור</strong> — <code>?type=drills</code> לא התאים לעולם (DB שומר <code>missilesDrill</code>, <code>earthQuakeDrill</code> וכו׳); הוחלף ב-<code>?category=drills</code> שנגזר מ-<code>ALERT_TYPE_CATEGORY</code></li>
+    <li><strong>קאש תמונות עמיד לאתחול</strong> — הוספת טבלת <code>mapbox_image_cache</code> ב-SQLite; <code>initializeCache()</code> טוען תמונות שמורות ב-startup; מונה הדשבורד עקבי עם חיוב Mapbox</li>
+    <li><strong><code>toVisualRtl()</code> במקום <code>wrapRtl()</code></strong> — <code>\u202B</code> (RLE embedding) לא נתמך ב-VS Code terminal; <code>toVisualRtl()</code> ממיר לסדר ויזואלי דרך <code>bidi-js</code> (Unicode TR#9) ומציג נכון בכל הטרמינלים</li>
+  </ul>
+</section>
+<section class="cl-category">
+  <h3>🧪 בדיקות</h3>
+  <ul>
+    <li>142 בדיקות חדשות: <code>mapboxCacheRepository</code> (13), <code>templateCache</code> (16), dashboard routes <code>/messages</code> (17), <code>mapService</code> — <code>getCurrentMapStyle</code> (5) + <code>expandGeoJSONBounds</code> (3) + colored markers (2), ועדכון assertions ל-<code>toVisualRtl()</code> ב-<code>logger.test.ts</code></li>
+  </ul>
+</section>
+<section class="cl-category">
+  <h3>🔧 תחזוקה</h3>
+  <ul>
+    <li><code>src/config/alertTypeDefaults.ts</code> — חילוץ <code>ALERT_TYPE_HE</code> / <code>ALERT_TYPE_EMOJI</code> / <code>DEFAULT_INSTRUCTIONS_PREFIX</code> מ-<code>telegramBot.ts</code> לקובץ ייעודי</li>
+    <li><code>src/config/templateCache.ts</code> — קאש in-memory עם <code>Object.freeze()</code> + reload אטומי</li>
+    <li><code>src/db/mapboxCacheRepository.ts</code> — repository pattern לטבלת <code>mapbox_image_cache</code></li>
+    <li><code>src/db/messageTemplateRepository.ts</code> — repository pattern לטבלת <code>message_templates</code></li>
+  </ul>
+</section>
+</section>
+<section class="cl-version">
+  <h2>v0.2.1 <span class="cl-date">— 2026-03-29</span></h2>
+<section class="cl-category">
+  <h3>✨ תכונות חדשות</h3>
+  <ul>
+    <li><strong>תיקון BiDi בטרמינל</strong> — מחרוזות עבריות המשולבות עם מספרים (כגון "פורט 3000", "כל 2 שניות") נעטפות ב-Unicode RLE embedding (<code>\u202B...\u202C</code>) ומוצגות כעת בסדר הנכון בכל הטרמינלים</li>
+    <li><strong>startup box מעוגל</strong> — פינות <code>╭╮╰╯</code>, רוחב דינמי לפי רוחב הטרמינל</li>
+    <li><strong>לינקים לחיצים</strong> — Health Server ו-Dashboard מציגים OSC 8 hyperlinks (VS Code terminal, iTerm2)</li>
+    <li><strong>tag badges</strong> — תגי לוג צבעוניים עם רקע לכל מקור (<code>Poller</code>, <code>AlertHandler</code>, <code>DM</code> וכו')</li>
+    <li><strong>section divider</strong> — קו הפרדה עם תאריך בין ה-startup box לשורות הלוג</li>
+    <li><strong>מונה התראות היום</strong> — startup box מציג כמה התראות נשלחו היום (מה-DB)</li>
+  </ul>
+</section>
+<section class="cl-category">
+  <h3>🐛 תיקוני באגים</h3>
+  <ul>
+    <li><strong>יצירת <code>data/</code> אוטומטית</strong> — <code>schema.ts</code> יוצר את תיקיית <code>data/</code> אם אינה קיימת לפני פתיחת ה-DB; מונע <code>SQLITE_CANTOPEN</code> בהתקנות רעננות שבהן התיקייה מוסרת ע"י gitignore</li>
+    <li><strong>ניווט אזורים stateless</strong> — <code>zoneHandler.ts</code> מקודד כעת את ה-context המלא (<code>superRegionIdx:zoneIdx:page</code>) ישירות ב-callback_data של כל כפתור (<code>zp:</code>, <code>ct:</code>, <code>ca:</code>, <code>cr:</code>); הכפתורים עובדים לאחר restart הבוט ללא state בצד שרת; <code>ZoneState Map</code> הוסר לחלוטין</li>
+    <li><strong><code>settingsHandler.ts</code></strong> — 13 קריאות <code>console.error</code> הוחלפו ב-<code>log()</code> מ-<code>logger.ts</code></li>
+    <li><strong><code>dmDispatcher.ts</code></strong> — פרמטר <code>enqueueAll</code> להזרקה בבדיקות (ברירת מחדל: <code>dmQueue</code>) — מאפשר בדיקות יחידה ללא module mocking</li>
+    <li><strong>Recharts</strong> — נוסף <code>orientation="right"</code> ל-<code><YAxis></code> ב-Overview ו-Alerts; הציר מופיע כעת בצד הנכון בממשק RTL</li>
+    <li><strong>Sidebar</strong> — תוקן ל-<code>border-l-2</code> (הקצה הפנימי מול אזור התוכן) במקום <code>border-r-2</code></li>
+    <li><strong>Pagination</strong> — חצי ניווט הוחלפו (RTL-correct)</li>
+    <li><strong>Framer Motion</strong> — כיוון <code>x</code> entry animation תוקן לערכים חיוביים לכניסה מימין (RTL-correct)</li>
+  </ul>
+</section>
+<section class="cl-category">
+  <h3>🧪 בדיקות</h3>
+  <ul>
+    <li>13 בדיקות חדשות ל-<code>notifySubscribers()</code> — אינטגרציה עם DB אמיתי + enqueueAll מוזרק</li>
+    <li>5 בדיקות לפילטר <code>snooze</code> / <code>muted_until</code> ב-<code>dmDispatcher</code></li>
+    <li>2 בדיקות לפילטר <code>quiet hours</code> בשליחה לתור</li>
+  </ul>
+</section>
+<section class="cl-category">
+  <h3>🔧 תחזוקה</h3>
+  <ul>
+    <li><code>src/loggerUtils.ts</code> — קובץ helpers חדש (<code>wrapRtl</code>, <code>osc8Link</code>, <code>boxWidth</code>, <code>hr</code>, <code>containsHebrew</code>)</li>
+    <li><code>src/db/alertHistoryRepository.ts</code> — הוספת <code>countAlertsToday()</code></li>
+    <li><strong>CI: <code>--test-concurrency=1</code></strong> — בדיקות core רצות סדרתית כדי למנוע race conditions בין <code>mapboxUsageRepository.test.ts</code> ו-<code>mapService.test.ts</code> שחולקים DB על הדיסק</li>
+    <li><strong>CI: <code>wizard-check</code></strong> — בדיקת קיום <code>wizard/package-lock.json</code> הועברה מ-job-level <code>if</code> לשלב ייעודי (hashFiles() זמין רק ב-step context, לא ב-job context)</li>
+    <li><code>.worktrees/</code> נוסף ל-<code>.gitignore</code></li>
+  </ul>
+</section>
+</section>
+<section class="cl-version">
+  <h2>v0.2.0 <span class="cl-date">— 2026-03-29</span></h2>
+<section class="cl-category">
+  <h3>✨ תכונות חדשות</h3>
+  <ul>
+    <li><strong>חבילה קלה</strong>: <code>wizard/</code> נפרד עם 2 תלויות בלבד (<code>@clack/prompts</code> + <code>chalk</code>) — במקום ~180 חבילות עם native addons</li>
+    <li><strong>חוויה עשירה</strong>: ממשק @clack עם צבעים, select menus, progress badges, spinners</li>
+    <li><strong>ולידציה חיה</strong>: בדיקת פורמט token / chat-id / mapbox / URL בכל שדה בזמן ההקלדה</li>
+    <li><strong>Update mode</strong> (<code>--update</code>): זיהוי .env קיים, multiselect של שדות לעדכון, merge אימות</li>
+    <li><strong>Verify mode</strong> (<code>--verify</code>): בדיקת תקינות TELEGRAM_BOT_TOKEN + MAPBOX_ACCESS_TOKEN מול API</li>
+    <li><strong>RTL בטרמינל</strong>: עברית ו-LTR על שורות נפרדות, <code>visibleWidth</code> Unicode-aware לחישוב padding</li>
+    <li><strong>Glassmorphism design system</strong>: CSS tokens ב-<code>:root {}</code> — <code>--color-glass</code>, <code>--color-border-glass</code>, <code>--color-glow-*</code></li>
+    <li><strong>כל 7 הדפים עוצבו מחדש</strong> עם <code>framer-motion</code> animations + RTL תקין (Overview, Alerts, Subscribers, Operations, Settings, LandingPage, Login)</li>
+    <li><strong>Component library</strong> (<code>dashboard-ui/src/components/ui/</code>): <code>GlassCard</code>, <code>AnimatedCounter</code>, <code>LiveDot</code>, <code>PageTransition</code></li>
+    <li><strong>RTL fixes</strong>: chevron sidebar (right/left מתהפכים נכון), slide direction (<code>x</code> הוא כיוון פיזי, לא לוגי), text alignment</li>
+    <li><strong><code>StatusStrip</code></strong>: isLoading state — מונע false-positive ״מחובר״ לפני שהבדיקה הראשונה חזרה</li>
+    <li><strong><code>GlowVariant</code> type</strong>: exported ומשותף — exhaustiveness נאכף ב-compile time ב-<code>KpiCard</code></li>
+    <li><strong>Mutation patterns</strong>: <code>onMutate</code> + <code>onSettled</code> תוקנו בכל פעולה destructive (delete, patch, deploy)</li>
+    <li><strong><code>src/logger.ts</code></strong> חדש: <code>log(level, tag, msg)</code> עם chalk v4 — levels: <code>info/success/warn/error</code></li>
+    <li><strong><code>logStartupHeader(version, services[])</code></strong>: טבלת סטטוס בעת הפעלה — Health Server, Alert Poller, Dashboard, DB</li>
+    <li><strong><code>logAlert(type, cities, action)</code></strong>: תיבת ⚡ מעוצבת לכל שליחה/עריכה עם סוג + רשימת ערים</li>
+    <li>כל <code>console.log/warn/error</code> בקוד הפרודקשן הוחלפו ב-<code>log()</code> מובנה</li>
+    <li>עיצוב SaaS מודרני עם hero section, feature grid, CTA</li>
+    <li>RTL מלא, Heebo font, Telegram blue theme, dark mode</li>
+    <li>Error handling, accessibility, ו-CSS structure תוקנו</li>
+  </ul>
+</section>
+<section class="cl-category">
+  <h3>⚠️ שינויים שוברים</h3>
+  <ul>
+    <li><code>root/package.json</code> קיבל <code>"private": true</code> — הבוט עצמו לא מפורסם יותר ל-npm</li>
+    <li><code>bin/setup.js</code> הוסר — הוחלף ב-<code>wizard/src/</code></li>
+    <li>שם חבילת wizard נשמר: <code>@haoref-boti/pikud-haoref-bot</code></li>
+  </ul>
+</section>
+<section class="cl-category">
+  <h3>🧪 בדיקות</h3>
+  <ul>
+    <li>76 בדיקות ל-<code>wizard/</code> (TDD)</li>
+    <li><code>test(logger)</code>: suite מלאה ל-<code>log</code>, <code>logStartupHeader</code>, <code>logAlert</code></li>
+    <li><code>test(alertHandler)</code>: stdout מדוכא בבדיקות — פלט CI נקי יותר</li>
+  </ul>
+</section>
+<section class="cl-category">
+  <h3>🔧 תחזוקה</h3>
+  <ul>
+    <li><code>publish-npm</code> job הוחלף ב-<code>publish-wizard</code> — trigger: <code>wizard-v*</code> tags (עצמאי מ-<code>v*</code>)</li>
+    <li>CI עודכן ל-4 jobs מקבילים: <code>test</code>, <code>dashboard-build</code>, <code>docker-build</code>, <code>wizard-check</code></li>
+    <li><code>wizard-check</code> מותנה: <code>hashFiles('wizard/package-lock.json') != ''</code> — מדלג כשאין <code>wizard/</code></li>
+    <li>תיקון: <code>DB_PATH=:memory:</code> הועבר לבלוק <code>env:</code> — YAML compact mapping תקין</li>
+    <li>תיקון: <code>FORCE_JAVASCRIPT_ACTIONS_TO_NODE24</code> נוסף לכל ה-jobs</li>
+  </ul>
+</section>
+</section>
+<section class="cl-version">
+  <h2>v0.1.6 <span class="cl-date">— 2026-03-29</span></h2>
+<section class="cl-category">
+  <h3>✨ תכונות חדשות</h3>
+  <ul>
+    <li><code>npx @haoref-boti/pikud-haoref-bot</code> — wizard אינטראקטיבי להגדרת הבוט</li>
+    <li>שואל על <code>TELEGRAM_BOT_TOKEN</code>, <code>TELEGRAM_CHAT_ID</code>, <code>MAPBOX_ACCESS_TOKEN</code> (חובה)</li>
+    <li>תמיכה בדגלים: <code>--token</code>, <code>--chat-id</code>, <code>--mapbox</code>, <code>--dashboard</code>, <code>--proxy</code>, <code>--invite-link</code>, <code>--full</code>, <code>--output</code></li>
+    <li>בחירת אופן הרצה: Docker (מומלץ) או Node.js</li>
+    <li>החבילה מפורסמת ב-npm: <code>@haoref-boti/pikud-haoref-bot</code></li>
+  </ul>
+</section>
+<section class="cl-category">
+  <h3>🔧 תחזוקה</h3>
+  <ul>
+    <li><code>publish-npm</code> job נוסף ל-<code>release.yml</code> — פרסום אוטומטי ל-npm בכל tag גרסה</li>
+    <li><code>bin/setup.js</code> נוסף לפרויקט (plain JS, ללא תלויות)</li>
+    <li><code>package.json</code>: נוספו שדות <code>bin</code>, <code>files</code>, <code>publishConfig</code></li>
+    <li>דף הנחיתה עודכן: כפתור "הרץ instance משלך" מציג <code>npx @haoref-boti/pikud-haoref-bot</code></li>
+    <li>גריד "שתי דרכים" אוזן לגובה שווה בין שני הכרטיסים</li>
+  </ul>
+</section>
+</section>
+<section class="cl-version">
+  <h2>v0.1.5 <span class="cl-date">— 2026-03-28</span></h2>
+<section class="cl-category">
+  <h3>✨ תכונות חדשות</h3>
+  <ul>
+    <li>שרת Express חדש על פורט <code>DASHBOARD_PORT</code> (ברירת מחדל: 4000) — מופעל רק כאשר <code>DASHBOARD_SECRET</code> מוגדר</li>
+    <li>אימות מאובטח עם עוגיית <code>httpOnly</code>, <code>timingSafeEqual</code> למניעת timing attacks</li>
+    <li>API routes: <code>/api/stats</code>, <code>/api/subscribers</code>, <code>/api/operations</code>, <code>/api/settings</code>, <code>/api/landing</code></li>
+    <li>React SPA (Vite + Tailwind v4 RTL) עם 7 דפים: Overview, Alerts, Subscribers, Operations, Settings, LandingPage, Login</li>
+    <li>Command Palette (⌘K), sidebar RTL, status strip עם polling חי</li>
+    <li>ייצוא מנויים כ-CSV, ניהול תור שליחה DM, ניהול alert window</li>
+    <li>שידור ידני של התראה, endpoint ל-deploy של landing page דרך GitHub Actions</li>
+    <li>ניהול הגדרות key-value בטבלת <code>settings</code> ב-SQLite</li>
+    <li>זמן מקלט (<code>⏱ X שנ׳</code>) מוצג בהודעות DM קצרות — כמינימום הזמן בין ערי המנוי</li>
+    <li>דחיית התראות (<code>snooze</code>) — המשתמש יכול להשתיק DMs לפרק זמן מוגדר</li>
+    <li>עמוד <code>/mycities</code> מציג כעת תוויות אזור לכל עיר</li>
+    <li><code>/start</code> בצ'אטי קבוצה מחזיר תשובה (במקום להתעלם)</li>
+    <li><code>/start</code> בתפריט הראשי מציג את ההתראה האחרונה</li>
+    <li><code>/history</code> מציג שעה מוחלטת לצד הזמן היחסי (לפני X שעות)</li>
+    <li>פוליגונים חדים יותר לערים</li>
+    <li>צבע פוליגון לפי סוג ההתראה (אדום לביטחוני, כתום לטבעי, צהוב לסביבתי וכו׳)</li>
+    <li>הזרקת סקריפט Google Analytics 4 דרך <code>GA4_MEASUREMENT_ID</code> env var</li>
+    <li><code><!-- GA4_PLACEHOLDER --></code> ב-template — מוחלף בזמן בניה</li>
+  </ul>
+</section>
+<section class="cl-category">
+  <h3>⚠️ שינויים שוברים</h3>
+  <ul>
+    <li>משתנה סביבה חדש <code>DASHBOARD_SECRET</code> נדרש להפעלת הדשבורד (ללא הגדרה — לא נטען)</li>
+    <li>משתנה סביבה חדש <code>DASHBOARD_PORT</code> (ברירת מחדל: 4000)</li>
+    <li>עמודת <code>muted_until TEXT</code> נוספה לטבלת <code>users</code> — migration אוטומטי בהפעלה</li>
+  </ul>
+</section>
+<section class="cl-category">
+  <h3>🔧 תחזוקה</h3>
+  <ul>
+    <li><code>initSchema(database)</code> מופרד מ-<code>initDb()</code> לבדיקות עם DB בזיכרון</li>
+    <li><code>addColumnIfMissing()</code> helper מאחד את הלוגיקה של ALTER TABLE migrations</li>
+    <li><code>DB_PATH=:memory:</code> ב-<code>npm test</code> לבדיקות בזיכרון ללא קובץ</li>
+    <li><code>build:dashboard</code> ו-<code>dev:dashboard</code> נוספו ל-<code>package.json</code></li>
+    <li>Docker ו-CI מבנים את ה-dashboard-ui כחלק מהבנייה הכוללת</li>
+  </ul>
+</section>
+</section>
+<section class="cl-version">
+  <h2>v0.1.4 <span class="cl-date">— 2026-03-28</span></h2>
+<section class="cl-category">
+  <h3>✨ תכונות חדשות</h3>
+  <ul>
+    <li>טבלת <code>alert_history</code> ב-SQLite — כל התראה שנשלחת נשמרת עם type, ערים, instructions ו-fired_at</li>
+    <li>ניקוי אוטומטי של רשומות ישנות מ-7 ימים בכל הפעלה</li>
+    <li><code>alertHistoryRepository</code> — <code>insertAlert</code>, <code>getRecentAlerts(hours)</code>, <code>getAlertsForCity</code>, <code>getAlertsForCities</code></li>
+    <li>סיכום 24 שעות אחרונות לפי קטגוריה (🔴 ביטחוני, 🌍 טבע, ☢️ סביבתי, 🔵 תרגילים, 📢 כללי)</li>
+    <li>ספירה אישית: כמה מהתראות נגעו לאזורים שהמשתמש רשום אליהם</li>
+    <li><code>/history</code> — 10 התראות אחרונות לערים שהמשתמש רשום אליהן</li>
+    <li><code>/history [עיר]</code> — 10 התראות אחרונות לעיר ספציפית</li>
+    <li>fallback לכלל-ארצי כשאין מנויים, עם טיפ להצטרפות</li>
+    <li>זמן יחסי בעברית: "עכשיו" / "לפני X דקות" / "לפני X שעות" / "לפני X ימים"</li>
+    <li>כל מנוי מקבל רק ערים שרשום אליהן (<code>matchedCities</code>) — לא את כל ערי ההתראה</li>
+    <li><code>buildDmText</code> — helper לבניית הודעה לפי פורמט + type</li>
+    <li><code>shouldSkipForQuietHours</code> — מסנן DMs מסוג drills ו-general בשעות הלילה</li>
+    <li>התראות קריטיות (missiles, earthquake, hazmat) תמיד עוברות</li>
+    <li>לחצן toggle בתפריט <code>/settings</code>: 🔕 שעות שקט: כבוי / פעיל ✓</li>
+    <li><code>GET /health</code> — מחזיר JSON: <code>uptime</code>, <code>lastAlertAt</code>, <code>lastPollAt</code>, <code>alertsToday</code></li>
+    <li>פורט מוגדר דרך <code>HEALTH_PORT</code> (ברירת מחדל: 3000)</li>
+    <li><code>updateLastAlertAt()</code> נקרא אוטומטית בכל התראה חדשה</li>
+    <li>טבלת <code>alert_window</code> ב-SQLite — מצב חלון ההתראות הפעיל נשמר על הדיסק</li>
+    <li><code>loadActiveMessages()</code> בהפעלה — משחזר מצב מ-DB, מונע הודעות כפולות בערוץ לאחר restart</li>
+    <li><code>upsertWindow</code>, <code>deleteWindow</code>, <code>loadAllWindows</code>, <code>clearAllWindows</code> ב-<code>alertWindowRepository</code></li>
+    <li><code>DmQueue</code> — תור שליחה עם מגבלת מקביליות מוגדרת (ברירת מחדל: 10)</li>
+    <li>backoff אוטומטי לשגיאות 429: מחזיר לראש התור ומשהה לפי <code>retry_after</code></li>
+    <li>ניהול משתמשים חסומים: מסיר אוטומטית ממסד הנתונים</li>
+    <li><code>notifySubscribers</code> הפכה ל-sync — השליחה אסינכרונית בתור</li>
+  </ul>
+</section>
+<section class="cl-category">
+  <h3>🔧 תחזוקה</h3>
+  <ul>
+    <li><code>ALERT_TYPE_CATEGORY</code> ו-<code>AlertCategory</code> מיוצאים מ-<code>topicRouter.ts</code> לשימוש ב-statsHandler ו-dmDispatcher</li>
+    <li><code>User</code> interface מכיל <code>quiet_hours_enabled: number</code></li>
+    <li><code>getUsersForCities</code> מחזיר <code>matchedCities[]</code> + <code>quiet_hours_enabled</code> לכל מנוי</li>
+  </ul>
+</section>
+</section>
+<section class="cl-version">
+  <h2>v0.1.3 <span class="cl-date">— 2026-03-27</span></h2>
+<section class="cl-category">
+  <h3>✨ תכונות חדשות</h3>
+  <ul>
+    <li>דף נחיתה עברי RTL ב-<code>landing/</code> עם עיצוב dark tactical theme (Heebo + Telegram blue)</li>
+    <li>Hero עם לוגו, אינדיקטור live ירוק, ושני CTAs: "הצטרף לערוץ" + "הרץ instance משלך"</li>
+    <li>גריד פיצ'רים — מסונכרן אוטומטית מטבלת <code>## ✨ תכונות</code> ב-README.md</li>
+    <li>תצוגה מקדימה של 5 צילומי מסך עם scroll-snap אופקי</li>
+    <li>Footer עם גרסה ותאריך בנייה שמוזרקים אוטומטית מ-<code>package.json</code></li>
+    <li>דף חי: https://yonatan2021.github.io/pikud-haoref-bot-landing/</li>
+    <li><code>deploy-landing.yml</code> — בכל push ל-<code>main</code>: מריץ <code>node landing/build.js</code>, דוחף <code>landing/dist/</code> לריפו <code>pikud-haoref-bot-landing</code></li>
+    <li>SSH deploy key (<code>LANDING_DEPLOY_KEY</code>) מאפשר דחיפה מ-CI ללא אישור ידני</li>
+  </ul>
+</section>
+<section class="cl-category">
+  <h3>⚡ שיפורי ביצועים</h3>
+  <ul>
+    <li><strong>לוגו</strong>: קימפוס 674KB → 18KB (37×) דרך <code>sips</code>; גרסה מקוצרת שמורה ב-<code>landing/template/logo.jpg</code></li>
+    <li><strong>צילומי מסך</strong>: קימפוס 340KB → 29-31KB (11×) לכל תמונה; גרסאות מקוצרות ב-<code>landing/template/screenshots/</code></li>
+  </ul>
+</section>
+<section class="cl-category">
+  <h3>🔧 תחזוקה</h3>
+  <ul>
+    <li><code>landing/dist/</code> מכוסה ע"י כלל <code>dist/</code> הקיים ב-<code>.gitignore</code></li>
+  </ul>
+</section>
+</section>
+<section class="cl-version">
+  <h2>v0.1.2 <span class="cl-date">— 2026-03-27</span></h2>
+<section class="cl-category">
+  <h3>✨ תכונות חדשות</h3>
+  <ul>
+    <li><code>buildNewsFlashDmMessage()</code> — הודעות DM ל-newsFlash מציגות שמות אזורים במקום ערים (<code>📢 הודעה מיוחדת | גליל עליון, קריות</code>)</li>
+    <li><code>alert.instructions</code> מוצג בשורה נפרדת כשקיים</li>
+    <li>שימוש ב-<code>Set</code> לדדופ אזורים ב-<code>buildNewsFlashDmMessage</code></li>
+    <li><code>buildZonedCityList()</code> — מקבץ ערי התראה לפי אזור עם כותרת <code>📍 <b>Zone</b></code> לכל אזור</li>
+    <li>ערים ללא match ב-<code>cities.json</code> נצמדות כרשימה שטוחה בסוף</li>
+    <li>סדר אזורים לפי סדר הופעה ראשון במערך הערים של ההתראה</li>
+    <li>שלב חדש: פישוט פוליגונים אגרסיבי (tolerance 0.01) לפני מעבר ל-bounding box</li>
+    <li>שלב חדש: pin markers קומפקטיים (~30 תווים לעיר) כ-fallback לפני bounding box</li>
+    <li><code>truncateToCaptionLimit()</code> — חיתוך caption ב-1,024 תווים בגבול section אחרון שלם למניעת שבירת HTML</li>
+    <li><code>normalizeCityName()</code> — trim, כיווץ רווחים כפולים, ואיחוד כל גרסאות המקף (<code>-</code>, <code>–</code>, <code>—</code>) ל-<code>" - "</code> עם רווח עקבי</li>
+  </ul>
+</section>
+<section class="cl-category">
+  <h3>⚡ שיפורי ביצועים</h3>
+  <ul>
+    <li><strong>Docker layer cache</strong>: הסרת <code>.version</code> מ-<code>package.json</code> לפני <code>npm ci</code> — מייצב את שכבת ה-cache ומונע invalidation על bump גרסה בלבד</li>
+  </ul>
+</section>
+<section class="cl-category">
+  <h3>🐛 תיקוני באגים</h3>
+  <ul>
+    <li><strong>TypeScript strict</strong>: תיקון cast של <code>mock.fn</code> דרך <code>unknown</code> כדי לעמוד בבדיקת overlap קפדנית של TypeScript</li>
+  </ul>
+</section>
+<section class="cl-category">
+  <h3>🔧 תחזוקה</h3>
+  <ul>
+    <li>הוספת לוגו הפרויקט ל-README</li>
+  </ul>
+</section>
+</section>
+<section class="cl-version">
+  <h2>v0.1.1 <span class="cl-date">— 2026-03-27</span></h2>
+<section class="cl-category">
+  <h3>✨ תכונות חדשות</h3>
+  <ul>
+    <li>חילוץ לוגיקת עיבוד ההתראה מ-<code>index.ts</code> לקובץ ייעודי <code>alertHandler.ts</code> עם dependency injection מלא</li>
+    <li>כל התלויות (מפה, שליחה, עריכה, מעקב, DM) מוזרקות כפרמטרים — מאפשר בדיקות יחידה מלאות ללא side effects</li>
+    <li><code>alertHelpers.ts</code>: עזרים <code>isDrillAlert</code> / <code>shouldSkipMap</code> מחולצים לקובץ נפרד לשימוש חוזר ובדיקות</li>
+    <li>התראות מאותו סוג שמגיעות בתוך חלון הזמן (ברירת מחדל: 120 שניות) <strong>עורכות</strong> את ההודעה הקיימת בטלגרם במקום לשלוח הודעה חדשה</li>
+    <li>ערים מתמזגות (union) להודעה המעודכנת עם מפה מעודכנת</li>
+    <li>fallback לשליחת הודעה חדשה אם העריכה נכשלת (למשל הודעה ישנה מדי)</li>
+    <li>שינוי גודל החלון דרך <code>ALERT_UPDATE_WINDOW_SECONDS</code></li>
+    <li>מונה בקשות חודשי נשמר ב-SQLite (טבלת <code>mapbox_usage</code>, מפתח: <code>YYYY-MM</code>)</li>
+    <li>מגבלה חודשית קשיחה דרך <code>MAPBOX_MONTHLY_LIMIT</code> — fallback לטקסט בלבד כשמגיעים למגבלה</li>
+    <li>מטמון FIFO בזיכרון (ברירת מחדל: 20 ערכים) לפי fingerprint — cache hit לא צורך מכסה</li>
+    <li>המונה מתעדכן רק בעת תגובת API מוצלחת</li>
+    <li><code>newsFlash</code> תמיד נשלח כטקסט בלבד (ללא מפה)</li>
+    <li>תרגילים נשלחים כטקסט בלבד כאשר <code>MAPBOX_SKIP_DRILLS=true</code></li>
+    <li><code>Dockerfile</code> רב-שלבי: builder עם Native addon ו-runner קל עם non-root user</li>
+    <li><strong>CI</strong> (<code>.github/workflows/ci.yml</code>): type-check + בדיקות + אימות בנייה — פועל על כל push/PR</li>
+    <li><strong>Release</strong> (<code>.github/workflows/release.yml</code>): בנייה ודחיפה ל-<code>ghcr.io</code> וגם ל-Docker Hub — פועל על push ל-<code>main</code></li>
+  </ul>
+</section>
+<section class="cl-category">
+  <h3>🐛 תיקוני באגים</h3>
+  <ul>
+    <li><strong>newsFlash ארצי</strong>: מניעת re-emission בעת התראות מקבילות — <code>citylessFingerprints</code> מנוהל בנפרד ולא נמחק על ידי לולאת הפקיעה הרגילה</li>
+    <li><strong><code>noop</code> callback</strong>: הוספת handler מפורש — ללא זה, כפתורי תצוגה (ספירת עמודים) הציגו ספינר טעינה בלתי-נגמר בטלגרם</li>
+    <li><strong>DM notifications</strong>: התראות DM לא נשלחו כאשר עריכת ההודעה החזירה "message is not modified" — מטופל כ-no-op תקין, DM נשלח בכל מקרה</li>
+    <li><strong>Mapbox counter isolation</strong>: הפרדת עדכון המונה מיצירת התמונה — מונע desync בין מונה SQLite לתמונה שנוצרה בעת כשל</li>
+    <li><strong>Error handling</strong>: guard בהפעלה (missing env vars), לוג מלא של שגיאות, אזהרת מכסה Mapbox, shallow copy ב-tracker למניעת mutation</li>
+  </ul>
+</section>
+<section class="cl-category">
+  <h3>🧪 בדיקות</h3>
+  <ul>
+    <li>בדיקות guard לפרמטר <code>windowMs</code> (ערך אפס וערך סביבה לא חוקי)</li>
+    <li>בדיקות מלאות ל-<code>alertWindowTracker</code></li>
+    <li>בדיקות ל-<code>alertHandler</code> ו-<code>alertHelpers</code> (כולל <code>isDrillAlert</code>, <code>shouldSkipMap</code>)</li>
+    <li>בדיקות ל-<code>mapService</code>: <code>selectEditMethod</code>, גודל מטמון מקסימלי, cache hit, מגבלה חודשית</li>
+    <li><code>closeDb()</code> מיוצא לאיפוס ה-singleton בין קבצי בדיקות — מונע stale handle בעת ריצת כל הבדיקות יחד</li>
+  </ul>
+</section>
+<section class="cl-category">
+  <h3>🔧 תחזוקה</h3>
+  <ul>
+    <li>הרחבת <code>.gitignore</code>: קבצי WAL של SQLite, וריאנטים של <code>.env</code>, לוגים, כיסוי קוד, <code>tsbuildinfo</code></li>
+    <li><strong>Node.js 24</strong>: עדכון GitHub Actions runners ל-Node 24</li>
+    <li><strong>לוגים באנגלית</strong>: תרגום כל הודעות ה-console log מעברית לאנגלית לאחידות</li>
+  </ul>
+</section>
+</section>
+<section class="cl-version">
+  <h2>v0.1.0 <span class="cl-date">— 2026-03-20</span></h2>
+<section class="cl-category">
+  <h3>🎉 גרסה ראשונה פומבית</h3>
+  <ul>
+    <li>סקירת API של פיקוד העורף כל 2 שניות</li>
+    <li>מפות Mapbox עם פוליגוני ערים מדויקים + fallback לבounding box ולטקסט</li>
+    <li>ניתוב 5 קטגוריות נושאים בטלגרם: ביטחוני, טבע, סביבתי, תרגילים, כללי</li>
+    <li>DM אישי למנויים לפי ערים ואזורים (6 אזורי-על, 28 אזורים)</li>
+    <li>Deduplication חכם לפי fingerprint — פוקע כשהתרעה נעלמת, לא רק ב-all-clear</li>
+    <li>תפיסת newsFlash ארצי (ללא ערים) שהספרייה מדלגת עליו</li>
+    <li>תמיכה ב-Proxy לשימוש מחוץ לישראל</li>
+    <li>בוט גראמי לניהול מנויים: <code>/start</code>, <code>/add</code>, <code>/zones</code>, <code>/mycities</code>, <code>/settings</code></li>
+  </ul>
+</section>
+</section>
+  </article>
+</main>
+
+<footer class="footer footer-legal" role="contentinfo">
+  <div class="footer-grid">
+    <section>
+      <h3>מוצר</h3>
+      <a href="/">בית</a>
+      <a href="/guides/">מדריכים</a>
+      <a href="/faq/">שאלות נפוצות</a>
+      <a href="/changelog/">יומן שינויים</a>
+    </section>
+    <section>
+      <h3>משפטי</h3>
+      <a href="/privacy/">מדיניות פרטיות</a>
+      <a href="/terms/">תנאי שימוש</a>
+      <a href="/accessibility/">הצהרת נגישות</a>
+      <a href="/security/">אבטחה וחשיפה</a>
+    </section>
+    <section>
+      <h3>קהילה</h3>
+      <a href="https://github.com/yonatan2021/pikud-haoref-bot" rel="noopener" target="_blank">GitHub</a>
+      <a href="https://github.com/yonatan2021/pikud-haoref-bot/issues" rel="noopener" target="_blank">דיווח על באג</a>
+      <a href="https://github.com/yonatan2021/pikud-haoref-bot/blob/main/LICENSE" rel="noopener" target="_blank">רישיון Apache 2.0</a>
+      <a href="https://github.com/sponsors/yonatan2021" rel="noopener" target="_blank" class="sponsor-link">❤️ תמוך בפרויקט</a>
+    </section>
+  </div>
+  <div class="footer-meta">
+    <span>גרסה 0.5.3</span> · <span>נבנה 17 באפריל 2026</span>
+    <p class="footer-disclaimer">
+      &#x26A0;&#xFE0F; פרוייקט אישי (לא מסחרי) שאני מנגיש לציבור בהתנדבות. ללא אחריות משום סוג.
+      המקור המוסמך והרשמי לזמני אמת הוא <b>אפליקציית פיקוד העורף</b> והצפירות —
+      הישמעו להוראותיה בראש ובראשונה.
+      השירות תלוי בגורמים חיצוניים (פיקוד העורף, Telegram, WhatsApp, Mapbox, GitHub)
+      ועלול להפסיק לפעול ללא התראה.
+    </p>
+  </div>
+</footer>
+
+  <script>
+    // ── 1. Cursor spotlight ─────────────────────────────────────────────────
+    document.addEventListener('mousemove', function(e) {
+      document.documentElement.style.setProperty('--cursor-x', e.clientX + 'px');
+      document.documentElement.style.setProperty('--cursor-y', e.clientY + 'px');
+    });
+
+    // ── 2. Scroll reveal (.reveal elements) ─────────────────────────────────
+    var revealObserver = new IntersectionObserver(function(entries) {
+      entries.forEach(function(e) {
+        if (e.isIntersecting) {
+          e.target.classList.add('visible');
+          revealObserver.unobserve(e.target);
+        }
+      });
+    }, { threshold: 0.05 }); /* reduced from 0.1 — prevents tall sections failing to trigger on short mobile viewports */
+
+    document.querySelectorAll('.reveal').forEach(function(el) {
+      revealObserver.observe(el);
+    });
+
+    // ── 3. Feature cards stagger reveal ─────────────────────────────────────
+    var featureObserver = new IntersectionObserver(function(entries) {
+      entries.forEach(function(e) {
+        if (e.isIntersecting) {
+          e.target.classList.add('visible');
+          featureObserver.unobserve(e.target);
+        }
+      });
+    }, { threshold: 0.08 });
+
+    document.querySelectorAll('.feature-card').forEach(function(el, i) {
+      // Cap stagger at 300ms — prevents 1.3s wait for last card in a 19-card grid
+      el.style.setProperty('--reveal-delay', Math.min(i * 0.07, 0.3) + 's');
+      featureObserver.observe(el);
+    });
+
+    // ── 4. Count-up animation (stats strip + live counters) ─────────────────
+    var countObserver = new IntersectionObserver(function(entries) {
+      entries.forEach(function(e) {
+        if (!e.isIntersecting) return;
+        var el = e.target;
+        var target = parseInt(el.dataset.target);
+        if (!target || el.classList.contains('counted')) return;
+        el.classList.add('counted');
+        var startTime = null;
+        var duration = 1400;
+        var animate = function(ts) {
+          if (!startTime) startTime = ts;
+          var progress = Math.min((ts - startTime) / duration, 1);
+          var eased = 1 - Math.pow(1 - progress, 3);
+          el.textContent = Math.floor(eased * target).toLocaleString('he-IL');
+          if (progress < 1) {
+            requestAnimationFrame(animate);
+          } else {
+            el.textContent = target.toLocaleString('he-IL');
+            el.classList.add('stat-counted');
+            setTimeout(function() { el.classList.remove('stat-counted'); }, 600);
+          }
+        };
+        requestAnimationFrame(animate);
+      });
+    }, { threshold: 0.5 });
+
+    document.querySelectorAll('[data-target]').forEach(function(el) {
+      countObserver.observe(el);
+    });
+
+    // ── 5. How It Works — connector line animation on scroll ────────────────
+    var howSection = document.querySelector('.how-it-works');
+    if (howSection) {
+      var howObserver = new IntersectionObserver(function(entries) {
+        if (entries[0].isIntersecting) {
+          howSection.classList.add('animated');
+          howObserver.disconnect();
+        }
+      }, { threshold: 0.3 });
+      howObserver.observe(howSection);
+    }
+
+    // ── 6. Mobile: feature tabs, show-more, compact cards ─────────────────
+    var isMobile = window.matchMedia('(max-width: 900px)');
+
+    // 6a. Tab switcher for feature panels
+    var tabs = document.querySelectorAll('.features-tab');
+    var panels = [document.getElementById('panel-user'), document.getElementById('panel-dev')];
+
+    function activateTab(selectedTab) {
+      tabs.forEach(function(tab) {
+        var isSelected = tab === selectedTab;
+        tab.classList.toggle('features-tab--active', isSelected);
+        tab.setAttribute('aria-selected', isSelected);
+      });
+      var activeId = selectedTab.getAttribute('aria-controls');
+      panels.forEach(function(panel) {
+        if (!panel) return;
+        var show = panel.id === activeId;
+        panel.hidden = !show;
+        panel.style.display = show ? '' : 'none';
+      });
+    }
+
+    function initMobileTabs() {
+      if (isMobile.matches) {
+        // On mobile: show only user panel initially
+        if (panels[1]) { panels[1].hidden = true; panels[1].style.display = 'none'; }
+      } else {
+        // On desktop: show both, remove hidden
+        panels.forEach(function(p) { if (p) { p.hidden = false; p.style.display = ''; } });
+      }
+    }
+
+    tabs.forEach(function(tab) {
+      tab.addEventListener('click', function() { activateTab(tab); });
+    });
+
+    initMobileTabs();
+    isMobile.addEventListener('change', initMobileTabs);
+
+    // 6b. "Show more" buttons for feature grids
+    document.querySelectorAll('.features-show-more').forEach(function(btn) {
+      var grid = btn.previousElementSibling;
+      if (!grid || !grid.classList.contains('features-grid')) return;
+      var total = grid.querySelectorAll('.feature-card').length;
+      var hiddenCount = Math.max(0, total - 6);
+      if (hiddenCount > 0) {
+        btn.textContent = 'הצג עוד (' + hiddenCount + ')';
+      }
+      btn.addEventListener('click', function() {
+        var expanded = grid.classList.toggle('expanded');
+        btn.setAttribute('aria-expanded', expanded);
+        btn.textContent = expanded ? 'הצג פחות' : 'הצג עוד (' + hiddenCount + ')';
+      });
+    });
+
+    // 6c. Compact cards — tap to expand description on mobile
+    document.querySelectorAll('.feature-card').forEach(function(card) {
+      card.addEventListener('click', function() {
+        if (!isMobile.matches) return;
+        card.classList.toggle('expanded');
+      });
+    });
+
+    // 6d. What's New show-more
+    var clBtn = document.querySelector('.changelog-show-more');
+    if (clBtn) {
+      var wnGrid = document.querySelector('.wn-grid');
+      clBtn.addEventListener('click', function() {
+        if (!wnGrid) return;
+        var expanded = wnGrid.classList.toggle('expanded');
+        clBtn.setAttribute('aria-expanded', expanded);
+        clBtn.textContent = expanded ? 'הצג פחות' : 'עוד עדכונים';
+      });
+    }
+
+    // 6e. FAB auto-hide near CTA section
+    var fab = document.querySelector('.mobile-fab');
+    var ctaSection = document.querySelector('.cta-section');
+    if (fab && ctaSection) {
+      var fabObserver = new IntersectionObserver(function(entries) {
+        fab.classList.toggle('mobile-fab--hidden', entries[0].isIntersecting);
+      }, { threshold: 0.2 });
+      fabObserver.observe(ctaSection);
+    }
+
+    // ── 7. Interactive city preview — custom dropdown ────────────────────────
+    var cityBubble     = document.getElementById('city-preview-bubble');
+    var previewCity    = document.getElementById('preview-city');
+    var previewZone    = document.getElementById('preview-zone');
+    var previewSeconds = document.getElementById('preview-seconds');
+    var previewBar     = document.getElementById('preview-bar');
+
+    function buildBar(seconds) {
+      var bar = '';
+      for (var b = 0; b < 5; b++) { bar += '🟥'; }
+      return bar;
+    }
+
+    function showCityPreview(val) {
+      if (!val) { if (cityBubble) cityBubble.hidden = true; return; }
+      var parts = val.split('|');
+      var city = parts[0] || '';
+      var zone = parts[1] || '';
+      var secs = parseInt(parts[2], 10) || 45;
+      if (previewCity)    previewCity.textContent    = city;
+      if (previewZone)    previewZone.textContent    = zone;
+      if (previewSeconds) previewSeconds.textContent = String(secs);
+      if (previewBar)     previewBar.textContent     = buildBar(secs) + ' ▸ ' + zone + ' (1)';
+      if (cityBubble) {
+        cityBubble.hidden = false;
+        cityBubble.classList.add('city-preview-bubble--animate');
+        setTimeout(function() { cityBubble.classList.remove('city-preview-bubble--animate'); }, 400);
+      }
+    }
+
+    var cityDropdown     = document.getElementById('city-dropdown');
+    var cityDropdownBtn  = document.getElementById('city-dropdown-btn');
+    var cityDropdownList = document.getElementById('city-dropdown-list');
+    var cityDropdownVal  = document.getElementById('city-dropdown-value');
+
+    function closeCityDd() { if (cityDropdown) cityDropdown.setAttribute('aria-expanded','false'); }
+    function openCityDd()  { if (cityDropdown) cityDropdown.setAttribute('aria-expanded','true');  }
+
+    if (cityDropdownBtn) {
+      cityDropdownBtn.addEventListener('click', function(e) {
+        e.stopPropagation();
+        cityDropdown.getAttribute('aria-expanded') === 'true' ? closeCityDd() : openCityDd();
+      });
+    }
+
+    if (cityDropdownList) {
+      cityDropdownList.querySelectorAll('.city-dropdown-item').forEach(function(item) {
+        item.addEventListener('click', function() {
+          var val  = item.dataset.value;
+          var text = item.textContent.trim();
+          if (cityDropdownVal) cityDropdownVal.textContent = val ? text : '— בחר עיר —';
+          cityDropdownList.querySelectorAll('.city-dropdown-item').forEach(function(i) {
+            i.classList.remove('city-dropdown-item--selected');
+            i.setAttribute('aria-selected', 'false');
+          });
+          item.classList.add('city-dropdown-item--selected');
+          item.setAttribute('aria-selected', 'true');
+          closeCityDd();
+          showCityPreview(val);
+        });
+      });
+    }
+
+    document.addEventListener('click', function(e) {
+      if (cityDropdown && !cityDropdown.contains(e.target)) closeCityDd();
+    });
+    document.addEventListener('keydown', function(e) {
+      if (e.key === 'Escape' && cityDropdown && cityDropdown.getAttribute('aria-expanded') === 'true') {
+        closeCityDd();
+        if (cityDropdownBtn) cityDropdownBtn.focus();
+      }
+    });
+
+    // ── Keyboard navigation for city dropdown ────────────────────────────────
+    if (cityDropdownBtn) {
+      cityDropdownBtn.addEventListener('keydown', function(e) {
+        if (e.key === 'ArrowDown' || e.key === 'Enter' || e.key === ' ') {
+          e.preventDefault();
+          openCityDd();
+          var firstItem = cityDropdownList
+            ? cityDropdownList.querySelector('.city-dropdown-item:not(.city-dropdown-item--placeholder)')
+            : null;
+          if (firstItem) {
+            firstItem.setAttribute('tabindex', '0');
+            firstItem.focus();
+          }
+        }
+      });
+    }
+
+    if (cityDropdownList) {
+      var allItems = Array.from(
+        cityDropdownList.querySelectorAll('.city-dropdown-item:not(.city-dropdown-item--placeholder)')
+      );
+      allItems.forEach(function(item, idx) {
+        item.setAttribute('tabindex', '-1');
+        item.addEventListener('keydown', function(e) {
+          if (e.key === 'ArrowDown') {
+            e.preventDefault();
+            var next = allItems[idx + 1];
+            if (next) { next.setAttribute('tabindex', '0'); next.focus(); }
+          } else if (e.key === 'ArrowUp') {
+            e.preventDefault();
+            if (idx === 0) {
+              if (cityDropdownBtn) cityDropdownBtn.focus();
+            } else {
+              var prev = allItems[idx - 1];
+              if (prev) { prev.setAttribute('tabindex', '0'); prev.focus(); }
+            }
+          } else if (e.key === 'Enter' || e.key === ' ') {
+            e.preventDefault();
+            item.click();
+            if (cityDropdownBtn) cityDropdownBtn.focus();
+          } else if (e.key === 'Escape') {
+            e.preventDefault();
+            closeCityDd();
+            if (cityDropdownBtn) cityDropdownBtn.focus();
+          }
+        });
+        /* Reset tabindex on blur so only one item is reachable at a time */
+        item.addEventListener('blur', function() {
+          item.setAttribute('tabindex', '-1');
+        });
+      });
+    }
+
+    // ── 8a. Screenshots — touch pause/resume ─────────────────────────────────
+    var screenshotsTrack = document.querySelector('.screenshots-track');
+    if (screenshotsTrack) {
+      screenshotsTrack.addEventListener('touchstart', function() {
+        screenshotsTrack.style.animationPlayState = 'paused';
+      }, { passive: true });
+      screenshotsTrack.addEventListener('touchend', function() {
+        screenshotsTrack.style.animationPlayState = '';
+      }, { passive: true });
+    }
+
+    // ── 8. FAQ chat bubbles ───────────────────────────────────────────────────
+    document.querySelectorAll('.faq-item').forEach(function(item) {
+      var btn = item.querySelector('.faq-q');
+      var ans = item.querySelector('.faq-a');
+      if (!btn || !ans) return;
+      btn.addEventListener('click', function() {
+        var isOpen = btn.getAttribute('aria-expanded') === 'true';
+        // Close all others
+        document.querySelectorAll('.faq-item').forEach(function(other) {
+          var ob = other.querySelector('.faq-q');
+          var oa = other.querySelector('.faq-a');
+          if (ob && oa && other !== item) {
+            ob.setAttribute('aria-expanded', 'false');
+            ob.classList.remove('faq-q--open');
+            oa.setAttribute('aria-hidden', 'true');
+            oa.style.maxHeight = '';
+            oa.style.opacity = '';
+          }
+        });
+        // Toggle this one
+        var opening = !isOpen;
+        btn.setAttribute('aria-expanded', String(opening));
+        btn.classList.toggle('faq-q--open', opening);
+        ans.setAttribute('aria-hidden', String(!opening));
+        if (opening) {
+          ans.style.maxHeight = ans.scrollHeight + 'px';
+          ans.style.opacity = '1';
+        } else {
+          ans.style.maxHeight = '';
+          ans.style.opacity = '';
+        }
+      });
+    });
+
+    // ── 9. Command palette ────────────────────────────────────────────────────
+    var cmdOverlay = document.getElementById('cmd-overlay');
+    var cmdInput   = document.getElementById('cmd-input');
+    var cmdList    = document.getElementById('cmd-list');
+    var cmdClose   = document.getElementById('cmd-close');
+    var cmdTrigger = document.getElementById('cmd-trigger');
+
+    function openCmdPalette() {
+      if (!cmdOverlay) return;
+      cmdOverlay.hidden = false;
+      filterCmdItems('');
+      setTimeout(function() { if (cmdInput) cmdInput.focus(); }, 50);
+    }
+
+    function closeCmdPalette() {
+      if (!cmdOverlay) return;
+      cmdOverlay.hidden = true;
+      if (cmdInput) cmdInput.value = '';
+      setCmdActive(null);
+    }
+
+    function filterCmdItems(query) {
+      if (!cmdList) return;
+      var items = cmdList.querySelectorAll('.cmd-item');
+      var q = query.replace(/^\//, '').toLowerCase();
+      items.forEach(function(item) {
+        var cmd = (item.dataset.cmd || '').toLowerCase();
+        var desc = (item.querySelector('.cmd-desc') || {}).textContent || '';
+        item.style.display = (!q || cmd.includes(q) || desc.includes(q)) ? '' : 'none';
+      });
+      // Auto-select first visible
+      var first = cmdList.querySelector('.cmd-item:not([style*="none"])');
+      setCmdActive(first || null);
+    }
+
+    var activeCmd = null;
+    function setCmdActive(el) {
+      if (activeCmd) activeCmd.classList.remove('cmd-item--active');
+      activeCmd = el;
+      if (activeCmd) activeCmd.classList.add('cmd-item--active');
+    }
+
+    function activateCmd(el) {
+      if (!el) return;
+      closeCmdPalette();
+      var target = el.dataset.target;
+      var href   = el.dataset.href;
+      var isExternal = el.dataset.external === 'true';
+      if (target) {
+        var section = document.querySelector(target);
+        if (section) section.scrollIntoView({ behavior: 'smooth', block: 'start' });
+      } else if (href) {
+        if (isExternal) {
+          window.open(href, '_blank', 'noopener,noreferrer');
+        } else {
+          window.location.href = href;
+        }
+      }
+    }
+
+    if (cmdInput) {
+      cmdInput.addEventListener('input', function() { filterCmdItems(cmdInput.value); });
+      cmdInput.addEventListener('keydown', function(e) {
+        var items = Array.prototype.slice.call(
+          cmdList ? cmdList.querySelectorAll('.cmd-item:not([style*="none"])') : []
+        );
+        var idx = items.indexOf(activeCmd);
+        if (e.key === 'ArrowDown') {
+          e.preventDefault();
+          setCmdActive(items[Math.min(idx + 1, items.length - 1)]);
+        } else if (e.key === 'ArrowUp') {
+          e.preventDefault();
+          setCmdActive(items[Math.max(idx - 1, 0)]);
+        } else if (e.key === 'Enter') {
+          e.preventDefault();
+          activateCmd(activeCmd);
+        } else if (e.key === 'Escape') {
+          closeCmdPalette();
+        }
+      });
+    }
+
+    if (cmdList) {
+      cmdList.querySelectorAll('.cmd-item').forEach(function(item) {
+        item.addEventListener('mouseenter', function() { setCmdActive(item); });
+        item.addEventListener('click', function() { activateCmd(item); });
+      });
+    }
+
+    if (cmdClose)   { cmdClose.addEventListener('click', closeCmdPalette); }
+    if (cmdTrigger) { cmdTrigger.addEventListener('click', openCmdPalette); }
+
+    if (cmdOverlay) {
+      cmdOverlay.addEventListener('click', function(e) {
+        if (e.target === cmdOverlay) closeCmdPalette();
+      });
+    }
+
+    // "/" key opens palette (not when inside an input/textarea/select)
+    document.addEventListener('keydown', function(e) {
+      if (e.key === '/' && !['INPUT','TEXTAREA','SELECT'].includes(document.activeElement.tagName)) {
+        e.preventDefault();
+        openCmdPalette();
+      }
+      if (e.key === 'Escape' && cmdOverlay && !cmdOverlay.hidden) {
+        closeCmdPalette();
+      }
+    });
+
+    // ── 11. Copy-to-clipboard (npx command) ──────────────────────────────────
+    document.querySelectorAll('.copy-btn').forEach(function(btn) {
+      btn.addEventListener('click', function() {
+        var text = btn.dataset.copy;
+        var apply = function() {
+          btn.classList.add('copied');
+          setTimeout(function() { btn.classList.remove('copied'); }, 2000);
+        };
+        if (navigator.clipboard && navigator.clipboard.writeText) {
+          navigator.clipboard.writeText(text).then(apply).catch(function(err) {
+            console.warn('[copy-btn] Clipboard API write failed:', err);
+          });
+        } else {
+          var ta = document.createElement('textarea');
+          ta.value = text;
+          ta.style.cssText = 'position:fixed;opacity:0;';
+          document.body.appendChild(ta);
+          ta.select();
+          try {
+            document.execCommand('copy');
+            apply();
+          } catch(err) {
+            console.warn('[copy-btn] execCommand copy failed:', err);
+          }
+          document.body.removeChild(ta);
+        }
+      });
+    });
+
+    // ── 12. Alert Simulator v2 — Telegram-clone bubble ───────────────────────
+    (function() {
+      var SIM_DATA = {
+        'חיפה':        { zone: 'חיפה',              cities: ['חיפה','קריית ים','קריית אתא','חוף הכרמל'],       seconds: 90 },
+        'תל אביב':     { zone: 'גוש דן',             cities: ['תל אביב','רמת גן','גבעתיים','בני ברק'],          seconds: 90 },
+        'באר שבע':     { zone: 'שפלת יהודה',         cities: ['באר שבע','אשקלון','קריית גת','נתיבות'],          seconds: 60 },
+        'אשדוד':       { zone: 'שפלת יהודה',         cities: ['אשדוד','אשקלון','קריית מלאכי','גן יבנה'],        seconds: 45 },
+        'ירושלים':     { zone: 'ירושלים',            cities: ['ירושלים','מבשרת ציון','מעלה אדומים','בית שמש'],  seconds: 90 },
+        'נתניה':       { zone: 'השרון',               cities: ['נתניה','רעננה','הוד השרון','כפר סבא'],            seconds: 90 },
+        'פתח תקווה':   { zone: 'גוש דן',             cities: ['פתח תקווה','ראש העין','אלעד','רמלה'],             seconds: 90 },
+        'ראשון לציון': { zone: 'גוש דן',             cities: ['ראשון לציון','חולון','בת ים','אור יהודה'],        seconds: 90 },
+        'חדרה':        { zone: 'חדרה ועמק יזרעאל',   cities: ['חדרה','פרדס חנה','זיכרון יעקב','בנימינה'],        seconds: 90 },
+        'אשקלון':      { zone: 'שפלת יהודה',         cities: ['אשקלון','שקמים','מיגדל הנגב','ברכיה'],           seconds: 30 },
+        'עכו':         { zone: 'חיפה',               cities: ['עכו','נהריה','כרמיאל','מעלות-תרשיחא'],           seconds: 90 },
+        'נצרת':        { zone: 'הגליל',              cities: ['נצרת','עפולה','יזרעאל','שפרעם'],                  seconds: 90 },
+        'אילת':        { zone: 'אילת',               cities: ['אילת'],                                           seconds: 180 },
+        'מודיעין':     { zone: 'ירושלים',            cities: ['מודיעין','מכבים-רעות','שוהם','אבן יהודה'],        seconds: 90 },
+        'רחובות':      { zone: 'גוש דן',             cities: ['רחובות','נס ציונה','יבנה','גדרה'],                seconds: 90 },
+        'כפר סבא':     { zone: 'השרון',              cities: ['כפר סבא','רעננה','אלקנה','עמנואל'],               seconds: 90 },
+        'טבריה':       { zone: 'כינרת',              cities: ['טבריה','כינרת','מגדל','גינוסר'],                  seconds: 90 },
+        'צפת':         { zone: 'הגליל העליון',        cities: ['צפת','מירון','ביריה','עמוקה'],                    seconds: 90 },
+        'דימונה':      { zone: 'הנגב',               cities: ['דימונה','ערד','ירוחם','מצפה רמון'],               seconds: 60 },
+        'קריית שמונה': { zone: 'הגליל העליון',        cities: ['קריית שמונה','מטולה','מנרה','כפר בלום'],          seconds: 30 }
+      };
+      var CAT_EMOJI = '🔴';
+      var CAT_NAME  = 'ירי רקטות וטילים';
+      var CAT_INSTR = '\u{1F6E1} להיכנס למרחב מוגן ולהישאר בו 10 דקות';
+
+      var simInput    = document.getElementById('sim-city-input');
+      var simSugList  = document.getElementById('sim-city-suggestions');
+      var simRun      = document.getElementById('sim-run');
+      var simPulse    = document.getElementById('sim-pulse');
+      var tgBubble    = document.getElementById('tg-bubble');
+      var tgHeader    = document.getElementById('tg-alert-header');
+      var tgZones     = document.getElementById('tg-alert-zones');
+      var tgCities    = document.getElementById('tg-alert-cities');
+      var tgInstr     = document.getElementById('tg-alert-instructions');
+      var tgCountdown = document.getElementById('tg-countdown-value');
+      var tgFill      = document.getElementById('tg-countdown-fill');
+      var tgTime      = document.getElementById('tg-bubble-time');
+
+      if (!simInput) return;
+
+      var allCities = Object.keys(SIM_DATA);
+      var selectedCity = null;
+      var cdTimer = null;
+
+      function fmtMmSs(s) {
+        var m = Math.floor(s / 60), sec = s % 60;
+        return (m < 10 ? '0' + m : String(m)) + ':' + (sec < 10 ? '0' + sec : String(sec));
+      }
+
+      function buildSuggestions(q) {
+        if (!simSugList) return;
+        while (simSugList.firstChild) simSugList.removeChild(simSugList.firstChild);
+        var matches = q
+          ? allCities.filter(function(c) { return c.indexOf(q) !== -1; })
+          : ['חיפה','תל אביב','באר שבע','אשדוד'];
+        if (!matches.length) { simSugList.hidden = true; return; }
+        matches.slice(0, 6).forEach(function(city) {
+          var li = document.createElement('li');
+          li.className = 'sim-suggestion';
+          li.setAttribute('role', 'option');
+          li.textContent = city;
+          li.addEventListener('mousedown', function(ev) {
+            ev.preventDefault();
+            selectCity(city);
+          });
+          simSugList.appendChild(li);
+        });
+        simSugList.hidden = false;
+      }
+
+      function selectCity(city) {
+        selectedCity = city;
+        if (simInput) simInput.value = city;
+        if (simSugList) simSugList.hidden = true;
+      }
+
+      simInput.addEventListener('input',  function() { buildSuggestions(simInput.value.trim()); });
+      simInput.addEventListener('focus',  function() { buildSuggestions(simInput.value.trim()); });
+      simInput.addEventListener('blur',   function() { setTimeout(function() { if (simSugList) simSugList.hidden = true; }, 150); });
+      simInput.addEventListener('keydown', function(ev) {
+        if (ev.key === 'Enter') {
+          if (simSugList && !simSugList.hidden) {
+            var first = simSugList.querySelector('.sim-suggestion');
+            if (first) selectCity(first.textContent.trim());
+          }
+          runSim();
+        }
+      });
+
+      // Wire static suggestion items already in HTML
+      if (simSugList) {
+        simSugList.querySelectorAll('.sim-suggestion').forEach(function(li) {
+          li.addEventListener('mousedown', function(ev) {
+            ev.preventDefault();
+            selectCity(li.dataset.city || li.textContent.trim());
+          });
+        });
+      }
+
+      function runSim() {
+        var city = selectedCity || (simInput ? simInput.value.trim() : '') || 'תל אביב';
+        var data = SIM_DATA[city] || SIM_DATA['תל אביב'];
+
+        if (tgHeader) {
+          while (tgHeader.firstChild) tgHeader.removeChild(tgHeader.firstChild);
+          tgHeader.appendChild(document.createTextNode(CAT_EMOJI + ' '));
+          var b = document.createElement('b');
+          b.textContent = CAT_NAME;
+          tgHeader.appendChild(b);
+        }
+        if (tgZones) {
+          while (tgZones.firstChild) tgZones.removeChild(tgZones.firstChild);
+          var bz = document.createElement('b');
+          bz.textContent = '\u25B8 ' + data.zone;
+          tgZones.appendChild(bz);
+        }
+        if (tgCities) tgCities.textContent = data.cities.join(' \u00B7 ');
+        if (tgInstr)  tgInstr.textContent  = CAT_INSTR;
+
+        var now = new Date();
+        var hh = now.getHours(), mm = now.getMinutes();
+        if (tgTime) tgTime.textContent = (hh < 10 ? '0' + hh : hh) + ':' + (mm < 10 ? '0' + mm : mm);
+
+        var total = data.seconds;
+        var remaining = total;
+        if (tgCountdown) tgCountdown.textContent = fmtMmSs(remaining);
+        if (tgFill) {
+          tgFill.style.transition = 'none';
+          tgFill.style.transform  = 'scaleX(1)';
+        }
+        if (simPulse) simPulse.hidden = false;
+        if (tgBubble) tgBubble.hidden = false;
+
+        requestAnimationFrame(function() {
+          if (tgFill) {
+            tgFill.style.transition = 'transform ' + total + 's linear';
+            tgFill.style.transform  = 'scaleX(0)';
+          }
+        });
+
+        if (cdTimer) clearInterval(cdTimer);
+        cdTimer = setInterval(function() {
+          remaining = Math.max(0, remaining - 1);
+          if (tgCountdown) tgCountdown.textContent = fmtMmSs(remaining);
+          if (remaining === 0) clearInterval(cdTimer);
+        }, 1000);
+      }
+
+      if (simRun) simRun.addEventListener('click', runSim);
+    })();
+
+    // ── 13. Light/Dark theme toggle ───────────────────────────────────────────
+    document.addEventListener('click', function(ev) {
+      var btn = ev.target.closest('[data-theme-toggle]');
+      if (!btn) return;
+      var cur = document.documentElement.dataset.theme;
+      var prefersDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
+      var next = cur === 'dark' ? 'light' : cur === 'light' ? 'dark' : (prefersDark ? 'light' : 'dark');
+      document.documentElement.dataset.theme = next;
+      try { localStorage.setItem('theme', next); } catch(e) {}
+    });
+
+  </script>
+
+  <!-- All routes for command palette — injected at build time -->
+  <script>window.__ROUTES = [{"slug":"/","title":"התראות פיקוד העורף"},{"slug":"/changelog/","title":"יומן שינויים"},{"slug":"/faq/","title":"שאלות נפוצות"},{"slug":"/privacy/","title":"מדיניות פרטיות"},{"slug":"/terms/","title":"תנאי שימוש"},{"slug":"/accessibility/","title":"הצהרת נגישות"},{"slug":"/security/","title":"אבטחה וחשיפה אחראית"},{"slug":"/guides/","title":"מדריכים"},{"slug":"/guides/telegram/","title":"רישום בטלגרם"},{"slug":"/guides/whatsapp/","title":"הצטרפות ל-WhatsApp"},{"slug":"/guides/commands/","title":"19 פקודות הבוט"},{"slug":"/guides/onboarding/","title":"onboarding מפורט"},{"slug":"/guides/self-host/","title":"הפעלה עצמית"}];</script>
+
+  <script>
+    // ── 14. Command Palette — routes extension ────────────────────────────────
+    (function() {
+      var cmdList = document.getElementById('cmd-list');
+      if (!cmdList || !window.__ROUTES) return;
+      window.__ROUTES.forEach(function(route) {
+        var li = document.createElement('li');
+        li.className = 'cmd-item cmd-item--route';
+        li.setAttribute('data-href', route.slug);
+        li.setAttribute('data-cmd', route.title);
+        var iconSpan = document.createElement('span');
+        iconSpan.className = 'cmd-icon';
+        iconSpan.textContent = '\uD83D\uDD17';
+        var labelSpan = document.createElement('span');
+        labelSpan.className = 'cmd-label';
+        labelSpan.textContent = '\u05E0\u05D5\u05D5\u05D8: ' + route.title;
+        var descSpan = document.createElement('span');
+        descSpan.className = 'cmd-desc';
+        descSpan.textContent = route.slug;
+        li.appendChild(iconSpan);
+        li.appendChild(labelSpan);
+        li.appendChild(descSpan);
+        li.addEventListener('mouseenter', function() {
+          if (typeof setCmdActive === 'function') setCmdActive(li);
+        });
+        li.addEventListener('click', function() {
+          if (typeof closeCmdPalette === 'function') closeCmdPalette();
+          window.location.href = route.slug;
+        });
+        cmdList.appendChild(li);
+      });
+    })();
+  </script>
+
+</body>
+</html>

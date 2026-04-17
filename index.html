@@ -1,32 +1,99 @@
 <!DOCTYPE html>
 <html lang="he" dir="rtl">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <meta name="description" content="התראות פיקוד העורף בזמן אמת — ישירות לטלגרם ול-WhatsApp, עם מפות, ניתוב נושאים ו-DM אישי לפי ערים. קוד פתוח, Apache 2.0." />
-  <title>בוט התראות פיקוד העורף</title>
+  <!-- Flash prevention: apply saved theme before first paint -->
+  <script>(function(){try{var t=localStorage.getItem('theme');if(t==='light'||t==='dark'){document.documentElement.dataset.theme=t;}}catch(e){}}());</script>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>התראות פיקוד העורף — ישירות לטלגרם ו-WhatsApp</title>
+  <meta name="description" content="בוט קוד-פתוח להתראות פיקוד העורף בזמן אמת. טלגרם, WhatsApp, DM אישי לפי ערים, מפות, 28 אזורים.">
+  <link rel="canonical" href="https://yonatan2021.github.io/pikud-haoref-bot-landing/">
+  <link rel="alternate" hreflang="he" href="https://yonatan2021.github.io/pikud-haoref-bot-landing/">
+  
 
-  <link rel="preconnect" href="https://fonts.googleapis.com" />
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link
-    href="https://fonts.googleapis.com/css2?family=Heebo:wght@400;500;700;800;900&display=swap"
-    rel="stylesheet"
-  />
+  <!-- Open Graph -->
+  <meta property="og:type" content="website">
+  <meta property="og:locale" content="he_IL">
+  <meta property="og:site_name" content="התראות פיקוד העורף">
+  <meta property="og:title" content="התראות פיקוד העורף — ישירות לטלגרם ו-WhatsApp">
+  <meta property="og:description" content="בוט קוד-פתוח להתראות פיקוד העורף בזמן אמת. טלגרם, WhatsApp, DM אישי לפי ערים, מפות, 28 אזורים.">
+  <meta property="og:url" content="https://yonatan2021.github.io/pikud-haoref-bot-landing/">
+  <meta property="og:image" content="https://yonatan2021.github.io/pikud-haoref-bot-landing/og/home.png">
+  <meta property="og:image:width" content="1200">
+  <meta property="og:image:height" content="630">
 
-  <link rel="stylesheet" href="style.css" />
-  <link rel="preload" as="image" href="logo.jpg" />
+  <!-- Twitter -->
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="התראות פיקוד העורף — ישירות לטלגרם ו-WhatsApp">
+  <meta name="twitter:description" content="בוט קוד-פתוח להתראות פיקוד העורף בזמן אמת. טלגרם, WhatsApp, DM אישי לפי ערים, מפות, 28 אזורים.">
+  <meta name="twitter:image" content="https://yonatan2021.github.io/pikud-haoref-bot-landing/og/home.png">
 
+  <!-- Theme + icons -->
+  <meta name="theme-color" content="#07080f">
+  <link rel="icon" href="/logo.jpg">
+
+  <!-- Fonts: self-hosted Heebo woff2 preload (critical weights) -->
+  <link rel="preload" href="/fonts/heebo-400.woff2" as="font" type="font/woff2" crossorigin>
+  <link rel="preload" href="/fonts/heebo-700.woff2" as="font" type="font/woff2" crossorigin>
+
+  <!-- Hero image preload (home only) -->
+  <link rel="preload" as="image" href="/screenshots/start.jpg" fetchpriority="high">
+
+  <link rel="stylesheet" href="/style.css">
+  
+
+  <!-- JSON-LD structured data -->
+  <script type="application/ld+json">{"@context":"https://schema.org","@type":"Organization","name":"התראות פיקוד העורף","url":"https://yonatan2021.github.io/pikud-haoref-bot-landing","logo":"https://yonatan2021.github.io/pikud-haoref-bot-landing/logo.jpg"}</script>
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"WebSite","name":"התראות פיקוד העורף","url":"https://yonatan2021.github.io/pikud-haoref-bot-landing","inLanguage":"he"}</script>
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"SoftwareApplication","name":"בוט התראות פיקוד העורף","applicationCategory":"CommunicationApplication","operatingSystem":"Telegram, WhatsApp, Web","inLanguage":"he","offers":{"@type":"Offer","price":0,"priceCurrency":"ILS"}}</script>
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"FAQPage","mainEntity":[{"@type":"Question","name":"האם השירות חינמי?","acceptedAnswer":{"@type":"Answer","text":"כן. לחלוטין. קוד פתוח Apache 2.0."}},{"@type":"Question","name":"איך זה שונה מאפליקציית פיקוד העורף?","acceptedAnswer":{"@type":"Answer","text":"השירות הוא משלים בלבד. אפליקציית פיקוד העורף היא המקור המוסמך. הבוט נותן ערוץ נוסף בתוך Telegram/WhatsApp — מהיר יותר למי שכבר עם הטלפון פתוח שם, ותומך התראות לפי ערים שבחרת."}},{"@type":"Question","name":"מתי ההתראה מגיעה?","acceptedAnswer":{"@type":"Answer","text":"בדרך כלל 1–3 שניות אחרי הצפירה הרשמית. הבוט מסקר את ה-API של פיקוד העורף ישירות."}},{"@type":"Question","name":"האם אתם שומרים את מספר הטלפון שלי?","acceptedAnswer":{"@type":"Answer","text":"לא. Telegram Bot API לא חושף טלפון. ראה מדיניות פרטיות."}},{"@type":"Question","name":"מה עם WhatsApp?","acceptedAnswer":{"@type":"Answer","text":"יש קבוצת WhatsApp המקבלת את אותן ההתראות. הלינק בדף הבית. שים לב: בוט WhatsApp רץ על whatsapp-web.js ועשוי להיות פחות יציב מטלגרם."}},{"@type":"Question","name":"איך אני בוחר ערים?","acceptedAnswer":{"@type":"Answer","text":"פקודה /add [שם עיר] או /zones לבחירה לפי אזור. מדריך התחלה."}},{"@type":"Question","name":"האם יש שעות שקט?","acceptedAnswer":{"@type":"Answer","text":"כן — /settings → שעות שקט. התראות ביטחוניות עדיין יישלחו (הצלת חיים), שאר הקטגוריות נשתקות."}},{"@type":"Question","name":"מה זה /connect?","acceptedAnswer":{"@type":"Answer","text":"מאפשר לחבר את עצמך לקרוב/חבר כדי לראות את סטטוס הביטחון שלו (🛡️ OK / ⚠️ צריך עזרה) כשהוא במקלט. ראה פרטיות."}}]}</script>
+
+  <!-- GA4 -->
   <script async src="https://www.googletagmanager.com/gtag/js?id=G-4K6GHXRF9Y"></script>
 <script>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments);}gtag('js',new Date());gtag('config','G-4K6GHXRF9Y');</script>
 </head>
 <body>
+<!-- sticky top nav; hamburger via :has + checkbox on mobile -->
+<a class="skip-link" href="#main">דלג לתוכן הראשי</a>
+<input type="checkbox" id="nav-toggle" class="nav-toggle-input" hidden>
+<header class="nav-bar" role="banner">
+  <div class="nav-inner">
+    <a class="nav-brand" href="/" aria-label="דף הבית">
+      <img src="/logo.jpg" alt="" width="32" height="32" aria-hidden="true">
+      <span>התראות פיקוד העורף</span>
+    </a>
+    <label for="nav-toggle" class="nav-hamburger" aria-label="פתח תפריט" aria-expanded="false">
+      <span></span><span></span><span></span>
+    </label>
+    <nav class="nav-links" aria-label="ניווט ראשי">
+      <a href="/" data-slug="/">בית</a>
+      <a href="/guides/" data-slug="/guides/">מדריכים</a>
+      <a href="/faq/" data-slug="/faq/">שאלות</a>
+      <a href="/changelog/" data-slug="/changelog/">שינויים</a>
+      <a href="https://github.com/yonatan2021/pikud-haoref-bot" rel="noopener" target="_blank">GitHub</a>
+      <button class="nav-theme-toggle" aria-label="החלף בין מצב בהיר לכהה" type="button" data-theme-toggle>🌓</button>
+      <kbd class="nav-palette-hint" title="פתח פלטה מהירה">/</kbd>
+    </nav>
+  </div>
+</header>
+<script>
+  // highlight active route — runs before main scripts
+  (function(){
+    var active = '/' || (location.pathname.endsWith('/') ? location.pathname : location.pathname + '/');
+    document.querySelectorAll('.nav-links a[data-slug]').forEach(function(a){
+      if (a.dataset.slug === active) { a.setAttribute('aria-current','page'); a.classList.add('is-active'); }
+    });
+  })();
+</script>
 
   <!-- ① Hero ---------------------------------------------------------------- -->
-  <header class="hero">
+  <header class="hero" id="main">
     <!-- Aurora background blobs -->
     <div class="aurora" aria-hidden="true">
       <div class="aurora-blob aurora-blob--1"></div>
       <div class="aurora-blob aurora-blob--2"></div>
+      <!-- 3rd blob: subtle red urgency warmth, max opacity 0.09 -->
+      <div class="aurora-blob aurora-blob--3"></div>
     </div>
 
     <!-- Cursor spotlight (position driven by JS CSS vars) -->
@@ -40,6 +107,7 @@
         class="hero-logo"
         width="86"
         height="86"
+        decoding="sync"
       />
 
       <h1 class="hero-title">בוט התראות פיקוד העורף</h1>
@@ -48,10 +116,21 @@
         <span class="typing-text">התראות IDF בזמן אמת — ישירות לטלגרם ולוואטסאפ, עם מפות ו-DM אישי</span><span class="typing-cursor" aria-hidden="true"></span>
       </p>
 
+      <aside class="hero-disclaimer" role="note" aria-label="הבהרה חשובה">
+        <span class="hero-disclaimer-icon" aria-hidden="true">&#x26A0;&#xFE0F;</span>
+        <p>
+          <b>פרוייקט אישי בהתנדבות.</b>
+          המקור המוסמך הוא <b>אפליקציית פיקוד העורף</b> והצפירות — הישמעו להוראותיהן בראש ובראשונה.
+          השירות תלוי בגורמים חיצוניים ועשוי להפסיק לפעול ללא התראה. ללא אחריות.
+          <a href="/terms/">תנאי שימוש מלאים &rarr;</a>
+        </p>
+      </aside>
+
       <div class="cta-group">
         <a
           href="https://t.me/phalaret"
           class="btn btn-primary btn--large"
+          style="--btn-delay: 0s"
           target="_blank"
           rel="noopener noreferrer"
         >
@@ -60,6 +139,7 @@
         <a
           href="https://chat.whatsapp.com/LtCl4F8fwacCUdvMRlhK2i?mode=gi_t"
           class="btn btn-whatsapp btn--large"
+          style="--btn-delay: 0.1s"
           target="_blank"
           rel="noopener noreferrer"
         >
@@ -68,6 +148,7 @@
         <a
           href="#paths"
           class="btn btn-secondary btn--large"
+          style="--btn-delay: 0.2s"
         >
           🚀 הרץ instance משלך
         </a>
@@ -83,32 +164,64 @@
       </div>
     </div>
 
-    <!-- Simulated alert cards (rotate every ~7s, hidden on narrow viewports) -->
-    <div class="alert-sim alert-sim--1" aria-hidden="true">
-      <div class="alert-sim-header">
-        <span class="alert-sim-dot"></span> התראה · לדוגמה
+    <!-- Alert Simulator v2 — interactive Telegram-clone bubble -->
+    <div class="sim-container" aria-label="הדמיית הודעת התראה">
+      <div class="sim-controls">
+        <label for="sim-city-input" class="sim-label">הדמה התראה לעיר שלך</label>
+        <div class="sim-input-wrap">
+          <input
+            type="text"
+            id="sim-city-input"
+            class="sim-city-input"
+            placeholder="חפש עיר להדמיה..."
+            autocomplete="off"
+            aria-autocomplete="list"
+            aria-controls="sim-city-suggestions"
+          >
+          <ul id="sim-city-suggestions" class="sim-suggestions" role="listbox" aria-label="הצעות ערים" hidden>
+            <li class="sim-suggestion" role="option" data-city="חיפה" data-zone="חיפה" data-seconds="90">חיפה</li>
+            <li class="sim-suggestion" role="option" data-city="תל אביב" data-zone="גוש דן" data-seconds="90">תל אביב</li>
+            <li class="sim-suggestion" role="option" data-city="באר שבע" data-zone="שפלת יהודה" data-seconds="60">באר שבע</li>
+            <li class="sim-suggestion" role="option" data-city="אשדוד" data-zone="שפלת יהודה" data-seconds="45">אשדוד</li>
+          </ul>
+        </div>
+        <button id="sim-run" class="sim-run-btn btn btn-primary" type="button" aria-label="הפעל הדמיית התראה">
+          &#9654; הפעל הדמיה
+        </button>
       </div>
-      <div class="alert-sim-type">🚀 ירי טילים ורקטות</div>
-      <div class="alert-sim-cities">תל אביב · רמת גן · גבעתיים</div>
-      <div class="alert-sim-action">היכנס למרחב המוגן מיד</div>
-    </div>
 
-    <div class="alert-sim alert-sim--2" aria-hidden="true">
-      <div class="alert-sim-header">
-        <span class="alert-sim-dot"></span> התראה · לדוגמה
+      <!-- Pulse waves container -->
+      <div class="sim-pulse-container" id="sim-pulse" aria-hidden="true" hidden>
+        <!-- Telegram-clone bubble -->
+        <article class="tg-bubble" id="tg-bubble" role="alert" aria-label="הדמיית הודעת טלגרם" hidden>
+          <span class="tg-watermark" aria-hidden="true">הדמיה</span>
+          <aside class="tg-bubble-avatar">
+            <img src="/logo.jpg" alt="" width="36" height="36" loading="lazy" decoding="async">
+          </aside>
+          <div class="tg-bubble-body">
+            <header class="tg-bubble-sender">
+              <span class="tg-sender-name">📢 פיקוד העורף</span>
+              <span class="tg-sender-verified" aria-label="ערוץ מאומת">✓</span>
+            </header>
+            <div class="tg-bubble-content">
+              <div class="tg-alert-header" id="tg-alert-header">🔴 <b>ירי רקטות וטילים</b></div>
+              <div class="tg-alert-zones" id="tg-alert-zones"><b>▸ גוש דן</b></div>
+              <div class="tg-alert-cities" id="tg-alert-cities">תל אביב · רמת גן · גבעתיים · בני ברק</div>
+              <div class="tg-alert-instructions" id="tg-alert-instructions">🛡 להיכנס למרחב מוגן ולהישאר בו 10 דקות</div>
+              <div class="tg-alert-countdown">
+                <span class="tg-countdown-label">זמן כניסה למרחב מוגן:</span>
+                <span class="tg-countdown-value" id="tg-countdown-value">01:30</span>
+                <div class="tg-countdown-bar"><div class="tg-countdown-fill" id="tg-countdown-fill"></div></div>
+              </div>
+            </div>
+            <footer class="tg-bubble-meta">
+              <time id="tg-bubble-time">16:42</time>
+              <span class="tg-bubble-views">👁 1.2K</span>
+              <span class="tg-bubble-forwards">🔁 342</span>
+            </footer>
+          </div>
+        </article>
       </div>
-      <div class="alert-sim-type">✈️ חדירת כלי טיס עוין</div>
-      <div class="alert-sim-cities">חיפה · חוף הכרמל · עתלית</div>
-      <div class="alert-sim-action">היכנס למרחב המוגן מיד</div>
-    </div>
-
-    <div class="alert-sim alert-sim--3" aria-hidden="true">
-      <div class="alert-sim-header">
-        <span class="alert-sim-dot"></span> התראה · לדוגמה
-      </div>
-      <div class="alert-sim-type">🔒 סייגור</div>
-      <div class="alert-sim-cities">ירושלים · מבשרת ציון</div>
-      <div class="alert-sim-action">נעל דלתות, הישאר בפנים</div>
     </div>
   </header>
 
@@ -922,7 +1035,7 @@
   <section class="paths section" id="paths">
     <div class="container">
       <h2 class="section-title reveal">🛣️ שלוש דרכים להשתמש</h2>
-      <p class="section-subtitle">בחר מה מתאים לך — אפשר גם וגם</p>
+      <p class="section-subtitle reveal" style="--reveal-delay: 0.05s">בחר מה מתאים לך — אפשר גם וגם</p>
 
       <div class="paths-grid">
 
@@ -1013,35 +1126,35 @@
 
         <div class="screenshot-item" role="listitem">
           <div class="screenshot-frame">
-            <img src="screenshots/start.jpg" alt="תפריט ראשי של הבוט" loading="lazy" width="200" height="356" />
+            <img src="screenshots/start.jpg" alt="תפריט ראשי של הבוט" loading="lazy" width="200" height="356" decoding="async" />
           </div>
           <p class="screenshot-caption">תפריט ראשי</p>
         </div>
 
         <div class="screenshot-item" role="listitem">
           <div class="screenshot-frame">
-            <img src="screenshots/zones.jpg" alt="ממשק בחירת אזור" loading="lazy" width="200" height="356" />
+            <img src="screenshots/zones.jpg" alt="ממשק בחירת אזור" loading="lazy" width="200" height="356" decoding="async" />
           </div>
           <p class="screenshot-caption">בחירת אזור</p>
         </div>
 
         <div class="screenshot-item" role="listitem">
           <div class="screenshot-frame">
-            <img src="screenshots/add.jpg" alt="חיפוש עיר להוספה" loading="lazy" width="200" height="356" />
+            <img src="screenshots/add.jpg" alt="חיפוש עיר להוספה" loading="lazy" width="200" height="356" decoding="async" />
           </div>
           <p class="screenshot-caption">חיפוש עיר</p>
         </div>
 
         <div class="screenshot-item" role="listitem">
           <div class="screenshot-frame">
-            <img src="screenshots/mycities.jpg" alt="רשימת הערים שהמשתמש עקב אחריהן" loading="lazy" width="200" height="356" />
+            <img src="screenshots/mycities.jpg" alt="רשימת הערים שהמשתמש עקב אחריהן" loading="lazy" width="200" height="356" decoding="async" />
           </div>
           <p class="screenshot-caption">הערים שלי</p>
         </div>
 
         <div class="screenshot-item" role="listitem">
           <div class="screenshot-frame">
-            <img src="screenshots/settings.jpg" alt="הגדרות הבוט" loading="lazy" width="200" height="356" />
+            <img src="screenshots/settings.jpg" alt="הגדרות הבוט" loading="lazy" width="200" height="356" decoding="async" />
           </div>
           <p class="screenshot-caption">הגדרות</p>
         </div>
@@ -1049,41 +1162,42 @@
         <!-- Duplicate set for seamless loop -->
         <div class="screenshot-item" aria-hidden="true">
           <div class="screenshot-frame">
-            <img src="screenshots/start.jpg" alt="" loading="lazy" width="200" height="356" />
+            <img src="screenshots/start.jpg" alt="" loading="lazy" width="200" height="356" decoding="async" />
           </div>
           <p class="screenshot-caption">תפריט ראשי</p>
         </div>
 
         <div class="screenshot-item" aria-hidden="true">
           <div class="screenshot-frame">
-            <img src="screenshots/zones.jpg" alt="" loading="lazy" width="200" height="356" />
+            <img src="screenshots/zones.jpg" alt="" loading="lazy" width="200" height="356" decoding="async" />
           </div>
           <p class="screenshot-caption">בחירת אזור</p>
         </div>
 
         <div class="screenshot-item" aria-hidden="true">
           <div class="screenshot-frame">
-            <img src="screenshots/add.jpg" alt="" loading="lazy" width="200" height="356" />
+            <img src="screenshots/add.jpg" alt="" loading="lazy" width="200" height="356" decoding="async" />
           </div>
           <p class="screenshot-caption">חיפוש עיר</p>
         </div>
 
         <div class="screenshot-item" aria-hidden="true">
           <div class="screenshot-frame">
-            <img src="screenshots/mycities.jpg" alt="" loading="lazy" width="200" height="356" />
+            <img src="screenshots/mycities.jpg" alt="" loading="lazy" width="200" height="356" decoding="async" />
           </div>
           <p class="screenshot-caption">הערים שלי</p>
         </div>
 
         <div class="screenshot-item" aria-hidden="true">
           <div class="screenshot-frame">
-            <img src="screenshots/settings.jpg" alt="" loading="lazy" width="200" height="356" />
+            <img src="screenshots/settings.jpg" alt="" loading="lazy" width="200" height="356" decoding="async" />
           </div>
           <p class="screenshot-caption">הגדרות</p>
         </div>
 
       </div>
     </div>
+    <p class="screenshots-pause-hint" aria-hidden="true">⏸ מושהה</p>
   </section>
 
   <!-- ⑦ What's New ---------------------------------------------------------- -->
@@ -1124,12 +1238,13 @@
       </div>
       <button class="changelog-show-more" aria-expanded="false">עוד עדכונים</button>
       <div class="changelog-footer reveal" style="--reveal-delay: 0.2s">
+        <a href="/changelog/" class="btn btn-ghost">כל היומן &rarr;</a>
         <a
           href="https://github.com/yonatan2021/pikud-haoref-bot/blob/main/CHANGELOG.md"
           class="changelog-link"
           target="_blank"
           rel="noopener noreferrer"
-        >← כל יומן השינויים</a>
+        >← GitHub</a>
       </div>
     </div>
   </section>
@@ -1140,107 +1255,41 @@
       <h2 class="section-title reveal">❓ שאלות נפוצות</h2>
 
       <div class="faq-list">
-
-        <div class="faq-item reveal">
-          <button class="faq-q" aria-expanded="false">האם השירות בחינם?</button>
-          <div class="faq-a" aria-hidden="true">
-            <div class="faq-bubble faq-bubble--bot">
-              <div class="faq-avatar" aria-hidden="true">🤖</div>
-              <div class="faq-text">כן, הצטרפות לערוץ ולקבוצת WhatsApp חינמית לגמרי. תמיד.</div>
-            </div>
-          </div>
-        </div>
-
-        <div class="faq-item reveal" style="--reveal-delay: 0.05s">
-          <button class="faq-q" aria-expanded="false">מה ההבדל בין טלגרם לוואטסאפ?</button>
-          <div class="faq-a" aria-hidden="true">
-            <div class="faq-bubble faq-bubble--bot">
-              <div class="faq-avatar" aria-hidden="true">🤖</div>
-              <div class="faq-text">בטלגרם יש DM אישי לפי ערים, 6 ערוצי נושא, שעות שקט, סטטיסטיקות והיסטוריה. בוואטסאפ קבוצה משותפת פשוטה — מיידית, ללא הגדרות.</div>
-            </div>
-          </div>
-        </div>
-
-        <div class="faq-item reveal" style="--reveal-delay: 0.1s">
-          <button class="faq-q" aria-expanded="false">איך מתחילים בטלגרם?</button>
-          <div class="faq-a" aria-hidden="true">
-            <div class="faq-bubble faq-bubble--bot">
-              <div class="faq-avatar" aria-hidden="true">🤖</div>
-              <div class="faq-text">מצטרפים לערוץ, שולחים /start לבוט, בוחרים שם ועיר — פחות מ-30 שניות.</div>
-            </div>
-          </div>
-        </div>
-
-        <div class="faq-item reveal" style="--reveal-delay: 0.15s">
-          <button class="faq-q" aria-expanded="false">האם אקבל התראות לעיר ספציפית בלבד?</button>
-          <div class="faq-a" aria-hidden="true">
-            <div class="faq-bubble faq-bubble--bot">
-              <div class="faq-avatar" aria-hidden="true">🤖</div>
-              <div class="faq-text">כן, בטלגרם בוחרים ערים ספציפיות או אזורים שלמים. תקבלו DM רק כשמתרחשת התראה באזור שלכם.</div>
-            </div>
-          </div>
-        </div>
-
-        <div class="faq-item reveal" style="--reveal-delay: 0.2s">
-          <button class="faq-q" aria-expanded="false">מה המקור של ההתראות?</button>
-          <div class="faq-a" aria-hidden="true">
-            <div class="faq-bubble faq-bubble--bot">
-              <div class="faq-avatar" aria-hidden="true">🤖</div>
-              <div class="faq-text">ה-API הרשמי של פיקוד העורף, מתעדכן כל 2 שניות סביב השעון.</div>
-            </div>
-          </div>
-        </div>
-
-        <div class="faq-item reveal" style="--reveal-delay: 0.25s">
-          <button class="faq-q" aria-expanded="false">האם אפשר להקים instance פרטי?</button>
-          <div class="faq-a" aria-hidden="true">
-            <div class="faq-bubble faq-bubble--bot">
-              <div class="faq-avatar" aria-hidden="true">🤖</div>
-              <div class="faq-text">כן, <code>npx @haoref-boti/pikud-haoref-bot</code> מגדיר הכל בדקות — בלי קוד, בלי שרת נפרד.</div>
-            </div>
-          </div>
-        </div>
-
-        <div class="faq-item reveal" style="--reveal-delay: 0.3s">
-          <button class="faq-q" aria-expanded="false">האם הקוד פתוח?</button>
-          <div class="faq-a" aria-hidden="true">
-            <div class="faq-bubble faq-bubble--bot">
-              <div class="faq-avatar" aria-hidden="true">🤖</div>
-              <div class="faq-text">כן, Apache 2.0, זמין ב-GitHub. ניתן לפרוק, לשנות ולהשתמש בחופשיות.</div>
-            </div>
-          </div>
-        </div>
-
-        <div class="faq-item reveal" style="--reveal-delay: 0.35s">
-          <button class="faq-q" aria-expanded="false">מה קורה עם התראות בלילה?</button>
-          <div class="faq-a" aria-hidden="true">
-            <div class="faq-bubble faq-bubble--bot">
-              <div class="faq-avatar" aria-hidden="true">🤖</div>
-              <div class="faq-text">שעות שקט (23:00–06:00) — DM אישי לא נשלח, אך התראות ביטחוניות עוברות תמיד ללא קשר.</div>
-            </div>
-          </div>
-        </div>
-
-        <div class="faq-item reveal" style="--reveal-delay: 0.4s">
-          <button class="faq-q" aria-expanded="false">האם ה-DM עובד גם ב-WhatsApp?</button>
-          <div class="faq-a" aria-hidden="true">
-            <div class="faq-bubble faq-bubble--bot">
-              <div class="faq-avatar" aria-hidden="true">🤖</div>
-              <div class="faq-text">לא, DM אישי זמין רק בטלגרם. WhatsApp מקבל הודעות לקבוצה משותפת.</div>
-            </div>
-          </div>
-        </div>
-
-        <div class="faq-item reveal" style="--reveal-delay: 0.45s">
-          <button class="faq-q" aria-expanded="false">כמה זמן לוקח להצטרף?</button>
-          <div class="faq-a" aria-hidden="true">
-            <div class="faq-bubble faq-bubble--bot">
-              <div class="faq-avatar" aria-hidden="true">🤖</div>
-              <div class="faq-text">פחות מ-30 שניות — לחיצה אחת על הקישור, בחירת עיר, וזהו.</div>
-            </div>
-          </div>
-        </div>
-
+        <details class="faq-item reveal">
+  <summary class="faq-q">האם השירות חינמי?</summary>
+  <div class="faq-answer">כן. לחלוטין. קוד פתוח Apache 2.0.</div>
+</details>
+<details class="faq-item reveal" style="--reveal-delay: 0.05s">
+  <summary class="faq-q">איך זה שונה מאפליקציית פיקוד העורף?</summary>
+  <div class="faq-answer">השירות הוא משלים בלבד. אפליקציית פיקוד העורף היא המקור המוסמך. הבוט נותן ערוץ נוסף בתוך Telegram/WhatsApp — מהיר יותר למי שכבר עם הטלפון פתוח שם, ותומך התראות לפי ערים שבחרת.</div>
+</details>
+<details class="faq-item reveal" style="--reveal-delay: 0.10s">
+  <summary class="faq-q">מתי ההתראה מגיעה?</summary>
+  <div class="faq-answer">בדרך כלל 1–3 שניות אחרי הצפירה הרשמית. הבוט מסקר את ה-API של פיקוד העורף ישירות.</div>
+</details>
+<details class="faq-item reveal" style="--reveal-delay: 0.15s">
+  <summary class="faq-q">האם אתם שומרים את מספר הטלפון שלי?</summary>
+  <div class="faq-answer">לא. Telegram Bot API לא חושף טלפון. ראה <a href="/privacy/">מדיניות פרטיות</a>.</div>
+</details>
+<details class="faq-item reveal" style="--reveal-delay: 0.20s">
+  <summary class="faq-q">מה עם WhatsApp?</summary>
+  <div class="faq-answer">יש קבוצת WhatsApp המקבלת את אותן ההתראות. הלינק בדף הבית. שים לב: בוט WhatsApp רץ על whatsapp-web.js ועשוי להיות פחות יציב מטלגרם.</div>
+</details>
+<details class="faq-item reveal" style="--reveal-delay: 0.25s">
+  <summary class="faq-q">איך אני בוחר ערים?</summary>
+  <div class="faq-answer">פקודה <code>/add [שם עיר]</code> או <code>/zones</code> לבחירה לפי אזור. <a href="/guides/onboarding/">מדריך התחלה</a>.</div>
+</details>
+<details class="faq-item reveal" style="--reveal-delay: 0.30s">
+  <summary class="faq-q">האם יש שעות שקט?</summary>
+  <div class="faq-answer">כן — <code>/settings</code> → שעות שקט. התראות ביטחוניות עדיין יישלחו (הצלת חיים), שאר הקטגוריות נשתקות.</div>
+</details>
+<details class="faq-item reveal" style="--reveal-delay: 0.35s">
+  <summary class="faq-q">מה זה /connect?</summary>
+  <div class="faq-answer">מאפשר לחבר את עצמך לקרוב/חבר כדי לראות את סטטוס הביטחון שלו (🛡️ OK / ⚠️ צריך עזרה) כשהוא במקלט. ראה <a href="/privacy/">פרטיות</a>.</div>
+</details>
+      </div>
+      <div class="faq-footer reveal" style="--reveal-delay: 0.5s">
+        <a href="/faq/" class="btn btn-ghost">כל 20 השאלות &rarr;</a>
       </div>
     </div>
   </section>
@@ -1277,32 +1326,42 @@
     </div>
   </section>
 
-  <!-- ⑨ Footer -------------------------------------------------------------- -->
-  <footer class="footer">
-    <div class="footer-inner">
-      <span>גרסה 0.5.3</span>
-      <span class="footer-sep" aria-hidden="true">·</span>
-      <a href="https://github.com/yonatan2021/pikud-haoref-bot" target="_blank" rel="noopener noreferrer">GitHub</a>
-      <span class="footer-sep" aria-hidden="true">·</span>
-      <span>⭐ 0 כוכבים</span>
-      <span class="footer-sep" aria-hidden="true">·</span>
-      <span>🧪 1,789 בדיקות</span>
-      <span class="footer-sep" aria-hidden="true">·</span>
-      <span>Apache 2.0</span>
-      <span class="footer-sep" aria-hidden="true">·</span>
-      <span>עודכן 17 באפריל 2026</span>
-    </div>
-    <div class="footer-sponsor">
-      <a
-        href="https://github.com/sponsors/yonatan2021"
-        class="sponsor-btn"
-        target="_blank"
-        rel="noopener noreferrer"
-        aria-label="תמוך בפרויקט דרך GitHub Sponsors"
-      >❤️ תמוך בפרויקט</a>
-    </div>
-    <p class="footer-credit">עשוי עם ❤️ בישראל 🇮🇱</p>
-  </footer>
+  <footer class="footer footer-legal" role="contentinfo">
+  <div class="footer-grid">
+    <section>
+      <h3>מוצר</h3>
+      <a href="/">בית</a>
+      <a href="/guides/">מדריכים</a>
+      <a href="/faq/">שאלות נפוצות</a>
+      <a href="/changelog/">יומן שינויים</a>
+    </section>
+    <section>
+      <h3>משפטי</h3>
+      <a href="/privacy/">מדיניות פרטיות</a>
+      <a href="/terms/">תנאי שימוש</a>
+      <a href="/accessibility/">הצהרת נגישות</a>
+      <a href="/security/">אבטחה וחשיפה</a>
+    </section>
+    <section>
+      <h3>קהילה</h3>
+      <a href="https://github.com/yonatan2021/pikud-haoref-bot" rel="noopener" target="_blank">GitHub</a>
+      <a href="https://github.com/yonatan2021/pikud-haoref-bot/issues" rel="noopener" target="_blank">דיווח על באג</a>
+      <a href="https://github.com/yonatan2021/pikud-haoref-bot/blob/main/LICENSE" rel="noopener" target="_blank">רישיון Apache 2.0</a>
+      <a href="https://github.com/sponsors/yonatan2021" rel="noopener" target="_blank" class="sponsor-link">❤️ תמוך בפרויקט</a>
+    </section>
+  </div>
+  <div class="footer-meta">
+    <span>גרסה 0.5.3</span> · <span>נבנה 17 באפריל 2026</span>
+    <p class="footer-disclaimer">
+      &#x26A0;&#xFE0F; פרוייקט אישי (לא מסחרי) שאני מנגיש לציבור בהתנדבות. ללא אחריות משום סוג.
+      המקור המוסמך והרשמי לזמני אמת הוא <b>אפליקציית פיקוד העורף</b> והצפירות —
+      הישמעו להוראותיה בראש ובראשונה.
+      השירות תלוי בגורמים חיצוניים (פיקוד העורף, Telegram, WhatsApp, Mapbox, GitHub)
+      ועלול להפסיק לפעול ללא התראה.
+    </p>
+  </div>
+</footer>
+
 
   <!-- Mobile FAB — quick join link, hidden on desktop -->
   <a href="https://t.me/phalaret" class="mobile-fab" target="_blank"
@@ -1386,7 +1445,7 @@
           revealObserver.unobserve(e.target);
         }
       });
-    }, { threshold: 0.1 });
+    }, { threshold: 0.05 }); /* reduced from 0.1 — prevents tall sections failing to trigger on short mobile viewports */
 
     document.querySelectorAll('.reveal').forEach(function(el) {
       revealObserver.observe(el);
@@ -1427,6 +1486,8 @@
             requestAnimationFrame(animate);
           } else {
             el.textContent = target.toLocaleString('he-IL');
+            el.classList.add('stat-counted');
+            setTimeout(function() { el.classList.remove('stat-counted'); }, 600);
           }
         };
         requestAnimationFrame(animate);
@@ -1603,8 +1664,73 @@
     document.addEventListener('keydown', function(e) {
       if (e.key === 'Escape' && cityDropdown && cityDropdown.getAttribute('aria-expanded') === 'true') {
         closeCityDd();
+        if (cityDropdownBtn) cityDropdownBtn.focus();
       }
     });
+
+    // ── Keyboard navigation for city dropdown ────────────────────────────────
+    if (cityDropdownBtn) {
+      cityDropdownBtn.addEventListener('keydown', function(e) {
+        if (e.key === 'ArrowDown' || e.key === 'Enter' || e.key === ' ') {
+          e.preventDefault();
+          openCityDd();
+          var firstItem = cityDropdownList
+            ? cityDropdownList.querySelector('.city-dropdown-item:not(.city-dropdown-item--placeholder)')
+            : null;
+          if (firstItem) {
+            firstItem.setAttribute('tabindex', '0');
+            firstItem.focus();
+          }
+        }
+      });
+    }
+
+    if (cityDropdownList) {
+      var allItems = Array.from(
+        cityDropdownList.querySelectorAll('.city-dropdown-item:not(.city-dropdown-item--placeholder)')
+      );
+      allItems.forEach(function(item, idx) {
+        item.setAttribute('tabindex', '-1');
+        item.addEventListener('keydown', function(e) {
+          if (e.key === 'ArrowDown') {
+            e.preventDefault();
+            var next = allItems[idx + 1];
+            if (next) { next.setAttribute('tabindex', '0'); next.focus(); }
+          } else if (e.key === 'ArrowUp') {
+            e.preventDefault();
+            if (idx === 0) {
+              if (cityDropdownBtn) cityDropdownBtn.focus();
+            } else {
+              var prev = allItems[idx - 1];
+              if (prev) { prev.setAttribute('tabindex', '0'); prev.focus(); }
+            }
+          } else if (e.key === 'Enter' || e.key === ' ') {
+            e.preventDefault();
+            item.click();
+            if (cityDropdownBtn) cityDropdownBtn.focus();
+          } else if (e.key === 'Escape') {
+            e.preventDefault();
+            closeCityDd();
+            if (cityDropdownBtn) cityDropdownBtn.focus();
+          }
+        });
+        /* Reset tabindex on blur so only one item is reachable at a time */
+        item.addEventListener('blur', function() {
+          item.setAttribute('tabindex', '-1');
+        });
+      });
+    }
+
+    // ── 8a. Screenshots — touch pause/resume ─────────────────────────────────
+    var screenshotsTrack = document.querySelector('.screenshots-track');
+    if (screenshotsTrack) {
+      screenshotsTrack.addEventListener('touchstart', function() {
+        screenshotsTrack.style.animationPlayState = 'paused';
+      }, { passive: true });
+      screenshotsTrack.addEventListener('touchend', function() {
+        screenshotsTrack.style.animationPlayState = '';
+      }, { passive: true });
+    }
 
     // ── 8. FAQ chat bubbles ───────────────────────────────────────────────────
     document.querySelectorAll('.faq-item').forEach(function(item) {
@@ -1622,6 +1748,7 @@
             ob.classList.remove('faq-q--open');
             oa.setAttribute('aria-hidden', 'true');
             oa.style.maxHeight = '';
+            oa.style.opacity = '';
           }
         });
         // Toggle this one
@@ -1631,8 +1758,10 @@
         ans.setAttribute('aria-hidden', String(!opening));
         if (opening) {
           ans.style.maxHeight = ans.scrollHeight + 'px';
+          ans.style.opacity = '1';
         } else {
           ans.style.maxHeight = '';
+          ans.style.opacity = '';
         }
       });
     });
@@ -1774,6 +1903,209 @@
         }
       });
     });
+
+    // ── 12. Alert Simulator v2 — Telegram-clone bubble ───────────────────────
+    (function() {
+      var SIM_DATA = {
+        'חיפה':        { zone: 'חיפה',              cities: ['חיפה','קריית ים','קריית אתא','חוף הכרמל'],       seconds: 90 },
+        'תל אביב':     { zone: 'גוש דן',             cities: ['תל אביב','רמת גן','גבעתיים','בני ברק'],          seconds: 90 },
+        'באר שבע':     { zone: 'שפלת יהודה',         cities: ['באר שבע','אשקלון','קריית גת','נתיבות'],          seconds: 60 },
+        'אשדוד':       { zone: 'שפלת יהודה',         cities: ['אשדוד','אשקלון','קריית מלאכי','גן יבנה'],        seconds: 45 },
+        'ירושלים':     { zone: 'ירושלים',            cities: ['ירושלים','מבשרת ציון','מעלה אדומים','בית שמש'],  seconds: 90 },
+        'נתניה':       { zone: 'השרון',               cities: ['נתניה','רעננה','הוד השרון','כפר סבא'],            seconds: 90 },
+        'פתח תקווה':   { zone: 'גוש דן',             cities: ['פתח תקווה','ראש העין','אלעד','רמלה'],             seconds: 90 },
+        'ראשון לציון': { zone: 'גוש דן',             cities: ['ראשון לציון','חולון','בת ים','אור יהודה'],        seconds: 90 },
+        'חדרה':        { zone: 'חדרה ועמק יזרעאל',   cities: ['חדרה','פרדס חנה','זיכרון יעקב','בנימינה'],        seconds: 90 },
+        'אשקלון':      { zone: 'שפלת יהודה',         cities: ['אשקלון','שקמים','מיגדל הנגב','ברכיה'],           seconds: 30 },
+        'עכו':         { zone: 'חיפה',               cities: ['עכו','נהריה','כרמיאל','מעלות-תרשיחא'],           seconds: 90 },
+        'נצרת':        { zone: 'הגליל',              cities: ['נצרת','עפולה','יזרעאל','שפרעם'],                  seconds: 90 },
+        'אילת':        { zone: 'אילת',               cities: ['אילת'],                                           seconds: 180 },
+        'מודיעין':     { zone: 'ירושלים',            cities: ['מודיעין','מכבים-רעות','שוהם','אבן יהודה'],        seconds: 90 },
+        'רחובות':      { zone: 'גוש דן',             cities: ['רחובות','נס ציונה','יבנה','גדרה'],                seconds: 90 },
+        'כפר סבא':     { zone: 'השרון',              cities: ['כפר סבא','רעננה','אלקנה','עמנואל'],               seconds: 90 },
+        'טבריה':       { zone: 'כינרת',              cities: ['טבריה','כינרת','מגדל','גינוסר'],                  seconds: 90 },
+        'צפת':         { zone: 'הגליל העליון',        cities: ['צפת','מירון','ביריה','עמוקה'],                    seconds: 90 },
+        'דימונה':      { zone: 'הנגב',               cities: ['דימונה','ערד','ירוחם','מצפה רמון'],               seconds: 60 },
+        'קריית שמונה': { zone: 'הגליל העליון',        cities: ['קריית שמונה','מטולה','מנרה','כפר בלום'],          seconds: 30 }
+      };
+      var CAT_EMOJI = '🔴';
+      var CAT_NAME  = 'ירי רקטות וטילים';
+      var CAT_INSTR = '\u{1F6E1} להיכנס למרחב מוגן ולהישאר בו 10 דקות';
+
+      var simInput    = document.getElementById('sim-city-input');
+      var simSugList  = document.getElementById('sim-city-suggestions');
+      var simRun      = document.getElementById('sim-run');
+      var simPulse    = document.getElementById('sim-pulse');
+      var tgBubble    = document.getElementById('tg-bubble');
+      var tgHeader    = document.getElementById('tg-alert-header');
+      var tgZones     = document.getElementById('tg-alert-zones');
+      var tgCities    = document.getElementById('tg-alert-cities');
+      var tgInstr     = document.getElementById('tg-alert-instructions');
+      var tgCountdown = document.getElementById('tg-countdown-value');
+      var tgFill      = document.getElementById('tg-countdown-fill');
+      var tgTime      = document.getElementById('tg-bubble-time');
+
+      if (!simInput) return;
+
+      var allCities = Object.keys(SIM_DATA);
+      var selectedCity = null;
+      var cdTimer = null;
+
+      function fmtMmSs(s) {
+        var m = Math.floor(s / 60), sec = s % 60;
+        return (m < 10 ? '0' + m : String(m)) + ':' + (sec < 10 ? '0' + sec : String(sec));
+      }
+
+      function buildSuggestions(q) {
+        if (!simSugList) return;
+        while (simSugList.firstChild) simSugList.removeChild(simSugList.firstChild);
+        var matches = q
+          ? allCities.filter(function(c) { return c.indexOf(q) !== -1; })
+          : ['חיפה','תל אביב','באר שבע','אשדוד'];
+        if (!matches.length) { simSugList.hidden = true; return; }
+        matches.slice(0, 6).forEach(function(city) {
+          var li = document.createElement('li');
+          li.className = 'sim-suggestion';
+          li.setAttribute('role', 'option');
+          li.textContent = city;
+          li.addEventListener('mousedown', function(ev) {
+            ev.preventDefault();
+            selectCity(city);
+          });
+          simSugList.appendChild(li);
+        });
+        simSugList.hidden = false;
+      }
+
+      function selectCity(city) {
+        selectedCity = city;
+        if (simInput) simInput.value = city;
+        if (simSugList) simSugList.hidden = true;
+      }
+
+      simInput.addEventListener('input',  function() { buildSuggestions(simInput.value.trim()); });
+      simInput.addEventListener('focus',  function() { buildSuggestions(simInput.value.trim()); });
+      simInput.addEventListener('blur',   function() { setTimeout(function() { if (simSugList) simSugList.hidden = true; }, 150); });
+      simInput.addEventListener('keydown', function(ev) {
+        if (ev.key === 'Enter') {
+          if (simSugList && !simSugList.hidden) {
+            var first = simSugList.querySelector('.sim-suggestion');
+            if (first) selectCity(first.textContent.trim());
+          }
+          runSim();
+        }
+      });
+
+      // Wire static suggestion items already in HTML
+      if (simSugList) {
+        simSugList.querySelectorAll('.sim-suggestion').forEach(function(li) {
+          li.addEventListener('mousedown', function(ev) {
+            ev.preventDefault();
+            selectCity(li.dataset.city || li.textContent.trim());
+          });
+        });
+      }
+
+      function runSim() {
+        var city = selectedCity || (simInput ? simInput.value.trim() : '') || 'תל אביב';
+        var data = SIM_DATA[city] || SIM_DATA['תל אביב'];
+
+        if (tgHeader) {
+          while (tgHeader.firstChild) tgHeader.removeChild(tgHeader.firstChild);
+          tgHeader.appendChild(document.createTextNode(CAT_EMOJI + ' '));
+          var b = document.createElement('b');
+          b.textContent = CAT_NAME;
+          tgHeader.appendChild(b);
+        }
+        if (tgZones) {
+          while (tgZones.firstChild) tgZones.removeChild(tgZones.firstChild);
+          var bz = document.createElement('b');
+          bz.textContent = '\u25B8 ' + data.zone;
+          tgZones.appendChild(bz);
+        }
+        if (tgCities) tgCities.textContent = data.cities.join(' \u00B7 ');
+        if (tgInstr)  tgInstr.textContent  = CAT_INSTR;
+
+        var now = new Date();
+        var hh = now.getHours(), mm = now.getMinutes();
+        if (tgTime) tgTime.textContent = (hh < 10 ? '0' + hh : hh) + ':' + (mm < 10 ? '0' + mm : mm);
+
+        var total = data.seconds;
+        var remaining = total;
+        if (tgCountdown) tgCountdown.textContent = fmtMmSs(remaining);
+        if (tgFill) {
+          tgFill.style.transition = 'none';
+          tgFill.style.transform  = 'scaleX(1)';
+        }
+        if (simPulse) simPulse.hidden = false;
+        if (tgBubble) tgBubble.hidden = false;
+
+        requestAnimationFrame(function() {
+          if (tgFill) {
+            tgFill.style.transition = 'transform ' + total + 's linear';
+            tgFill.style.transform  = 'scaleX(0)';
+          }
+        });
+
+        if (cdTimer) clearInterval(cdTimer);
+        cdTimer = setInterval(function() {
+          remaining = Math.max(0, remaining - 1);
+          if (tgCountdown) tgCountdown.textContent = fmtMmSs(remaining);
+          if (remaining === 0) clearInterval(cdTimer);
+        }, 1000);
+      }
+
+      if (simRun) simRun.addEventListener('click', runSim);
+    })();
+
+    // ── 13. Light/Dark theme toggle ───────────────────────────────────────────
+    document.addEventListener('click', function(ev) {
+      var btn = ev.target.closest('[data-theme-toggle]');
+      if (!btn) return;
+      var cur = document.documentElement.dataset.theme;
+      var prefersDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
+      var next = cur === 'dark' ? 'light' : cur === 'light' ? 'dark' : (prefersDark ? 'light' : 'dark');
+      document.documentElement.dataset.theme = next;
+      try { localStorage.setItem('theme', next); } catch(e) {}
+    });
+
+  </script>
+
+  <!-- All routes for command palette — injected at build time -->
+  <script>window.__ROUTES = [{"slug":"/","title":"התראות פיקוד העורף"},{"slug":"/changelog/","title":"יומן שינויים"},{"slug":"/faq/","title":"שאלות נפוצות"},{"slug":"/privacy/","title":"מדיניות פרטיות"},{"slug":"/terms/","title":"תנאי שימוש"},{"slug":"/accessibility/","title":"הצהרת נגישות"},{"slug":"/security/","title":"אבטחה וחשיפה אחראית"},{"slug":"/guides/","title":"מדריכים"},{"slug":"/guides/telegram/","title":"רישום בטלגרם"},{"slug":"/guides/whatsapp/","title":"הצטרפות ל-WhatsApp"},{"slug":"/guides/commands/","title":"19 פקודות הבוט"},{"slug":"/guides/onboarding/","title":"onboarding מפורט"},{"slug":"/guides/self-host/","title":"הפעלה עצמית"}];</script>
+
+  <script>
+    // ── 14. Command Palette — routes extension ────────────────────────────────
+    (function() {
+      var cmdList = document.getElementById('cmd-list');
+      if (!cmdList || !window.__ROUTES) return;
+      window.__ROUTES.forEach(function(route) {
+        var li = document.createElement('li');
+        li.className = 'cmd-item cmd-item--route';
+        li.setAttribute('data-href', route.slug);
+        li.setAttribute('data-cmd', route.title);
+        var iconSpan = document.createElement('span');
+        iconSpan.className = 'cmd-icon';
+        iconSpan.textContent = '\uD83D\uDD17';
+        var labelSpan = document.createElement('span');
+        labelSpan.className = 'cmd-label';
+        labelSpan.textContent = '\u05E0\u05D5\u05D5\u05D8: ' + route.title;
+        var descSpan = document.createElement('span');
+        descSpan.className = 'cmd-desc';
+        descSpan.textContent = route.slug;
+        li.appendChild(iconSpan);
+        li.appendChild(labelSpan);
+        li.appendChild(descSpan);
+        li.addEventListener('mouseenter', function() {
+          if (typeof setCmdActive === 'function') setCmdActive(li);
+        });
+        li.addEventListener('click', function() {
+          if (typeof closeCmdPalette === 'function') closeCmdPalette();
+          window.location.href = route.slug;
+        });
+        cmdList.appendChild(li);
+      });
+    })();
   </script>
 
 </body>
